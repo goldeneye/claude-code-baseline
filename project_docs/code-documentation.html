@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Code Documentation - Claude Code Baseline Project Structure">
+    <meta name="author" content="TimGolden - aka GoldenEye Engineering">
+    <title>Code Documentation - Claude Code Baseline</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Include Header -->
+<div id="header-placeholder"></div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-code"></i> Code Documentation
+        </h1>
+        <p class="lead">
+            Comprehensive documentation of the Claude Code Baseline project structure, scripts, templates, and components.
+        </p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="container my-5">
+
+    <!-- Project Structure -->
+    <section class="mb-5">
+        <h2 class="section-title">Project Structure</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <pre class="mb-0"><code>E:\github\claude_code_baseline\
+├── 📄 <strong>README.md</strong>                          # Main repository README
+├── 📄 <strong>CLAUDE.md</strong>                          # AI assistant guidance
+├── 📄 <strong>NEW-PROJECT-SETUP.md</strong>               # New project guide
+├── 📄 <strong>EXISTING-PROJECT-GUIDE.md</strong>          # Existing project integration guide
+│
+├── 📁 <strong>baseline_docs/</strong>                     # 11 baseline documentation templates
+│   ├── README.md
+│   ├── README-USAGE.md
+│   ├── IMPLEMENTATION-PLAN.md
+│   ├── ARCHITECTURE.md
+│   ├── API-ENDPOINTS.md
+│   ├── DATABASE-SCHEMA.md
+│   ├── USER-GUIDES.md
+│   ├── TESTING-STRATEGY.md
+│   ├── DEPLOYMENT.md
+│   ├── MAINTENANCE.md
+│   └── TROUBLESHOOTING.md
+│
+├── 📁 <strong>coding-standards/</strong>                  # 13 modular coding standards
+│   ├── README.md                           # Central navigation hub
+│   ├── 01-pseudo-code-standards.md
+│   ├── 02-php-standards.md
+│   ├── 03-javascript-standards.md
+│   ├── 04-database-standards.md
+│   ├── 05-api-standards.md
+│   ├── 06-security-standards.md
+│   ├── 07-testing-standards.md
+│   ├── 08-documentation-standards.md
+│   ├── 09-git-workflow-standards.md
+│   ├── 10-code-review-standards.md
+│   ├── 11-deployment-standards.md
+│   └── 12-performance-standards.md
+│
+├── 📁 <strong>scripts/</strong>                           # PowerShell automation scripts
+│   ├── new-project.ps1                     # Create new projects
+│   ├── add-baseline-to-existing-project.ps1
+│   └── backup-project.ps1
+│
+├── 📁 <strong>agents/</strong>                            # AI agent templates (8 agents)
+│   ├── gen-docs.md                         # Documentation generation
+│   ├── code-review.md                      # Code review agent
+│   ├── test-generator.md                   # Test generation
+│   ├── security-audit.md                   # Security auditing
+│   ├── refactor.md                         # Code refactoring
+│   ├── api-designer.md                     # API design
+│   ├── db-optimizer.md                     # Database optimization
+│   └── troubleshooter.md                   # Problem diagnosis
+│
+├── 📁 <strong>claude_wip/</strong>                        # Claude's working directory
+│   ├── drafts/                             # Work in progress
+│   ├── analysis/                           # Analysis documents
+│   ├── scratch/                            # Temporary files
+│   └── backups/                            # Backup files
+│
+└── 📁 <strong>project_docs/</strong>                      # HTML documentation site
+    ├── index.html
+    ├── code-documentation.html (this page)
+    ├── changelog.html
+    ├── todo.html
+    ├── how-to-guides.html
+    ├── css/custom.css
+    └── includes/
+        ├── header.html
+        └── footer.html</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- PowerShell Scripts -->
+    <section class="mb-5">
+        <h2 class="section-title">PowerShell Scripts</h2>
+
+        <!-- new-project.ps1 -->
+        <div class="card doc-card mb-4">
+            <div class="card-header">
+                <i class="fas fa-terminal"></i> new-project.ps1
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Create New Projects with Baseline</h5>
+                <p class="card-text">
+                    Automated script to create new projects from the baseline in ~30 seconds.
+                    Handles directory creation, file copying, and template variable replacement.
+                </p>
+
+                <h6 class="mt-4">Key Features:</h6>
+                <ul>
+                    <li><strong>Template Variables:</strong> Automatically replaces {{PROJECT_NAME}}, {{REPO_PATH}}, etc.</li>
+                    <li><strong>Directory Structure:</strong> Creates organized docs/, scripts/, tests/ structure</li>
+                    <li><strong>Component Selection:</strong> Choose which baseline components to include</li>
+                    <li><strong>Git Integration:</strong> Optional git repository initialization</li>
+                    <li><strong>Verification:</strong> Validates all files copied successfully</li>
+                </ul>
+
+                <h6 class="mt-4">Usage:</h6>
+                <pre><code class="language-powershell">.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -DestinationPath "E:\projects\myapp" `
+    -CompanyName "ACME Corp" `
+    -InitGit</code></pre>
+
+                <h6 class="mt-4">Parameters:</h6>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>-ProjectName</code></td>
+                            <td>✅ Yes</td>
+                            <td>Name of the new project</td>
+                        </tr>
+                        <tr>
+                            <td><code>-DestinationPath</code></td>
+                            <td>✅ Yes</td>
+                            <td>Where to create the project</td>
+                        </tr>
+                        <tr>
+                            <td><code>-CompanyName</code></td>
+                            <td>❌ No</td>
+                            <td>Company name for templates</td>
+                        </tr>
+                        <tr>
+                            <td><code>-InitGit</code></td>
+                            <td>❌ No</td>
+                            <td>Initialize git repository</td>
+                        </tr>
+                        <tr>
+                            <td><code>-SkipStandards</code></td>
+                            <td>❌ No</td>
+                            <td>Skip copying coding standards</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="../NEW-PROJECT-SETUP.md" class="btn btn-outline-primary mt-3">
+                    <i class="fas fa-book"></i> View Full Documentation
+                </a>
+            </div>
+        </div>
+
+        <!-- add-baseline-to-existing-project.ps1 -->
+        <div class="card doc-card mb-4">
+            <div class="card-header">
+                <i class="fas fa-folder-plus"></i> add-baseline-to-existing-project.ps1
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Safely Add Baseline to Existing Projects</h5>
+                <p class="card-text">
+                    Safely integrate the baseline documentation into existing projects with automatic backups,
+                    conflict detection, and guaranteed no-overwrite protection.
+                </p>
+
+                <h6 class="mt-4">Safety Features:</h6>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                            <li><strong>🛡️ Never Overwrites:</strong> Existing files are never touched</li>
+                            <li><strong>💾 Automatic Backup:</strong> Creates timestamped backup before changes</li>
+                            <li><strong>🔍 Conflict Detection:</strong> Reports all conflicts before proceeding</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li><strong>🔄 Automatic Rollback:</strong> Reverts on any error</li>
+                            <li><strong>🧪 Dry-Run Mode:</strong> Preview without making changes</li>
+                            <li><strong>📋 Detailed Logging:</strong> Full report of all actions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h6 class="mt-4">Usage:</h6>
+                <pre><code class="language-powershell"># Basic usage
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject"
+
+# Dry-run (preview only)
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject" -DryRun
+
+# Custom conflict resolution
+.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\myproject" `
+    -ConflictStrategy "suffix" `
+    -BackupStrategy "selective"</code></pre>
+
+                <h6 class="mt-4">Conflict Resolution Strategies:</h6>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Strategy</th>
+                            <th>Behavior</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>skip</code></td>
+                            <td>Skip conflicting files (safest)</td>
+                            <td>Production projects, first-time integration</td>
+                        </tr>
+                        <tr>
+                            <td><code>suffix</code></td>
+                            <td>Add .baseline suffix to new files</td>
+                            <td>When you want both versions</td>
+                        </tr>
+                        <tr>
+                            <td><code>interactive</code></td>
+                            <td>Ask for each conflict</td>
+                            <td>Full control over each decision</td>
+                        </tr>
+                        <tr>
+                            <td><code>alternate-directory</code></td>
+                            <td>Place in baseline_proposed/</td>
+                            <td>Review before manual merge</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="../EXISTING-PROJECT-GUIDE.md" class="btn btn-outline-primary mt-3">
+                    <i class="fas fa-book"></i> View Full Documentation
+                </a>
+            </div>
+        </div>
+
+        <!-- backup-project.ps1 -->
+        <div class="card doc-card mb-4">
+            <div class="card-header">
+                <i class="fas fa-save"></i> backup-project.ps1
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Project Backup Utility</h5>
+                <p class="card-text">
+                    Create timestamped backups of your project before major changes.
+                </p>
+
+                <h6 class="mt-4">Usage:</h6>
+                <pre><code class="language-powershell">.\backup-project.ps1 -ProjectPath "E:\myproject" -BackupPath "E:\backups"</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Agent System -->
+    <section class="mb-5">
+        <h2 class="section-title">AI Agent System</h2>
+        <div class="card doc-card mb-4">
+            <div class="card-body">
+                <p>
+                    The baseline includes 8 specialized AI agent templates designed to work with Claude Code.
+                    These agents provide focused assistance for specific development tasks.
+                </p>
+
+                <h6 class="mt-4">Available Agents:</h6>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box primary">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h6 class="card-title">gen-docs.md</h6>
+                                <p class="card-text">Generates comprehensive documentation from code and comments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box success">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h6 class="card-title">code-review.md</h6>
+                                <p class="card-text">Performs thorough code reviews with best practice recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box info">
+                                    <i class="fas fa-vial"></i>
+                                </div>
+                                <h6 class="card-title">test-generator.md</h6>
+                                <p class="card-text">Generates unit and integration tests for your code.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box warning">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h6 class="card-title">security-audit.md</h6>
+                                <p class="card-text">Audits code for security vulnerabilities and OWASP compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box primary">
+                                    <i class="fas fa-sync"></i>
+                                </div>
+                                <h6 class="card-title">refactor.md</h6>
+                                <p class="card-text">Suggests and implements code refactoring improvements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box success">
+                                    <i class="fas fa-plug"></i>
+                                </div>
+                                <h6 class="card-title">api-designer.md</h6>
+                                <p class="card-text">Designs RESTful APIs following best practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box info">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h6 class="card-title">db-optimizer.md</h6>
+                                <p class="card-text">Optimizes database schemas, queries, and indexes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="icon-box warning">
+                                    <i class="fas fa-wrench"></i>
+                                </div>
+                                <h6 class="card-title">troubleshooter.md</h6>
+                                <p class="card-text">Diagnoses and resolves common development issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-4">
+                    <i class="fas fa-info-circle"></i> <strong>Note:</strong> Agent templates can be installed to
+                    <code>C:\Users\TimGolden\.claude\agents\</code> for use across all projects.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baseline Documentation -->
+    <section class="mb-5">
+        <h2 class="section-title">Baseline Documentation Templates</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p>
+                    11 comprehensive documentation templates covering all aspects of software projects.
+                    Each template includes detailed sections, examples, and guidance.
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-check text-success"></i> Core Documentation</h6>
+                        <ul>
+                            <li><strong>README.md</strong> - Project overview and quick start</li>
+                            <li><strong>README-USAGE.md</strong> - Detailed usage instructions</li>
+                            <li><strong>IMPLEMENTATION-PLAN.md</strong> - Development roadmap</li>
+                            <li><strong>ARCHITECTURE.md</strong> - System architecture and design</li>
+                            <li><strong>API-ENDPOINTS.md</strong> - API documentation</li>
+                            <li><strong>DATABASE-SCHEMA.md</strong> - Database structure</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-check text-success"></i> Operational Documentation</h6>
+                        <ul>
+                            <li><strong>USER-GUIDES.md</strong> - End-user documentation</li>
+                            <li><strong>TESTING-STRATEGY.md</strong> - Testing approach</li>
+                            <li><strong>DEPLOYMENT.md</strong> - Deployment procedures</li>
+                            <li><strong>MAINTENANCE.md</strong> - Maintenance guidelines</li>
+                            <li><strong>TROUBLESHOOTING.md</strong> - Common issues and solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-primary mt-4">
+                    <i class="fas fa-lightbulb"></i> <strong>Template Variables:</strong> All templates use variables like
+                    <code>{{PROJECT_NAME}}</code> that are automatically replaced when creating new projects.
+                </div>
+
+                <a href="../baseline_docs/README.md" class="btn btn-outline-primary mt-3">
+                    <i class="fas fa-folder-open"></i> View All Templates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Standards -->
+    <section class="mb-5">
+        <h2 class="section-title">Coding Standards</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p>
+                    13 modular coding standards documents covering best practices for enterprise development.
+                    Each standard is compliance-aligned and battle-tested in production environments.
+                </p>
+
+                <h6 class="mt-4">Standards Modules:</h6>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>01. Pseudo-Code Standards</strong>
+                                <br><small class="text-muted">Planning and algorithm design</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>02. PHP Standards</strong>
+                                <br><small class="text-muted">PHP best practices, PSR compliance</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>03. JavaScript Standards</strong>
+                                <br><small class="text-muted">Modern JS/ES6+, frameworks</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>04. Database Standards</strong>
+                                <br><small class="text-muted">Schema design, query optimization</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>05. API Standards</strong>
+                                <br><small class="text-muted">RESTful design, versioning</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>06. Security Standards</strong>
+                                <br><small class="text-muted">OWASP Top 10, secure coding</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>07. Testing Standards</strong>
+                                <br><small class="text-muted">Unit, integration, E2E testing</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>08. Documentation Standards</strong>
+                                <br><small class="text-muted">Code comments, API docs</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>09. Git Workflow Standards</strong>
+                                <br><small class="text-muted">Branching, commits, PRs</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>10. Code Review Standards</strong>
+                                <br><small class="text-muted">Review process, checklists</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>11. Deployment Standards</strong>
+                                <br><small class="text-muted">CI/CD, release management</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>12. Performance Standards</strong>
+                                <br><small class="text-muted">Optimization, monitoring</small>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>README.md</strong>
+                                <br><small class="text-muted">Central navigation hub</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-4">
+                    <i class="fas fa-star"></i> <strong>Modular Design:</strong> Each standard is self-contained with cross-references.
+                    Use the README.md hub for easy navigation.
+                </div>
+
+                <a href="../coding-standards/README.md" class="btn btn-outline-primary mt-3">
+                    <i class="fas fa-book-open"></i> View Standards Hub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Claude WIP Directory -->
+    <section class="mb-5">
+        <h2 class="section-title">Claude WIP Convention</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <h5 class="card-title">Standardized Working Directory for AI Assistants</h5>
+                <p class="card-text">
+                    The <code>claude_wip/</code> directory is a standardized convention for organizing work-in-progress files,
+                    analysis documents, drafts, and temporary files created during AI-assisted development.
+                </p>
+
+                <h6 class="mt-4">Directory Structure:</h6>
+                <pre><code>claude_wip/
+├── drafts/          # Work in progress documents
+├── analysis/        # Analysis and planning documents
+├── scratch/         # Temporary experimental files
+└── backups/         # Backup files and rollback points</code></pre>
+
+                <h6 class="mt-4">Purpose:</h6>
+                <ul>
+                    <li><strong>Organization:</strong> Keep AI-generated content separate from production code</li>
+                    <li><strong>Consistency:</strong> Same structure across all projects</li>
+                    <li><strong>Clarity:</strong> Easy to identify work-in-progress vs finalized content</li>
+                    <li><strong>Safety:</strong> Protected directory for experimental changes</li>
+                </ul>
+
+                <h6 class="mt-4">Usage Guidelines:</h6>
+                <div class="alert alert-info">
+                    <ul class="mb-0">
+                        <li>All AI drafts and analysis go in <code>claude_wip/</code></li>
+                        <li>Never commit sensitive information to this directory</li>
+                        <li>Clean up periodically to remove obsolete files</li>
+                        <li>Use descriptive filenames with dates (e.g., <code>api-design-analysis-2025-01-15.md</code>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Variable System -->
+    <section class="mb-5">
+        <h2 class="section-title">Template Variable System</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <h5 class="card-title">Automated Project Customization</h5>
+                <p class="card-text">
+                    All baseline documentation templates use placeholder variables that are automatically replaced
+                    when creating new projects with the PowerShell scripts.
+                </p>
+
+                <h6 class="mt-4">Available Variables:</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                            <th>Example Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>{{PROJECT_NAME}}</code></td>
+                            <td>Project name</td>
+                            <td>MyApp</td>
+                        </tr>
+                        <tr>
+                            <td><code>{{COMPANY_NAME}}</code></td>
+                            <td>Company or organization name</td>
+                            <td>ACME Corporation</td>
+                        </tr>
+                        <tr>
+                            <td><code>{{REPO_PATH}}</code></td>
+                            <td>Full path to repository</td>
+                            <td>E:\projects\myapp</td>
+                        </tr>
+                        <tr>
+                            <td><code>{{CLAUDE_WIP_PATH}}</code></td>
+                            <td>Path to claude_wip directory</td>
+                            <td>E:\projects\myapp\claude_wip</td>
+                        </tr>
+                        <tr>
+                            <td><code>{{DATE}}</code></td>
+                            <td>Current date</td>
+                            <td>2025-01-15</td>
+                        </tr>
+                        <tr>
+                            <td><code>{{YEAR}}</code></td>
+                            <td>Current year</td>
+                            <td>2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6 class="mt-4">How It Works:</h6>
+                <ol>
+                    <li>Write documentation templates using <code>{{VARIABLE_NAME}}</code> placeholders</li>
+                    <li>Run <code>new-project.ps1</code> with your project details</li>
+                    <li>Script automatically replaces all variables with actual values</li>
+                    <li>Get fully customized documentation instantly</li>
+                </ol>
+
+                <div class="alert alert-success mt-4">
+                    <i class="fas fa-magic"></i> <strong>Pro Tip:</strong> You can add custom variables by modifying
+                    the PowerShell scripts or using a configuration file.
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Include Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Load Header and Footer -->
+<script>
+    fetch('includes/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    fetch('includes/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+</body>
+</html>

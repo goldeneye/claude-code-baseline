@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Changelog - Claude Code Baseline Version History">
+    <meta name="author" content="TimGolden - aka GoldenEye Engineering">
+    <title>Changelog - Claude Code Baseline</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Include Header -->
+<div id="header-placeholder"></div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-history"></i> Changelog
+        </h1>
+        <p class="lead">
+            Track all changes, updates, and improvements to the Claude Code Baseline repository.
+        </p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="container my-5">
+
+    <!-- Version 2.0 -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header bg-primary text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-rocket"></i> Version 2.0 - Major Update
+                    </h3>
+                    <span class="badge bg-light text-dark">January 15, 2025</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Major release introducing modular coding standards, existing project integration,
+                    and enhanced automation capabilities.
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-plus-circle text-success"></i> New Features</h5>
+                        <ul>
+                            <li>
+                                <strong>Add-to-Existing-Project Script</strong>
+                                <br><small class="text-muted">
+                                    Safely integrate baseline into existing projects with automatic backups,
+                                    conflict detection, and rollback capabilities.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Modular Coding Standards</strong>
+                                <br><small class="text-muted">
+                                    Split monolithic coding standards into 13 focused, navigable documents
+                                    with central README hub.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>HTML Documentation Site</strong>
+                                <br><small class="text-muted">
+                                    Professional Bootstrap-based documentation site with responsive design
+                                    and shared navigation components.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Enhanced Template Variables</strong>
+                                <br><small class="text-muted">
+                                    Expanded variable system with {{CLAUDE_WIP_PATH}}, {{DATE}}, {{YEAR}}
+                                    for better automation.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>8 AI Agent Templates</strong>
+                                <br><small class="text-muted">
+                                    Pre-configured agents for documentation, code review, testing,
+                                    security, refactoring, API design, database optimization, and troubleshooting.
+                                </small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-sync text-info"></i> Changes</h5>
+                        <ul>
+                            <li>
+                                <strong>Folder Rename: coding-standards/</strong>
+                                <br><small class="text-muted">
+                                    Renamed from <code>03-coding-standards/</code> to <code>coding-standards/</code>
+                                    for cleaner project structure.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Claude WIP Convention</strong>
+                                <br><small class="text-muted">
+                                    Formalized <code>claude_wip/</code> as standard working directory
+                                    for all AI-assisted development across projects.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Updated Documentation</strong>
+                                <br><small class="text-muted">
+                                    Enhanced CLAUDE.md, README.md, and all baseline templates with
+                                    latest best practices and clearer instructions.
+                                </small>
+                            </li>
+                        </ul>
+
+                        <h5 class="mt-4"><i class="fas fa-wrench text-warning"></i> Improvements</h5>
+                        <ul>
+                            <li>Better error handling in PowerShell scripts</li>
+                            <li>Comprehensive logging and reporting</li>
+                            <li>Dry-run mode for all scripts</li>
+                            <li>Git integration detection</li>
+                            <li>Automatic verification checks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-4">
+                    <i class="fas fa-check-circle"></i> <strong>Migration Guide:</strong>
+                    Existing projects can safely upgrade using <code>add-baseline-to-existing-project.ps1</code>
+                    with the <code>-DryRun</code> flag to preview changes first.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Version 1.5 -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-star"></i> Version 1.5 - Enhancement Release
+                    </h3>
+                    <span class="badge bg-light text-dark">January 10, 2025</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Focused release improving AI assistant guidance and template variable system.
+                </p>
+
+                <h5 class="mt-4"><i class="fas fa-plus-circle text-success"></i> New Features</h5>
+                <ul>
+                    <li>
+                        <strong>Template Variable System</strong>
+                        <br><small class="text-muted">
+                            Introduced {{PROJECT_NAME}}, {{COMPANY_NAME}}, {{REPO_PATH}} variables
+                            for automated customization of baseline templates.
+                        </small>
+                    </li>
+                    <li>
+                        <strong>Enhanced CLAUDE.md</strong>
+                        <br><small class="text-muted">
+                            Comprehensive AI guidance document with project structure, conventions,
+                            and integration instructions for Claude Code.
+                        </small>
+                    </li>
+                    <li>
+                        <strong>Backup Script</strong>
+                        <br><small class="text-muted">
+                            Added <code>backup-project.ps1</code> for creating timestamped project backups
+                            before major changes.
+                        </small>
+                    </li>
+                </ul>
+
+                <h5 class="mt-4"><i class="fas fa-sync text-info"></i> Changes</h5>
+                <ul>
+                    <li>Updated all baseline templates to use template variables</li>
+                    <li>Improved PowerShell script parameter validation</li>
+                    <li>Enhanced documentation with more examples</li>
+                    <li>Added troubleshooting sections to guides</li>
+                </ul>
+
+                <h5 class="mt-4"><i class="fas fa-bug text-danger"></i> Bug Fixes</h5>
+                <ul>
+                    <li>Fixed path handling for spaces in directory names</li>
+                    <li>Corrected git initialization issues in new-project script</li>
+                    <li>Resolved template variable replacement edge cases</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Version 1.0 -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header bg-secondary text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-flag-checkered"></i> Version 1.0 - Initial Release
+                    </h3>
+                    <span class="badge bg-light text-dark">August 2024</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Initial baseline repository creation with core documentation templates and automation.
+                </p>
+
+                <h5 class="mt-4"><i class="fas fa-plus-circle text-success"></i> Initial Features</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Core Components</h6>
+                        <ul>
+                            <li>11 baseline documentation templates</li>
+                            <li>Comprehensive coding standards document</li>
+                            <li>README.md with project overview</li>
+                            <li>Basic CLAUDE.md for AI guidance</li>
+                            <li>Git workflow guidelines</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Automation</h6>
+                        <ul>
+                            <li><code>new-project.ps1</code> script</li>
+                            <li>Directory structure creation</li>
+                            <li>File copying automation</li>
+                            <li>Git repository initialization</li>
+                            <li>Basic verification checks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h5 class="mt-4"><i class="fas fa-file-alt text-primary"></i> Documentation Templates</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                            <li>README.md</li>
+                            <li>README-USAGE.md</li>
+                            <li>IMPLEMENTATION-PLAN.md</li>
+                            <li>ARCHITECTURE.md</li>
+                            <li>API-ENDPOINTS.md</li>
+                            <li>DATABASE-SCHEMA.md</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>USER-GUIDES.md</li>
+                            <li>TESTING-STRATEGY.md</li>
+                            <li>DEPLOYMENT.md</li>
+                            <li>MAINTENANCE.md</li>
+                            <li>TROUBLESHOOTING.md</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header">
+                <h3 class="mb-0">
+                    <i class="fas fa-road"></i> Future Roadmap
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>Planned features and improvements for future releases:</p>
+
+                <div class="timeline mt-4">
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">Version 2.1 (Planned)</h6>
+                        <ul class="mb-2">
+                            <li>Multi-language support for coding standards (Python, TypeScript, Go)</li>
+                            <li>Interactive web-based project configurator</li>
+                            <li>Enhanced AI agent templates with examples</li>
+                            <li>Docker integration for containerized projects</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">Version 3.0 (Future)</h6>
+                        <ul class="mb-2">
+                            <li>VS Code extension for baseline integration</li>
+                            <li>Automated compliance checking and reporting</li>
+                            <li>Template marketplace for custom templates</li>
+                            <li>Integration with popular project management tools</li>
+                            <li>Advanced analytics and metrics dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">Community Requests</h6>
+                        <ul class="mb-0">
+                            <li>GitHub Actions workflows for automation</li>
+                            <li>Cloud deployment templates (AWS, Azure, GCP)</li>
+                            <li>Mobile app development templates</li>
+                            <li>API documentation automation (OpenAPI/Swagger)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-4">
+                    <i class="fas fa-lightbulb"></i> <strong>Have a suggestion?</strong>
+                    Open an issue on GitHub or contribute to the project to help shape future releases!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Version Comparison -->
+    <section class="mb-5">
+        <h2 class="section-title">Version Comparison</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th class="text-center">v1.0</th>
+                                <th class="text-center">v1.5</th>
+                                <th class="text-center">v2.0</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Baseline Documentation Templates</td>
+                                <td class="text-center"><span class="badge bg-success">11</span></td>
+                                <td class="text-center"><span class="badge bg-success">11</span></td>
+                                <td class="text-center"><span class="badge bg-success">11</span></td>
+                            </tr>
+                            <tr>
+                                <td>Coding Standards Modules</td>
+                                <td class="text-center"><span class="badge bg-warning">1</span></td>
+                                <td class="text-center"><span class="badge bg-warning">1</span></td>
+                                <td class="text-center"><span class="badge bg-success">13</span></td>
+                            </tr>
+                            <tr>
+                                <td>PowerShell Automation Scripts</td>
+                                <td class="text-center"><span class="badge bg-success">1</span></td>
+                                <td class="text-center"><span class="badge bg-success">2</span></td>
+                                <td class="text-center"><span class="badge bg-success">3</span></td>
+                            </tr>
+                            <tr>
+                                <td>AI Agent Templates</td>
+                                <td class="text-center"><span class="badge bg-secondary">0</span></td>
+                                <td class="text-center"><span class="badge bg-secondary">0</span></td>
+                                <td class="text-center"><span class="badge bg-success">8</span></td>
+                            </tr>
+                            <tr>
+                                <td>Template Variable System</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Existing Project Integration</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>HTML Documentation Site</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Conflict Resolution</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><span class="badge bg-success">4 Strategies</span></td>
+                            </tr>
+                            <tr>
+                                <td>Automatic Backup</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><span class="badge bg-warning">Manual</span></td>
+                                <td class="text-center"><span class="badge bg-success">Auto</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dry-Run Mode</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade Instructions -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header">
+                <h3 class="mb-0">
+                    <i class="fas fa-arrow-up"></i> Upgrade Instructions
+                </h3>
+            </div>
+            <div class="card-body">
+                <h5>Upgrading from v1.x to v2.0</h5>
+
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong>
+                    Always create a backup before upgrading. Version 2.0 includes structural changes.
+                </div>
+
+                <h6 class="mt-4">For New Projects:</h6>
+                <pre><code class="language-powershell"># Simply use the latest new-project script
+.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp"</code></pre>
+
+                <h6 class="mt-4">For Existing Projects:</h6>
+                <pre><code class="language-powershell"># Step 1: Preview changes (dry-run)
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject" -DryRun
+
+# Step 2: Apply changes
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject"
+
+# Step 3: Manually rename coding standards folder if present
+# From: docs\03-coding-standards\
+# To:   docs\coding-standards\</code></pre>
+
+                <h6 class="mt-4">Breaking Changes:</h6>
+                <ul>
+                    <li>Folder renamed: <code>03-coding-standards/</code> → <code>coding-standards/</code></li>
+                    <li>Coding standards split into 13 files (previously 1 monolithic file)</li>
+                    <li>New required directory: <code>claude_wip/</code> with subdirectories</li>
+                </ul>
+
+                <h6 class="mt-4">Compatible Changes:</h6>
+                <ul>
+                    <li>All baseline documentation templates remain compatible</li>
+                    <li>Template variable system is backward compatible</li>
+                    <li>PowerShell scripts have improved error handling but same interface</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Include Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Load Header and Footer -->
+<script>
+    fetch('includes/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    fetch('includes/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+</body>
+</html>

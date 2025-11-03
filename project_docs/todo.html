@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TODO List - Claude Code Baseline Project Tasks">
+    <meta name="author" content="TimGolden - aka GoldenEye Engineering">
+    <title>TODO List - Claude Code Baseline</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <style>
+        .task-card {
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+        .task-card.completed {
+            border-left-color: #28a745;
+            opacity: 0.85;
+        }
+        .task-card.in-progress {
+            border-left-color: #17a2b8;
+        }
+        .task-card.pending {
+            border-left-color: #ffc107;
+        }
+        .task-card.future {
+            border-left-color: #6c757d;
+        }
+        .task-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .priority-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Include Header -->
+<div id="header-placeholder"></div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-tasks"></i> Project TODO List
+        </h1>
+        <p class="lead">
+            Track project tasks, features, and enhancements. See what's completed, in progress, and planned.
+        </p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="container my-5">
+
+    <!-- Summary Stats -->
+    <section class="mb-5">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card doc-card h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box success mx-auto">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="h4">18</h3>
+                        <p class="text-muted mb-0">Completed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card doc-card h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box info mx-auto">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <h3 class="h4">2</h3>
+                        <p class="text-muted mb-0">In Progress</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card doc-card h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box warning mx-auto">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="h4">5</h3>
+                        <p class="text-muted mb-0">Pending</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card doc-card h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box primary mx-auto">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="h4">12</h3>
+                        <p class="text-muted mb-0">Future</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In Progress Tasks -->
+    <section class="mb-5">
+        <h2 class="section-title">
+            <i class="fas fa-spinner text-info"></i> In Progress
+        </h2>
+
+        <div class="card doc-card task-card in-progress mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            <i class="fas fa-code"></i> Multi-Language Coding Standards
+                        </h5>
+                        <p class="card-text">
+                            Extend coding standards to support Python, TypeScript, and Go in addition to PHP and JavaScript.
+                            Create language-specific modules following the same structure as existing standards.
+                        </p>
+                        <div class="mt-2">
+                            <span class="badge bg-info priority-badge">Medium Priority</span>
+                            <span class="badge bg-secondary priority-badge">Documentation</span>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <span class="badge bg-info">In Progress</span>
+                    </div>
+                </div>
+                <div class="progress mt-3" style="height: 8px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 35%"></div>
+                </div>
+                <small class="text-muted">35% Complete - Python standards drafted</small>
+            </div>
+        </div>
+
+        <div class="card doc-card task-card in-progress mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            <i class="fas fa-robot"></i> Enhanced AI Agent Examples
+                        </h5>
+                        <p class="card-text">
+                            Add practical examples and use cases to each AI agent template. Include sample inputs,
+                            expected outputs, and common scenarios for each of the 8 agents.
+                        </p>
+                        <div class="mt-2">
+                            <span class="badge bg-warning priority-badge">High Priority</span>
+                            <span class="badge bg-secondary priority-badge">AI/Automation</span>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <span class="badge bg-info">In Progress</span>
+                    </div>
+                </div>
+                <div class="progress mt-3" style="height: 8px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 20%"></div>
+                </div>
+                <small class="text-muted">20% Complete - gen-docs and code-review examples added</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pending Tasks -->
+    <section class="mb-5">
+        <h2 class="section-title">
+            <i class="fas fa-clock text-warning"></i> Pending Tasks
+        </h2>
+
+        <div class="card doc-card task-card pending mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            <i class="fas fa-browser"></i> Interactive Project Configurator
+                        </h5>
+                        <p class="card-text">
+                            Create a web-based interactive tool for configuring new projects. Allow users to select
+                            components, customize templates, and generate project configurations visually.
+                        </p>
+                        <div class="mt-2">
+                            <span class="badge bg-warning priority-badge">High Priority</span>
+                            <span class="badge bg-secondary priority-badge">Tooling</span>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <span class="badge bg-warning">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card task-card pending mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            <i class="fab fa-docker"></i> Docker Integration
+                        </h5>
+                        <p class="card-text">
+                            Add Docker support with pre-configured Dockerfile templates for common project types
+                            (PHP/Apache, Node.js, Python, etc.). Include docker-compose examples.
+                        </p>
+                        <div class="mt-2">
+                            <span class="badge bg-info priority-badge">Medium Priority</span>
+                            <span class="badge bg-secondary priority-badge">DevOps</span>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <span class="badge bg-warning">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card task-card pending mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            <i class="fas fa-search"></i> Search Functionality
+                        </h5>
+                        <p class="card-text">
+                            Add full-text search across all HTML documentation pages. Include filtering,
+                            highlighting, and navigation to search results.
+                        </p>
+                        <div class="mt-2">
+                            <span class="badge bg-info priority-badge">Medium Priority</span>
+                            <span class="badge bg-secondary priority-badge">Documentation</span>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <span class="badge bg-warning">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card task-card pending mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            <i class="fas fa-copy"></i> Code Copy Buttons
+                        </h5>
+                        <p class="card-text">
+                            Add one-click copy buttons to all code blocks in the HTML documentation.
+                            Include confirmation toast notifications on successful copy.
+                        </p>
+                        <div class="mt-2">
+                            <span class="badge bg-success priority-badge">Low Priority</span>
+                            <span class="badge bg-secondary priority-badge">UX</span>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <span class="badge bg-warning">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card task-card pending mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="card-title">
+                            <i class="fas fa-moon"></i> Dark Mode Toggle
+                        </h5>
+                        <p class="card-text">
+                            Implement dark mode theme for HTML documentation site with toggle switch.
+                            Save user preference in localStorage.
+                        </p>
+                        <div class="mt-2">
+                            <span class="badge bg-success priority-badge">Low Priority</span>
+                            <span class="badge bg-secondary priority-badge">UI/UX</span>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <span class="badge bg-warning">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Enhancements -->
+    <section class="mb-5">
+        <h2 class="section-title">
+            <i class="fas fa-star text-primary"></i> Future Enhancements
+        </h2>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-plug"></i> VS Code Extension
+                        </h6>
+                        <p class="card-text">
+                            Create VS Code extension for baseline integration directly from the editor.
+                        </p>
+                        <span class="badge bg-secondary">v3.0</span>
+                        <span class="badge bg-secondary priority-badge">Tooling</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-check-double"></i> Compliance Checker
+                        </h6>
+                        <p class="card-text">
+                            Automated tool to check project compliance with coding standards and best practices.
+                        </p>
+                        <span class="badge bg-secondary">v3.0</span>
+                        <span class="badge bg-secondary priority-badge">Automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-store"></i> Template Marketplace
+                        </h6>
+                        <p class="card-text">
+                            Platform for sharing and discovering custom baseline templates and standards.
+                        </p>
+                        <span class="badge bg-secondary">v3.0+</span>
+                        <span class="badge bg-secondary priority-badge">Community</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-cloud"></i> Cloud Deployment Templates
+                        </h6>
+                        <p class="card-text">
+                            Pre-configured templates for AWS, Azure, and GCP deployments with IaC.
+                        </p>
+                        <span class="badge bg-secondary">v3.0</span>
+                        <span class="badge bg-secondary priority-badge">DevOps</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fab fa-github"></i> GitHub Actions Workflows
+                        </h6>
+                        <p class="card-text">
+                            Pre-built CI/CD workflows for testing, building, and deploying projects.
+                        </p>
+                        <span class="badge bg-secondary">v2.1</span>
+                        <span class="badge bg-secondary priority-badge">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-mobile-alt"></i> Mobile App Templates
+                        </h6>
+                        <p class="card-text">
+                            Documentation templates and standards for React Native and Flutter projects.
+                        </p>
+                        <span class="badge bg-secondary">v2.1</span>
+                        <span class="badge bg-secondary priority-badge">Templates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-file-contract"></i> OpenAPI/Swagger Integration
+                        </h6>
+                        <p class="card-text">
+                            Automated API documentation generation from OpenAPI specifications.
+                        </p>
+                        <span class="badge bg-secondary">v2.1</span>
+                        <span class="badge bg-secondary priority-badge">Documentation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-chart-line"></i> Analytics Dashboard
+                        </h6>
+                        <p class="card-text">
+                            Project metrics and analytics dashboard showing code quality trends.
+                        </p>
+                        <span class="badge bg-secondary">v3.0</span>
+                        <span class="badge bg-secondary priority-badge">Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-tasks"></i> Project Management Integration
+                        </h6>
+                        <p class="card-text">
+                            Integration with Jira, Asana, Trello for automated task tracking.
+                        </p>
+                        <span class="badge bg-secondary">v3.0+</span>
+                        <span class="badge bg-secondary priority-badge">Integration</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-file-pdf"></i> PDF Export
+                        </h6>
+                        <p class="card-text">
+                            Export documentation to professionally formatted PDF files.
+                        </p>
+                        <span class="badge bg-secondary">v2.1</span>
+                        <span class="badge bg-secondary priority-badge">Documentation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-code-branch"></i> Version Selector
+                        </h6>
+                        <p class="card-text">
+                            Allow viewing documentation for different baseline versions.
+                        </p>
+                        <span class="badge bg-secondary">v2.1</span>
+                        <span class="badge bg-secondary priority-badge">Documentation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card doc-card task-card future h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <i class="fas fa-highlighter"></i> Syntax Highlighting
+                        </h6>
+                        <p class="card-text">
+                            Enhanced code syntax highlighting with Prism.js or Highlight.js.
+                        </p>
+                        <span class="badge bg-secondary">v2.1</span>
+                        <span class="badge bg-secondary priority-badge">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completed Tasks (Recent) -->
+    <section class="mb-5">
+        <h2 class="section-title">
+            <i class="fas fa-check-circle text-success"></i> Recently Completed
+        </h2>
+
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 15, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> HTML Documentation Site</strong></p>
+                        <p class="text-muted">Created complete Bootstrap-based documentation site with 5 pages and responsive design.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 15, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Add-to-Existing-Project Script</strong></p>
+                        <p class="text-muted">Implemented safe integration script with automatic backup and conflict resolution.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 15, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Modular Coding Standards</strong></p>
+                        <p class="text-muted">Split monolithic standards into 13 focused documents with central navigation.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 15, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Folder Rename: coding-standards</strong></p>
+                        <p class="text-muted">Renamed from 03-coding-standards to coding-standards for cleaner structure.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 15, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Claude WIP Convention</strong></p>
+                        <p class="text-muted">Documented standardized claude_wip/ working directory convention.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 15, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> 8 AI Agent Templates</strong></p>
+                        <p class="text-muted">Created specialized agent templates for docs, review, testing, security, refactoring, API, DB, troubleshooting.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 10, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Template Variable System</strong></p>
+                        <p class="text-muted">Implemented automated variable replacement for project customization.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 10, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Enhanced CLAUDE.md</strong></p>
+                        <p class="text-muted">Comprehensive AI guidance document with project structure and conventions.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">January 10, 2025</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Backup Script</strong></p>
+                        <p class="text-muted">Added backup-project.ps1 for creating timestamped backups.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h6 class="fw-bold">August 2024</h6>
+                        <p class="mb-1"><strong><i class="fas fa-check text-success"></i> Initial Baseline Release</strong></p>
+                        <p class="text-muted">Created 11 documentation templates and new-project automation script.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Include Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Load Header and Footer -->
+<script>
+    fetch('includes/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    fetch('includes/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+</body>
+</html>

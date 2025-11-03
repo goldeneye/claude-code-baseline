@@ -1,0 +1,369 @@
+/* Agent Reports Stylesheet */
+
+:root {
+    --primary-color: #2563eb;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #3b82f6;
+    --bg-color: #f9fafb;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+
+/* Header */
+.report-header {
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.report-header h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.report-meta {
+    color: var(--text-secondary);
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.report-meta .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Executive Summary */
+.executive-summary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.executive-summary h2 {
+    margin-bottom: 15px;
+}
+
+.score-badge {
+    display: inline-block;
+    font-size: 3em;
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
+    padding: 20px 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Status Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.badge-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-warning {
+    background-color: #fed7aa;
+    color: #92400e;
+}
+
+.badge-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-info {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* Priority Badges */
+.priority-critical {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.priority-high {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.priority-medium {
+    background-color: var(--info-color);
+    color: white;
+}
+
+.priority-low {
+    background-color: var(--text-secondary);
+    color: white;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.section h3 {
+    font-size: 1.3em;
+    color: var(--text-primary);
+    margin: 25px 0 15px 0;
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, #f3f4f6 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Issue Cards */
+.issue-card {
+    border-left: 4px solid var(--border-color);
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.issue-card.critical {
+    border-left-color: var(--danger-color);
+}
+
+.issue-card.high {
+    border-left-color: var(--warning-color);
+}
+
+.issue-card.medium {
+    border-left-color: var(--info-color);
+}
+
+.issue-card.low {
+    border-left-color: var(--text-secondary);
+}
+
+.issue-title {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.issue-location {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 10px;
+}
+
+/* Code Blocks */
+pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+code {
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 0.9em;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+thead {
+    background: var(--bg-color);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+tr:hover {
+    background: var(--bg-color);
+}
+
+/* Checkmarks */
+.checkmark {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.xmark {
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: var(--text-secondary);
+    margin: 0 8px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 30px;
+    background: var(--bg-color);
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success-color) 0%, #34d399 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: width 0.3s ease;
+}
+
+/* Footer */
+.report-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .report-header h1 {
+        font-size: 1.8em;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    .container {
+        box-shadow: none;
+    }
+
+    .no-print {
+        display: none;
+    }
+}

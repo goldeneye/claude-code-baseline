@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How-To Guides - Claude Code Baseline Step-by-Step Instructions">
+    <meta name="author" content="TimGolden - aka GoldenEye Engineering">
+    <title>How-To Guides - Claude Code Baseline</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <style>
+        .guide-nav {
+            position: sticky;
+            top: 20px;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        .guide-section {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Include Header -->
+<div id="header-placeholder"></div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-book-open"></i> How-To Guides
+        </h1>
+        <p class="lead">
+            Step-by-step instructions for using the Claude Code Baseline effectively.
+            Learn how to create projects, integrate baseline, and leverage AI agents.
+        </p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="container my-5">
+    <div class="row">
+        <!-- Navigation Sidebar -->
+        <div class="col-lg-3">
+            <div class="guide-nav">
+                <div class="card doc-card">
+                    <div class="card-header">
+                        <strong><i class="fas fa-list"></i> Quick Navigation</strong>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <a href="#new-project" class="list-group-item list-group-item-action">
+                            <i class="fas fa-plus-circle"></i> Creating New Projects
+                        </a>
+                        <a href="#existing-project" class="list-group-item list-group-item-action">
+                            <i class="fas fa-folder-plus"></i> Adding to Existing
+                        </a>
+                        <a href="#ai-agents" class="list-group-item list-group-item-action">
+                            <i class="fas fa-robot"></i> Using AI Agents
+                        </a>
+                        <a href="#customize" class="list-group-item list-group-item-action">
+                            <i class="fas fa-edit"></i> Customizing Standards
+                        </a>
+                        <a href="#template-vars" class="list-group-item list-group-item-action">
+                            <i class="fas fa-code"></i> Template Variables
+                        </a>
+                        <a href="#troubleshooting" class="list-group-item list-group-item-action">
+                            <i class="fas fa-wrench"></i> Troubleshooting
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guides Content -->
+        <div class="col-lg-9">
+
+            <!-- Guide 1: Creating New Projects -->
+            <section id="new-project" class="guide-section mb-5">
+                <div class="card doc-card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <i class="fas fa-plus-circle"></i> Creating New Projects
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Use the <code>new-project.ps1</code> script to create a fully-structured project
+                            with baseline documentation in under 30 seconds.
+                        </p>
+
+                        <h5 class="mt-4">Prerequisites</h5>
+                        <ul>
+                            <li>Windows PowerShell 5.1 or PowerShell 7+</li>
+                            <li>Git (optional, for repository initialization)</li>
+                            <li>Text editor (VS Code recommended)</li>
+                        </ul>
+
+                        <h5 class="mt-4">Step-by-Step Instructions</h5>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">1</span> Navigate to Baseline Directory</h6>
+                            <pre class="ms-5"><code>cd E:\github\claude_code_baseline</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">2</span> Run the Script</h6>
+                            <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
+    -ProjectName "MyAwesomeApp" `
+    -DestinationPath "E:\projects\my-awesome-app"</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">3</span> Add Optional Parameters (if needed)</h6>
+                            <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
+    -ProjectName "MyAwesomeApp" `
+    -DestinationPath "E:\projects\my-awesome-app" `
+    -CompanyName "ACME Corporation" `
+    -InitGit `
+    -Verbose</code></pre>
+                            <p class="ms-5 mt-2"><small class="text-muted">
+                                <code>-CompanyName</code> replaces {{COMPANY_NAME}} in templates<br>
+                                <code>-InitGit</code> creates a git repository<br>
+                                <code>-Verbose</code> shows detailed output
+                            </small></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">4</span> Review Output</h6>
+                            <p class="ms-5">The script will:</p>
+                            <ul class="ms-5">
+                                <li>Create directory structure</li>
+                                <li>Copy baseline documentation</li>
+                                <li>Copy coding standards</li>
+                                <li>Replace template variables</li>
+                                <li>Create claude_wip/ directory</li>
+                                <li>Initialize git (if requested)</li>
+                                <li>Verify all files</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">5</span> Open Your New Project</h6>
+                            <pre class="ms-5"><code>cd E:\projects\my-awesome-app
+code .</code></pre>
+                        </div>
+
+                        <div class="alert alert-success mt-4">
+                            <i class="fas fa-check-circle"></i> <strong>Success!</strong>
+                            Your project now has complete baseline documentation, coding standards, and
+                            a standardized structure ready for development.
+                        </div>
+
+                        <h5 class="mt-4">Available Parameters</h5>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Required</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>-ProjectName</code></td>
+                                    <td><span class="badge bg-danger">Yes</span></td>
+                                    <td>Name of your project</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-DestinationPath</code></td>
+                                    <td><span class="badge bg-danger">Yes</span></td>
+                                    <td>Where to create the project</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-CompanyName</code></td>
+                                    <td><span class="badge bg-secondary">No</span></td>
+                                    <td>Your company/organization name</td>
+                                    <td>"Your Company"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-InitGit</code></td>
+                                    <td><span class="badge bg-secondary">No</span></td>
+                                    <td>Initialize git repository</td>
+                                    <td>false</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-SkipStandards</code></td>
+                                    <td><span class="badge bg-secondary">No</span></td>
+                                    <td>Skip copying coding standards</td>
+                                    <td>false</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-Verbose</code></td>
+                                    <td><span class="badge bg-secondary">No</span></td>
+                                    <td>Show detailed output</td>
+                                    <td>false</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="mt-4">What Gets Created</h5>
+                        <pre><code>my-awesome-app/
+├── docs/
+│   ├── baseline/              # 11 documentation templates
+│   └── coding-standards/      # 13 coding standard modules
+├── claude_wip/                # AI working directory
+│   ├── drafts/
+│   ├── analysis/
+│   ├── scratch/
+│   └── backups/
+├── scripts/                   # Empty, ready for your scripts
+├── tests/                     # Empty, ready for tests
+└── CLAUDE.md                  # AI guidance file</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guide 2: Adding to Existing Projects -->
+            <section id="existing-project" class="guide-section mb-5">
+                <div class="card doc-card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <i class="fas fa-folder-plus"></i> Adding to Existing Projects
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Safely integrate the baseline into existing projects without overwriting any files.
+                        </p>
+
+                        <div class="alert alert-warning">
+                            <i class="fas fa-shield-alt"></i> <strong>Safety First:</strong>
+                            This script NEVER overwrites existing files and always creates a backup before making changes.
+                        </div>
+
+                        <h5 class="mt-4">Step-by-Step Instructions</h5>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">1</span> Preview Changes (Dry-Run)</h6>
+                            <p class="ms-5">Always start with a dry-run to see what would happen:</p>
+                            <pre class="ms-5"><code class="language-powershell">.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\myproject" `
+    -DryRun</code></pre>
+                            <p class="ms-5 mt-2"><small class="text-muted">
+                                This shows you what would be copied/created without actually doing it.
+                            </small></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">2</span> Review Conflicts</h6>
+                            <p class="ms-5">The dry-run will report any conflicts:</p>
+                            <pre class="ms-5"><code>CONFLICT: E:\myproject\CLAUDE.md already exists
+CONFLICT: E:\myproject\docs\baseline\README.md already exists
+
+Choose a conflict resolution strategy:
+- skip: Skip conflicting files (safest)
+- suffix: Add .baseline suffix to new files
+- interactive: Ask for each conflict
+- alternate-directory: Place in baseline_proposed/</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">3</span> Choose Conflict Resolution</h6>
+                            <p class="ms-5">Select the strategy that fits your needs:</p>
+                            <pre class="ms-5"><code class="language-powershell"># Option A: Skip conflicts (safest)
+.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\myproject" `
+    -ConflictStrategy "skip"
+
+# Option B: Add suffix to new files
+.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\myproject" `
+    -ConflictStrategy "suffix"
+
+# Option C: Interactive prompts
+.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\myproject" `
+    -ConflictStrategy "interactive"
+
+# Option D: Alternate directory
+.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\myproject" `
+    -ConflictStrategy "alternate-directory"</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">4</span> Apply Changes</h6>
+                            <p class="ms-5">Run without <code>-DryRun</code> to apply:</p>
+                            <pre class="ms-5"><code class="language-powershell">.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\myproject" `
+    -ConflictStrategy "skip" `
+    -BackupStrategy "selective"</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">5</span> Verify Results</h6>
+                            <p class="ms-5">Check the output for:</p>
+                            <ul class="ms-5">
+                                <li>Backup location (e.g., <code>.baseline-backup-20250115-143022/</code>)</li>
+                                <li>Files copied successfully</li>
+                                <li>Conflicts skipped or resolved</li>
+                                <li>Rollback instructions (if needed)</li>
+                            </ul>
+                        </div>
+
+                        <h5 class="mt-4">Conflict Resolution Strategies</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Strategy</th>
+                                    <th>Behavior</th>
+                                    <th>Use When</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>skip</code></td>
+                                    <td>Skip files that already exist</td>
+                                    <td>Production projects, first-time integration, maximum safety</td>
+                                </tr>
+                                <tr>
+                                    <td><code>suffix</code></td>
+                                    <td>Add <code>.baseline</code> suffix to new files</td>
+                                    <td>You want both versions for comparison</td>
+                                </tr>
+                                <tr>
+                                    <td><code>interactive</code></td>
+                                    <td>Prompt for each conflict</td>
+                                    <td>Small projects, need full control</td>
+                                </tr>
+                                <tr>
+                                    <td><code>alternate-directory</code></td>
+                                    <td>Place in <code>baseline_proposed/</code></td>
+                                    <td>Review before manually merging</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="mt-4">Backup Strategies</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Strategy</th>
+                                    <th>What Gets Backed Up</th>
+                                    <th>Recommended For</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>full</code></td>
+                                    <td>Entire project (excludes node_modules, vendor, etc.)</td>
+                                    <td>Small to medium projects</td>
+                                </tr>
+                                <tr>
+                                    <td><code>selective</code></td>
+                                    <td>Only potentially affected files</td>
+                                    <td>Large projects, faster backup (default)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git-stash</code></td>
+                                    <td>Uses git stash for backup</td>
+                                    <td>Git projects with no uncommitted changes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="alert alert-info mt-4">
+                            <i class="fas fa-undo"></i> <strong>Rollback:</strong>
+                            If something goes wrong, the script automatically rolls back changes.
+                            You can also manually restore from the backup directory created.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guide 3: Using AI Agents -->
+            <section id="ai-agents" class="guide-section mb-5">
+                <div class="card doc-card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <i class="fas fa-robot"></i> Using AI Agents
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Leverage specialized AI agents for documentation, code review, testing, and more.
+                        </p>
+
+                        <h5 class="mt-4">What Are AI Agents?</h5>
+                        <p>
+                            AI agents are pre-configured prompt templates that guide Claude Code to perform
+                            specific tasks with domain expertise. Each agent is specialized for a particular
+                            development task.
+                        </p>
+
+                        <h5 class="mt-4">Available Agents</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-file-alt text-primary"></i> gen-docs</h6>
+                                        <p class="small mb-0">Generates comprehensive documentation from code</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-search text-success"></i> code-review</h6>
+                                        <p class="small mb-0">Performs thorough code reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-vial text-info"></i> test-generator</h6>
+                                        <p class="small mb-0">Generates unit and integration tests</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-shield-alt text-warning"></i> security-audit</h6>
+                                        <p class="small mb-0">Audits code for security vulnerabilities</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="mt-4">Installation</h5>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">1</span> Copy Agent Templates</h6>
+                            <p class="ms-5">Copy agents to Claude Code's agent directory:</p>
+                            <pre class="ms-5"><code class="language-powershell"># Create agents directory if it doesn't exist
+mkdir C:\Users\TimGolden\.claude\agents -Force
+
+# Copy agent templates
+copy E:\github\claude_code_baseline\agents\*.md C:\Users\TimGolden\.claude\agents\</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">2</span> Verify Installation</h6>
+                            <pre class="ms-5"><code class="language-powershell">dir C:\Users\TimGolden\.claude\agents</code></pre>
+                            <p class="ms-5 mt-2"><small class="text-muted">
+                                You should see all 8 agent .md files.
+                            </small></p>
+                        </div>
+
+                        <h5 class="mt-4">Using Agents in Claude Code</h5>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">1</span> Invoke an Agent</h6>
+                            <p class="ms-5">In Claude Code, type the agent name:</p>
+                            <pre class="ms-5"><code>@gen-docs</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">2</span> Provide Context</h6>
+                            <p class="ms-5">Give the agent the files or code to work with:</p>
+                            <pre class="ms-5"><code>@gen-docs Please document the API endpoints in src/api/endpoints.php</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">3</span> Review and Refine</h6>
+                            <p class="ms-5">The agent will generate output based on its specialization. You can then:</p>
+                            <ul class="ms-5">
+                                <li>Ask for revisions</li>
+                                <li>Request different formats</li>
+                                <li>Add more context</li>
+                                <li>Combine with other agents</li>
+                            </ul>
+                        </div>
+
+                        <h5 class="mt-4">Example Use Cases</h5>
+
+                        <div class="accordion" id="agentExamples">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#example1">
+                                        Documentation Generation
+                                    </button>
+                                </h2>
+                                <div id="example1" class="accordion-collapse collapse show" data-bs-parent="#agentExamples">
+                                    <div class="accordion-body">
+                                        <pre><code>@gen-docs Generate API documentation for all endpoints in src/api/
+Include request/response examples and error codes.</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#example2">
+                                        Code Review
+                                    </button>
+                                </h2>
+                                <div id="example2" class="accordion-collapse collapse" data-bs-parent="#agentExamples">
+                                    <div class="accordion-body">
+                                        <pre><code>@code-review Review src/controllers/UserController.php
+Focus on security, performance, and PSR compliance.</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#example3">
+                                        Test Generation
+                                    </button>
+                                </h2>
+                                <div id="example3" class="accordion-collapse collapse" data-bs-parent="#agentExamples">
+                                    <div class="accordion-body">
+                                        <pre><code>@test-generator Create unit tests for src/utils/Validator.php
+Include edge cases and error scenarios.</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#example4">
+                                        Security Audit
+                                    </button>
+                                </h2>
+                                <div id="example4" class="accordion-collapse collapse" data-bs-parent="#agentExamples">
+                                    <div class="accordion-body">
+                                        <pre><code>@security-audit Audit the authentication system in src/auth/
+Check for OWASP Top 10 vulnerabilities.</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success mt-4">
+                            <i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong>
+                            You can chain multiple agents. For example, use <code>@refactor</code> to improve code,
+                            then <code>@test-generator</code> to create tests for the refactored code.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guide 4: Customizing Standards -->
+            <section id="customize" class="guide-section mb-5">
+                <div class="card doc-card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <i class="fas fa-edit"></i> Customizing Coding Standards
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Adapt the baseline coding standards to match your team's preferences and requirements.
+                        </p>
+
+                        <h5 class="mt-4">When to Customize</h5>
+                        <ul>
+                            <li>Your team uses different naming conventions</li>
+                            <li>Organization has specific compliance requirements</li>
+                            <li>Using different frameworks or tools than defaults</li>
+                            <li>Need to add language-specific standards</li>
+                        </ul>
+
+                        <h5 class="mt-4">How to Customize</h5>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">1</span> Identify the Standard to Modify</h6>
+                            <p class="ms-5">Standards are modular - find the one you need:</p>
+                            <pre class="ms-5"><code>coding-standards/
+├── 01-pseudo-code-standards.md
+├── 02-php-standards.md
+├── 03-javascript-standards.md
+└── ... (13 total)</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">2</span> Make a Backup</h6>
+                            <pre class="ms-5"><code class="language-powershell">copy coding-standards\02-php-standards.md coding-standards\02-php-standards.md.backup</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">3</span> Edit the Standard</h6>
+                            <p class="ms-5">Open in your editor and modify:</p>
+                            <pre class="ms-5"><code>code coding-standards\02-php-standards.md</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">4</span> Update Cross-References</h6>
+                            <p class="ms-5">If you change section names, update references in:</p>
+                            <ul class="ms-5">
+                                <li><code>coding-standards/README.md</code> (navigation hub)</li>
+                                <li>Other standards that reference this one</li>
+                                <li><code>CLAUDE.md</code> if applicable</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">5</span> Document Your Changes</h6>
+                            <p class="ms-5">Add a note at the top of the modified standard:</p>
+                            <pre class="ms-5"><code class="language-markdown"># PHP Coding Standards
+
+**Customized for ACME Corporation - Last Updated: 2025-01-15**
+
+**Changes from baseline:**
+- Added Symfony-specific guidelines
+- Modified namespace conventions
+- Added company-specific security requirements</code></pre>
+                        </div>
+
+                        <h5 class="mt-4">Common Customizations</h5>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Area</th>
+                                        <th>Common Changes</th>
+                                        <th>File to Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Naming Conventions</td>
+                                        <td>CamelCase vs snake_case preferences</td>
+                                        <td>02-php-standards.md, 03-javascript-standards.md</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Code Style</td>
+                                        <td>Indentation, braces, line length</td>
+                                        <td>Language-specific standards files</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Documentation</td>
+                                        <td>Comment format, required sections</td>
+                                        <td>08-documentation-standards.md</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Git Workflow</td>
+                                        <td>Branch naming, commit messages</td>
+                                        <td>09-git-workflow-standards.md</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Testing</td>
+                                        <td>Coverage requirements, test structure</td>
+                                        <td>07-testing-standards.md</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="alert alert-warning mt-4">
+                            <i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong>
+                            If you customize the baseline repo, document your changes so they can be reapplied
+                            when upgrading to newer baseline versions.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guide 5: Template Variables -->
+            <section id="template-vars" class="guide-section mb-5">
+                <div class="card doc-card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <i class="fas fa-code"></i> Working with Template Variables
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Template variables allow baseline documentation to be automatically customized
+                            for each project without manual editing.
+                        </p>
+
+                        <h5 class="mt-4">Available Variables</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Description</th>
+                                    <th>Example Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>{{PROJECT_NAME}}</code></td>
+                                    <td>Project name</td>
+                                    <td>MyAwesomeApp</td>
+                                </tr>
+                                <tr>
+                                    <td><code>{{COMPANY_NAME}}</code></td>
+                                    <td>Company/organization name</td>
+                                    <td>ACME Corporation</td>
+                                </tr>
+                                <tr>
+                                    <td><code>{{REPO_PATH}}</code></td>
+                                    <td>Full path to repository</td>
+                                    <td>E:\projects\my-awesome-app</td>
+                                </tr>
+                                <tr>
+                                    <td><code>{{CLAUDE_WIP_PATH}}</code></td>
+                                    <td>Path to claude_wip directory</td>
+                                    <td>E:\projects\my-awesome-app\claude_wip</td>
+                                </tr>
+                                <tr>
+                                    <td><code>{{DATE}}</code></td>
+                                    <td>Current date</td>
+                                    <td>2025-01-15</td>
+                                </tr>
+                                <tr>
+                                    <td><code>{{YEAR}}</code></td>
+                                    <td>Current year</td>
+                                    <td>2025</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h5 class="mt-4">How They Work</h5>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">1</span> Template Files Contain Variables</h6>
+                            <p class="ms-5">Example from README.md:</p>
+                            <pre class="ms-5"><code class="language-markdown"># {{PROJECT_NAME}}
+
+**Company:** {{COMPANY_NAME}}
+**Repository:** {{REPO_PATH}}
+**Last Updated:** {{DATE}}</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">2</span> Script Replaces Variables</h6>
+                            <p class="ms-5">When you run <code>new-project.ps1</code>:</p>
+                            <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
+    -ProjectName "MyAwesomeApp" `
+    -CompanyName "ACME Corp" `
+    -DestinationPath "E:\projects\my-awesome-app"</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">3</span> Result is Customized</h6>
+                            <p class="ms-5">The created file becomes:</p>
+                            <pre class="ms-5"><code class="language-markdown"># MyAwesomeApp
+
+**Company:** ACME Corp
+**Repository:** E:\projects\my-awesome-app
+**Last Updated:** 2025-01-15</code></pre>
+                        </div>
+
+                        <h5 class="mt-4">Adding Custom Variables</h5>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">1</span> Edit the PowerShell Script</h6>
+                            <p class="ms-5">Add your variable to <code>new-project.ps1</code>:</p>
+                            <pre class="ms-5"><code class="language-powershell"># Add parameter
+param(
+    [string]$ProjectName,
+    [string]$Author,  # New parameter
+    # ... other params
+)
+
+# Add to replacement map
+$replacements = @{
+    '{{PROJECT_NAME}}' = $ProjectName
+    '{{AUTHOR}}' = $Author  # New variable
+    # ... other replacements
+}</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">2</span> Use in Templates</h6>
+                            <p class="ms-5">Add to baseline templates:</p>
+                            <pre class="ms-5"><code class="language-markdown">**Author:** {{AUTHOR}}
+**Contact:** {{AUTHOR}}@company.com</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><span class="step-number">3</span> Use When Creating Projects</h6>
+                            <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -Author "John Smith" `
+    -DestinationPath "E:\projects\myapp"</code></pre>
+                        </div>
+
+                        <div class="alert alert-info mt-4">
+                            <i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong>
+                            You can also use a configuration file (JSON/YAML) to store common values
+                            and avoid typing them every time.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guide 6: Troubleshooting -->
+            <section id="troubleshooting" class="guide-section mb-5">
+                <div class="card doc-card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <i class="fas fa-wrench"></i> Troubleshooting
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            Common issues and their solutions.
+                        </p>
+
+                        <h5 class="mt-4">PowerShell Script Issues</h5>
+
+                        <div class="mb-4">
+                            <h6><i class="fas fa-times-circle text-danger"></i> Execution Policy Error</h6>
+                            <p><strong>Error:</strong> "cannot be loaded because running scripts is disabled"</p>
+                            <p><strong>Solution:</strong></p>
+                            <pre><code class="language-powershell"># Check current policy
+Get-ExecutionPolicy
+
+# Set to allow scripts (run as Administrator)
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><i class="fas fa-times-circle text-danger"></i> Path with Spaces Error</h6>
+                            <p><strong>Error:</strong> Script fails when path contains spaces</p>
+                            <p><strong>Solution:</strong> Use quotes around paths:</p>
+                            <pre><code class="language-powershell">.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -DestinationPath "E:\My Projects\myapp"  # Quoted path</code></pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6><i class="fas fa-times-circle text-danger"></i> Permission Denied</h6>
+                            <p><strong>Error:</strong> "Access to the path is denied"</p>
+                            <p><strong>Solution:</strong></p>
+                            <ul>
+                                <li>Run PowerShell as Administrator</li>
+                                <li>Check folder permissions</li>
+                                <li>Ensure destination folder is not open in another program</li>
+                            </ul>
+                        </div>
+
+                        <h5 class="mt-4">Template Variable Issues</h5>
+
+                        <div class="mb-4">
+                            <h6><i class="fas fa-times-circle text-danger"></i> Variables Not Replaced</h6>
+                            <p><strong>Symptom:</strong> Created files still contain {{PROJECT_NAME}} etc.</p>
+                            <p><strong>Solutions:</strong></p>
+                            <ul>
+                                <li>Verify you're using the latest script version</li>
+                                <li>Check that variable names match exactly (case-sensitive)</li>
+                                <li>Use <code>-Verbose</code> flag to see replacement details</li>
+                            </ul>
+                        </div>
+
+                        <h5 class="mt-4">Git Issues</h5>
+
+                        <div class="mb-4">
+                            <h6><i class="fas fa-times-circle text-danger"></i> Git Init Fails</h6>
+                            <p><strong>Error:</strong> "git is not recognized"</p>
+                            <p><strong>Solution:</strong></p>
+                            <ul>
+                                <li>Install Git from <a href="https://git-scm.com" target="_blank">git-scm.com</a></li>
+                                <li>Add Git to PATH</li>
+                                <li>Or omit <code>-InitGit</code> flag</li>
+                            </ul>
+                        </div>
+
+                        <h5 class="mt-4">AI Agent Issues</h5>
+
+                        <div class="mb-4">
+                            <h6><i class="fas fa-times-circle text-danger"></i> Agent Not Found</h6>
+                            <p><strong>Error:</strong> "@gen-docs not recognized"</p>
+                            <p><strong>Solution:</strong></p>
+                            <ul>
+                                <li>Verify agents are installed in <code>~/.claude/agents/</code></li>
+                                <li>Check file extensions are <code>.md</code></li>
+                                <li>Restart Claude Code</li>
+                            </ul>
+                        </div>
+
+                        <h5 class="mt-4">Getting Help</h5>
+
+                        <div class="alert alert-primary">
+                            <i class="fas fa-question-circle"></i> <strong>Still Having Issues?</strong>
+                            <ul class="mb-0">
+                                <li>Check the <a href="../TROUBLESHOOTING.md">TROUBLESHOOTING.md</a> file</li>
+                                <li>Review the <code>-Verbose</code> output from scripts</li>
+                                <li>Check the backup directory for clues</li>
+                                <li>Open an issue on GitHub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Include Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Load Header and Footer -->
+<script>
+    fetch('includes/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    fetch('includes/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+    // Smooth scroll for anchor links
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
