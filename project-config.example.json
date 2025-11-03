@@ -1,0 +1,43 @@
+{
+  "// NOTE": "This is an example configuration file for new-project.ps1",
+  "// USAGE": "Copy this file to project-config.json and customize the values",
+  "// REQUIRED": "Core variables that must be set",
+
+  "PROJECT_NAME": "YourProjectName",
+  "SERVICE_NAME": "Your Service Description",
+  "REPO_PATH": "E:\\path\\to\\your\\project",
+  "CONTACT_EMAIL": "dev@yourcompany.com",
+  "DOMAIN": "yourapp.com",
+
+  "// OPTIONAL": "Additional variables - remove or leave empty if not needed",
+
+  "DOCUMENT_PURPOSE": "Project documentation and standards",
+
+  "// AUTH0": "Authentication configuration (if using Auth0)",
+  "AUTH0_DOMAIN": "your-tenant.auth0.com",
+  "AUTH0_CLIENT_ID": "your-client-id-here",
+  "AUTH0_CLIENT_SECRET": "your-client-secret-here",
+  "AUTH0_AUDIENCE": "https://your-api.com",
+
+  "// DATABASE": "Database configuration",
+  "DB_HOST": "localhost",
+  "DB_PORT": "3306",
+  "DB_DATABASE": "your_database",
+  "DB_USER": "your_db_user",
+  "DB_PASSWORD": "your_db_password",
+  "DB_BACKUP_PRIMARY": "backup-server-1.com",
+  "DB_BACKUP_SECONDARY": "backup-server-2.com",
+
+  "// REDIS": "Redis/Cache configuration",
+  "REDIS_HOST": "localhost",
+  "REDIS_PORT": "6379",
+  "REDIS_PASSWORD": "",
+
+  "// MULTI-TENANT": "Multi-tenant IDs (if applicable)",
+  "MSP_ID": "00000000-0000-0000-0000-000000000000",
+  "COMPANY_ID": "00000000-0000-0000-0000-000000000000",
+  "CLIENT_ID": "00000000-0000-0000-0000-000000000000",
+
+  "// PATHS": "Additional paths (auto-calculated if not provided)",
+  "CLAUDE_WIP_PATH": "E:\\path\\to\\your\\project\\claude_wip"
+}

@@ -1,0 +1,10 @@
+{
+  "// NOTE": "Minimal configuration - only required variables",
+  "// USAGE": "Copy and customize for quick project setup",
+
+  "PROJECT_NAME": "MyProject",
+  "SERVICE_NAME": "My Application",
+  "REPO_PATH": "E:\\projects\\my-project",
+  "CONTACT_EMAIL": "dev@mycompany.com",
+  "DOMAIN": "myapp.com"
+}
