@@ -154,9 +154,23 @@ Before considering documentation complete:
 
 ## Output Format
 
-Provide a summary report:
+**IMPORTANT**: Generate reports in both HTML (Bootstrap) and Markdown with ComplianceScorecard branding.
+
+### HTML Reports
+
+Use Bootstrap template at `project_docs/includes/report-template.html`:
+- `{{REPORT_TITLE}}` → "Documentation Audit Report"
+- `{{ICON}}` → "file-text" or "book"
+- `{{AGENT_NAME}}` → "code-documenter"
+- `{{SCAN_TYPE}}` → "Documentation Audit"
+
+### Markdown Reports
+
+Always include logo at top:
 
 ```markdown
+![ComplianceScorecard Logo](../images/cs-logo.png)
+
 # Documentation Audit Report
 
 ## Files Processed: XX

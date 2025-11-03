@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{REPORT_TITLE}} - ComplianceScorecard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --cs-primary: #2563eb;
+            --cs-secondary: #64748b;
+            --cs-success: #10b981;
+            --cs-warning: #f59e0b;
+            --cs-danger: #ef4444;
+            --cs-info: #06b6d4;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f8f9fa;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .report-header {
+            background: linear-gradient(135deg, var(--cs-primary) 0%, #1e40af 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .report-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .meta-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--cs-primary);
+        }
+
+        .stat-label {
+            color: var(--cs-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .severity-critical { color: var(--cs-danger); font-weight: bold; }
+        .severity-high { color: #f97316; font-weight: bold; }
+        .severity-medium { color: var(--cs-warning); font-weight: bold; }
+        .severity-low { color: var(--cs-secondary); font-weight: bold; }
+        .severity-safe { color: var(--cs-success); font-weight: bold; }
+
+        .vulnerability-card {
+            border-left: 4px solid #dee2e6;
+            margin: 1.5rem 0;
+        }
+
+        .vulnerability-card.critical { border-left-color: var(--cs-danger); }
+        .vulnerability-card.high { border-left-color: #f97316; }
+        .vulnerability-card.medium { border-left-color: var(--cs-warning); }
+        .vulnerability-card.low { border-left-color: var(--cs-secondary); }
+
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            margin: 0;
+        }
+
+        .alert-critical {
+            background: #fef2f2;
+            border-left: 4px solid var(--cs-danger);
+        }
+
+        .alert-success-custom {
+            background: #f0fdf4;
+            border-left: 4px solid var(--cs-success);
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 1rem 0;
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            border-bottom: 2px solid var(--cs-primary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer a {
+            color: var(--cs-info);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .badge-lg {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0,0,0,.02);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                <img src="../images/cs-logo.png" alt="ComplianceScorecard">
+                <span class="fw-bold">ComplianceScorecard</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="bi bi-house"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            <i class="bi bi-robot"></i> Agent Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../code-documentation.html">
+                            <i class="bi bi-code-square"></i> Code Docs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="./index.html">{{BREADCRUMB_PARENT}}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{BREADCRUMB_CURRENT}}</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Report Header -->
+    <div class="report-header">
+        <div class="container">
+            <h1 class="display-4">
+                <i class="bi bi-{{ICON}}"></i> {{REPORT_TITLE}}
+            </h1>
+            <div class="report-meta">
+                <div class="meta-badge">
+                    <i class="bi bi-calendar"></i> <strong>Date:</strong> {{REPORT_DATE}}
+                </div>
+                <div class="meta-badge">
+                    <i class="bi bi-robot"></i> <strong>Agent:</strong> {{AGENT_NAME}}
+                </div>
+                <div class="meta-badge">
+                    <i class="bi bi-folder"></i> <strong>Repository:</strong> {{REPOSITORY}}
+                </div>
+                <div class="meta-badge">
+                    <i class="bi bi-shield-check"></i> <strong>Type:</strong> {{SCAN_TYPE}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        {{CONTENT}}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">ComplianceScorecard Platform</h5>
+                    <p>Engineering Baseline Documentation Repository</p>
+                    <p class="small text-muted">Generated by Claude Code AI Agents</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="../index.html"><i class="bi bi-house"></i> Documentation Home</a>
+                        <a href="./index.html"><i class="bi bi-robot"></i> All Agent Results</a>
+                        <a href="../../AGENTS-GUIDE.md"><i class="bi bi-book"></i> Agent Guide</a>
+                        <a href="../../README.md"><i class="bi bi-info-circle"></i> About Project</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center small text-muted">
+                <p class="mb-0">
+                    🤖 Generated with <a href="https://claude.com/claude-code">Claude Code</a> |
+                    Co-Authored-By: Claude &lt;noreply@anthropic.com&gt;
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

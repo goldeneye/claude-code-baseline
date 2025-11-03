@@ -149,9 +149,19 @@ Log::info("File: " . __FILE__ . ":" . __LINE__ . " - Creating assessment", [
 
 ### Step 4: Report Findings
 
-Provide detailed report:
+Provide detailed report with ComplianceScorecard branding:
+
+**HTML Reports**: Use Bootstrap template at `project_docs/includes/report-template.html`:
+- `{{REPORT_TITLE}}` → "Standards Compliance Report"
+- `{{ICON}}` → "check-circle" or "shield-check"
+- `{{AGENT_NAME}}` → "standards-enforcer"
+- `{{SCAN_TYPE}}` → "Standards Compliance Audit"
+
+**Markdown Reports**: Include logo at top:
 
 ```markdown
+![ComplianceScorecard Logo](../images/cs-logo.png)
+
 # Standards Compliance Report
 
 ## Critical Violations: X

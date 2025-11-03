@@ -42,7 +42,32 @@ project_docs/
     └── environment.md
 ```
 
-### 2. HTML Documentation (PHPDoc)
+### 2. HTML Documentation
+
+**IMPORTANT**: Always use Bootstrap-based HTML templates with ComplianceScorecard branding.
+
+Use the base template at `project_docs/includes/report-template.html` and replace these placeholders:
+- `{{REPORT_TITLE}}` - Title of the report
+- `{{ICON}}` - Bootstrap icon name (e.g., "book", "shield-check", "file-text")
+- `{{REPORT_DATE}}` - Current date
+- `{{AGENT_NAME}}` - Name of the agent generating the report
+- `{{REPOSITORY}}` - Repository name
+- `{{SCAN_TYPE}}` - Type of documentation/scan
+- `{{BREADCRUMB_PARENT}}` - Parent breadcrumb (e.g., "Agent Results")
+- `{{BREADCRUMB_CURRENT}}` - Current page name
+- `{{CONTENT}}` - Main HTML content
+
+**Bootstrap Resources**:
+- CSS: Bootstrap 5.3 (loaded from CDN)
+- Icons: Bootstrap Icons (loaded from CDN)
+- JS: Bootstrap Bundle with Popper (loaded from CDN)
+
+**Logo Branding**:
+- Always include ComplianceScorecard logo: `../images/cs-logo.png`
+- Logo appears in navbar automatically via template
+- For Markdown reports, include: `![ComplianceScorecard Logo](../images/cs-logo.png)` at the top
+
+#### PHPDoc for PHP Projects
 
 For PHP projects:
 

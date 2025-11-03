@@ -49,6 +49,22 @@ body {
     margin-bottom: 10px;
 }
 
+.report-header img {
+    height: 60px;
+    width: auto;
+    max-width: 100%;
+}
+
+.report-header .header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.report-header .header-text {
+    flex: 1;
+}
+
 .report-meta {
     color: var(--text-secondary);
     display: flex;
@@ -346,6 +362,14 @@ tr:hover {
 
     .report-header h1 {
         font-size: 1.8em;
+    }
+
+    .report-header img {
+        height: 40px;
+    }
+
+    .report-header .header-content {
+        gap: 10px;
     }
 
     .stats-grid {

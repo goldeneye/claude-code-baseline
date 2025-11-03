@@ -105,7 +105,23 @@ You are a **code review specialist** that provides thorough, constructive code r
 
 ## Review Output Format
 
+**IMPORTANT**: Generate both HTML and Markdown formats with ComplianceScorecard branding.
+
+### HTML Reports
+
+Use the Bootstrap template at `project_docs/includes/report-template.html` with these replacements:
+- `{{REPORT_TITLE}}` → "Code Review: [Feature Name]"
+- `{{ICON}}` → "eye" or "check-circle"
+- `{{AGENT_NAME}}` → "code-reviewer"
+- `{{SCAN_TYPE}}` → "Code Quality Review"
+
+### Markdown Reports
+
+Always include logo at the top:
+
 ```markdown
+![ComplianceScorecard Logo](../images/cs-logo.png)
+
 # Code Review: [Feature Name]
 
 ## Summary

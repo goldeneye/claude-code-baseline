@@ -283,15 +283,33 @@ grep -r "VerifyCsrfToken" --include="*.php"
 
 ## Vulnerability Report Format
 
+**IMPORTANT**: Always include ComplianceScorecard branding at the top of reports:
+
 ```markdown
-# Security Audit Report
+![ComplianceScorecard Logo](../images/cs-logo.png)
+
+# 🔒 Security Audit Report
+
+**Scan Date**: [Current Date]
+**Agent**: security-auditor
+**Repository**: [Repository Name]
+**Scan Type**: Comprehensive Security Audit
+
+---
 
 ## Executive Summary
-- Total Issues Found: X
-- Critical: X
-- High: X
-- Medium: X
-- Low: X
+
+| Metric | Count |
+|--------|-------|
+| **Total Issues** | X |
+| **Critical** | X |
+| **High** | X |
+| **Medium** | X |
+| **Low** | X |
+
+### Overall Security Rating
+
+[Rating] - X/60 (XX%)
 
 ## Critical Vulnerabilities
 
