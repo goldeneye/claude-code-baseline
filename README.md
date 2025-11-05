@@ -36,7 +36,9 @@ E:\github\claude_code_baseline\
 │
 ├── 🚀 NEW PROJECT SETUP
 ├── new-project.ps1                    # ⭐ Automated project creation script
+├── add-baseline-to-existing-project.ps1 # ⭐ Add baseline to existing projects
 ├── NEW-PROJECT-SETUP.md               # Complete setup guide
+├── EXISTING-PROJECT-GUIDE.md          # Add to existing projects guide
 ├── project-config.example.json        # Full configuration template
 ├── project-config.minimal.json        # Minimal configuration template
 │
@@ -130,6 +132,51 @@ The script will:
 
 **See:** [`NEW-PROJECT-SETUP.md`](NEW-PROJECT-SETUP.md) for complete instructions
 
+**Configuration Options:**
+
+```powershell
+# Interactive (prompts for values)
+.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp"
+
+# With configuration file (fully automated)
+.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp" -ConfigFile "project-config.json"
+
+# Minimal (command line values)
+.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp" -ContactEmail "dev@myapp.com" -Domain "myapp.com"
+```
+
+### Option 1B: Add to Existing Project (⭐ Safe Integration)
+
+**Already have a project? Add baseline documentation safely:**
+
+```powershell
+# Add baseline to existing project
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\your-existing-project"
+```
+
+The script will:
+- ✅ **Never overwrite** existing files
+- ✅ Create **automatic backup** before changes
+- ✅ Handle **conflicts intelligently**
+- ✅ Allow **selective component** addition
+- ✅ Support **dry-run mode** for preview
+- ✅ **Auto-rollback** if anything fails
+
+**See:** [`EXISTING-PROJECT-GUIDE.md`](EXISTING-PROJECT-GUIDE.md) for complete instructions
+
+**Quick examples:**
+
+```powershell
+# Preview changes (dry run)
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject" -DryRun
+
+# Add only specific components
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject" -Components baseline-docs,claude-wip
+
+# Fully automated with config file
+.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject" -ConfigFile "config.json" -Force
+```
+
 ### Option 2: Install Claude Code Agents (⭐ Recommended)
 
 **Get AI-powered assistance across ALL your projects:**
@@ -148,20 +195,7 @@ The agents are **already installed globally** at `C:\Users\TimGolden\.claude\age
 
 **See:** [`AGENTS-GUIDE.md`](AGENTS-GUIDE.md) for complete agent documentation
 
-**Configuration Options:**
-
-```powershell
-# Interactive (prompts for values)
-.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp"
-
-# With configuration file (fully automated)
-.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp" -ConfigFile "project-config.json"
-
-# Minimal (command line values)
-.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp" -ContactEmail "dev@myapp.com" -Domain "myapp.com"
-```
-
-### Option 2: Manual Setup
+### Option 3: Manual Setup
 
 1. **Browse the templates**: Start with [`baseline_docs/README.md`](baseline_docs/README.md)
 

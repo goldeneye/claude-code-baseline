@@ -63,3 +63,12 @@ backups/
 NOTES.md
 PERSONAL.md
 scratch.md
+
+# WIP directories (temporary work, drafts, analysis)
+# Never commit any WIP folders
+*wip/
+*wip*/
+*_wip/
+*-wip/
+claude_wip/
+tim_wip/

@@ -29,7 +29,7 @@ The script will:
 - Set up `.gitignore` and initialize Git repository
 - Create `claude_wip/` working directory
 
-**See:** [NEW-PROJECT-SETUP.md](./NEW-PROJECT-SETUP.md) for complete instructions
+**See:** [NEW-PROJECT-SETUP.md](./baseline_docs/NEW-PROJECT-SETUP.md) for complete instructions
 
 ### Configuration Options
 
@@ -90,7 +90,7 @@ my-project/
 
 ### Manual Setup
 
-If you prefer manual setup or need to customize the process, see [NEW-PROJECT-SETUP.md](./NEW-PROJECT-SETUP.md) for step-by-step instructions.
+If you prefer manual setup or need to customize the process, see [NEW-PROJECT-SETUP.md](./baseline_docs/NEW-PROJECT-SETUP.md) for step-by-step instructions.
 
 ### Files in This Baseline
 
