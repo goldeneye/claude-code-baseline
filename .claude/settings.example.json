@@ -1,0 +1,236 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "environment": {
+    "paths": {
+      "xampp": "{{XAMPP_ROOT_PATH}}",
+      "xampp_mysql": "{{XAMPP_ROOT_PATH}}\\mysql\\bin",
+      "python": "{{PYTHON_ROOT_PATH}}",
+      "composer": "{{COMPOSER_ROOT_PATH}}",
+      "nmap": "{{NMAP_ROOT_PATH}}",
+      "putty": "{{PUTTY_ROOT_PATH}}",
+      "xmeta": "{{CUSTOM_TOOL_PATH}}"
+    },
+    "backupLocations": {
+      "general": "{{BACKUP_DIRECTORY}}",
+      "mysql": "{{MYSQL_BACKUP_DIRECTORY}}",
+      "repositories": "{{REPOSITORIES_ROOT}}"
+    },
+    "repositories": {
+      "baseDir": "{{REPOSITORIES_ROOT}}",
+      "current": "{{CURRENT_REPO_PATH}}"
+    }
+  },
+  "hooks": {
+    "pre-read": {
+      "pattern": "baseline_docs/*.md",
+      "command": "echo 'Reading baseline template - remember to preserve {{TEMPLATE_VARIABLES}}'",
+      "enabled": true
+    },
+    "pre-write": {
+      "pattern": "baseline_docs/*.md",
+      "command": "powershell -Command \"if ((Get-Content '{{file}}' | Select-String -Pattern '{{[A-Z_]+}}' | Measure-Object).Count -eq 0) { Write-Warning 'No template variables found in {{file}}' }\"",
+      "enabled": true
+    },
+    "post-write": {
+      "pattern": "baseline_docs/*.md",
+      "command": "powershell -Command \"$lines = (Get-Content '{{file}}' | Measure-Object -Line).Lines; if ($lines -gt 600) { Write-Warning '{{file}} exceeds 600 line limit ($lines lines)' }\"",
+      "enabled": true
+    }
+  },
+  "fileWatchers": {
+    "{{YOUR_WIP_DIRECTORY}}/markdown/**/*.md": {
+      "description": "Source documentation updated - consider regenerating baseline pack",
+      "action": "notify"
+    },
+    "baseline_docs/**/*.md": {
+      "description": "Baseline template modified",
+      "action": "validate-frontmatter"
+    }
+  },
+  "customCommands": {
+    "validate-baseline": {
+      "command": "powershell -NoProfile -File .claude/scripts/validate-baseline.ps1",
+      "description": "Validate all baseline documentation files"
+    },
+    "count-templates": {
+      "command": "powershell -NoProfile -Command \"(Get-ChildItem baseline_docs -Filter '*.md' | Measure-Object).Count\"",
+      "description": "Count baseline documentation files"
+    },
+    "check-variables": {
+      "command": "powershell -NoProfile -Command \"Select-String -Path 'baseline_docs\\*.md' -Pattern '{{[A-Z_]+}}' | Select-Object Filename,Line\"",
+      "description": "Find all template variables in baseline docs"
+    },
+    "generate-index": {
+      "command": "powershell -NoProfile -File .claude/scripts/generate-readme-index.ps1",
+      "description": "Auto-generate README.md index from baseline files"
+    },
+    "backup-baseline": {
+      "command": "powershell -NoProfile -File .claude/scripts/backup-baseline.ps1",
+      "description": "Create timestamped backup of baseline documentation"
+    },
+    "backup-mysql": {
+      "command": "powershell -NoProfile -File .claude/scripts/backup-mysql.ps1",
+      "description": "Backup all MySQL databases to {{MYSQL_BACKUP_DIRECTORY}}"
+    },
+    "backup-repos": {
+      "command": "powershell -NoProfile -File .claude/scripts/backup-repos.ps1",
+      "description": "Backup all GitHub repositories to {{BACKUP_DIRECTORY}}"
+    },
+    "check-services": {
+      "command": "powershell -NoProfile -File .claude/scripts/check-services.ps1",
+      "description": "Check status of XAMPP MySQL, Apache services"
+    },
+    "list-repos": {
+      "command": "powershell -NoProfile -Command \"Get-ChildItem {{REPOSITORIES_ROOT}} -Directory | Select-Object Name,LastWriteTime | Format-Table -AutoSize\"",
+      "description": "List all repositories in {{REPOSITORIES_ROOT}}"
+    },
+    "python-version": {
+      "command": "powershell -NoProfile -Command \"& '{{PYTHON_ROOT_PATH}}\\python.exe' --version\"",
+      "description": "Check Python version"
+    },
+    "composer-version": {
+      "command": "powershell -NoProfile -Command \"& '{{COMPOSER_ROOT_PATH}}\\composer.bat' --version\"",
+      "description": "Check Composer version"
+    },
+    "mysql-status": {
+      "command": "powershell -NoProfile -Command \"& '{{XAMPP_ROOT_PATH}}\\mysql\\bin\\mysql.exe' -u {{MYSQL_USER}} -e 'SHOW DATABASES;'\"",
+      "description": "List all MySQL databases"
+    }
+  },
+  "aiAssistantConfig": {
+    "readBeforeEditing": [
+      "CLAUDE.md",
+      "claude-instrctions.md"
+    ],
+    "templateVariables": {
+      "PROJECT_NAME": "{{PROJECT_NAME}}",
+      "SERVICE_NAME": "{{SERVICE_NAME}}",
+      "REPO_PATH": "{{REPO_PATH}}",
+      "CONTACT_EMAIL": "{{CONTACT_EMAIL}}",
+      "DOMAIN": "{{DOMAIN}}",
+      "DB_HOST": "{{DB_HOST}}",
+      "AUTH0_DOMAIN": "{{AUTH0_DOMAIN}}"
+    },
+    "enforceRules": {
+      "preserveTemplateVariables": true,
+      "maintainFrontmatter": true,
+      "maxFileLines": 600,
+      "requireCrossReferences": true
+    },
+    "autoComplete": {
+      "yamlFrontmatter": {
+        "title": "{{PROJECT_NAME}} - {{DOCUMENT_PURPOSE}}",
+        "version": "1.0",
+        "last_updated": "{{DATE}}",
+        "author": "{{YOUR_NAME}} - {{YOUR_COMPANY}}"
+      }
+    }
+  },
+  "codeQuality": {
+    "markdown": {
+      "lineLength": 120,
+      "listIndent": 2,
+      "codeBlockStyle": "fenced",
+      "headingStyle": "atx"
+    },
+    "validation": {
+      "checkFrontmatter": true,
+      "checkTemplateVariables": true,
+      "checkCrossReferences": true,
+      "checkCodeBlocks": true
+    }
+  },
+  "backup": {
+    "schedule": {
+      "mysql": "daily",
+      "repositories": "weekly",
+      "baseline_docs": "on-change"
+    },
+    "retention": {
+      "mysql": 30,
+      "repositories": 90,
+      "baseline_docs": 60
+    },
+    "compression": true,
+    "encryption": false
+  },
+  "tools": {
+    "xampp": {
+      "mysql": {
+        "path": "{{XAMPP_ROOT_PATH}}\\mysql\\bin\\mysql.exe",
+        "dump": "{{XAMPP_ROOT_PATH}}\\mysql\\bin\\mysqldump.exe",
+        "defaultUser": "{{MYSQL_USER}}",
+        "defaultHost": "localhost",
+        "defaultPort": 3306
+      },
+      "apache": {
+        "path": "{{XAMPP_ROOT_PATH}}\\apache\\bin\\httpd.exe",
+        "configPath": "{{XAMPP_ROOT_PATH}}\\apache\\conf\\httpd.conf"
+      },
+      "php": {
+        "path": "{{XAMPP_ROOT_PATH}}\\php\\php.exe",
+        "iniPath": "{{XAMPP_ROOT_PATH}}\\php\\php.ini"
+      }
+    },
+    "python": {
+      "executable": "{{PYTHON_ROOT_PATH}}\\python.exe",
+      "pip": "{{PYTHON_ROOT_PATH}}\\Scripts\\pip.exe",
+      "scriptsPath": "{{PYTHON_ROOT_PATH}}\\Scripts"
+    },
+    "composer": {
+      "executable": "{{COMPOSER_ROOT_PATH}}\\composer.bat",
+      "globalPath": "{{COMPOSER_ROOT_PATH}}"
+    },
+    "nmap": {
+      "executable": "{{NMAP_ROOT_PATH}}\\nmap.exe",
+      "dataPath": "{{NMAP_ROOT_PATH}}"
+    }
+  },
+  "shortcuts": {
+    "/validate": "Run validation on all baseline files",
+    "/regenerate": "Regenerate baseline pack from source files",
+    "/backup": "Create timestamped backup of baseline_docs",
+    "/backup-mysql": "Backup all MySQL databases",
+    "/backup-repos": "Backup all GitHub repositories",
+    "/index": "Generate README.md index",
+    "/vars": "Show all template variables in use",
+    "/status": "Check XAMPP services status",
+    "/repos": "List all GitHub repositories",
+    "/tools": "Show installed tool versions"
+  },
+  "_instructions": {
+    "setup": [
+      "1. Copy this file to settings.local.json",
+      "2. Replace all {{PLACEHOLDER}} values with your actual paths",
+      "3. Update tool paths to match your installation locations",
+      "4. Configure custom commands for your environment",
+      "5. Adjust permissions, hooks, and file watchers as needed"
+    ],
+    "commonPlaceholders": {
+      "{{XAMPP_ROOT_PATH}}": "Example: C:\\xampp or E:\\xampp",
+      "{{PYTHON_ROOT_PATH}}": "Example: C:\\Python312 or E:\\python",
+      "{{REPOSITORIES_ROOT}}": "Example: C:\\Users\\YourName\\github or E:\\github",
+      "{{BACKUP_DIRECTORY}}": "Example: D:\\backups or E:\\backup",
+      "{{MYSQL_BACKUP_DIRECTORY}}": "Example: D:\\mysql_backups",
+      "{{MYSQL_USER}}": "Example: root or your MySQL username",
+      "{{YOUR_NAME}}": "Your full name",
+      "{{YOUR_COMPANY}}": "Your company or organization name",
+      "{{PROJECT_NAME}}": "Name of your current project",
+      "{{CONTACT_EMAIL}}": "Your contact email"
+    },
+    "notes": [
+      "settings.local.json is in .gitignore and won't be committed",
+      "Keep your local settings private - they contain system paths",
+      "Update the example file when adding new configuration options",
+      "Use forward slashes (/) or escaped backslashes (\\\\) in JSON paths"
+    ]
+  }
+}

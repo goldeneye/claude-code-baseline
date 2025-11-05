@@ -72,3 +72,7 @@ scratch.md
 *-wip/
 claude_wip/
 tim_wip/
+
+# Claude local settings (user-specific configuration)
+*.local.json
+.claude/settings.local.json
