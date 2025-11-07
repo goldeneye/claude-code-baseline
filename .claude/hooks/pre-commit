@@ -1,0 +1,83 @@
+#!/bin/bash
+# Pre-commit hook to enforce project standards
+# Prevents commits that violate coding-standards/
+
+echo "🛡️  Enforcing Project Standards..."
+
+VIOLATIONS=0
+
+# Check 1: No temporary files in root directory (must use claude_wip/)
+echo "Checking for temporary files in root..."
+TEMP_FILES=$(git diff --cached --name-only --diff-filter=A | grep -E "^(temp|tmp|test|delete|draft|backup|wip).*\.(ps1|sh|txt|tmp)$" || true)
+if [ -n "$TEMP_FILES" ]; then
+    echo "❌ VIOLATION: Temporary files must go in claude_wip/"
+    echo "$TEMP_FILES"
+    echo "   Move these to: claude_wip/scripts/ or claude_wip/drafts/"
+    VIOLATIONS=$((VIOLATIONS + 1))
+fi
+
+# Check 2: No scripts in root (except approved ones)
+APPROVED_ROOT_SCRIPTS="sync-agents.ps1|add-baseline-to-existing-project.ps1"
+ROOT_SCRIPTS=$(git diff --cached --name-only --diff-filter=A | grep -E "^[^/]+\.(ps1|sh)$" || true)
+if [ -n "$ROOT_SCRIPTS" ]; then
+    for script in $ROOT_SCRIPTS; do
+        if ! echo "$APPROVED_ROOT_SCRIPTS" | grep -q "$script"; then
+            echo "❌ VIOLATION: Script in root directory: $script"
+            echo "   Move to: claude_wip/scripts/"
+            VIOLATIONS=$((VIOLATIONS + 1))
+        fi
+    done
+fi
+
+# Check 3: No Windows reserved filenames
+RESERVED_NAMES="nul|con|prn|aux|com[1-9]|lpt[1-9]"
+RESERVED_FILES=$(git diff --cached --name-only | grep -Ei "/(${RESERVED_NAMES})$" || true)
+if [ -n "$RESERVED_FILES" ]; then
+    echo "❌ VIOLATION: Windows reserved filename detected:"
+    echo "$RESERVED_FILES"
+    VIOLATIONS=$((VIOLATIONS + 1))
+fi
+
+# Check 4: PHP files must use proper logging format (if PHP files exist)
+PHP_FILES=$(git diff --cached --name-only --diff-filter=AM | grep "\.php$" || true)
+if [ -n "$PHP_FILES" ]; then
+    for file in $PHP_FILES; do
+        if git diff --cached "$file" | grep -E "^\+.*Log::(info|error|warning|debug)" | grep -v "__FILE__.*__LINE__" > /dev/null 2>&1; then
+            echo "❌ VIOLATION: Logging format violation in $file"
+            echo "   Required: Log::info(\"File: \" . __FILE__ . \":\" . __LINE__ . \" - Message\")"
+            VIOLATIONS=$((VIOLATIONS + 1))
+        fi
+    done
+fi
+
+# Check 5: No hardcoded credentials
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=AM || true)
+if [ -n "$STAGED_FILES" ]; then
+    for file in $STAGED_FILES; do
+        if git diff --cached "$file" | grep -E "^\+.*(password|apikey|api_key|secret|token).*=.*(\"[^\"]{20,}\"|'[^']{20,}')" > /dev/null 2>&1; then
+            echo "⚠️  WARNING: Possible hardcoded credential in $file"
+            echo "   Review: coding-standards/11-security-standards.md"
+        fi
+    done
+fi
+
+# Check 6: Ensure claude_wip/ directory exists
+if [ ! -d "claude_wip" ]; then
+    echo "⚠️  WARNING: claude_wip/ directory doesn't exist"
+    echo "   Creating standard structure..."
+    mkdir -p claude_wip/{scripts,drafts,analysis,backups}
+    echo "✅ Created claude_wip/ structure"
+fi
+
+# Summary
+if [ $VIOLATIONS -gt 0 ]; then
+    echo ""
+    echo "❌ COMMIT BLOCKED: $VIOLATIONS standard violation(s) detected"
+    echo ""
+    echo "Fix violations and try again, or use: git commit --no-verify (NOT recommended)"
+    echo "Review standards: coding-standards/"
+    exit 1
+else
+    echo "✅ All standards checks passed"
+    exit 0
+fi
