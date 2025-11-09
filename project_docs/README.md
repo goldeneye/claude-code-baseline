@@ -1,6 +1,6 @@
 # Claude Code Baseline - HTML Documentation Site
 
-**Location:** `E:\github\claude_code_baseline\project_docs\`
+**Location:** `{{BASELINE_ROOT}}\project_docs\`
 
 ## Overview
 
@@ -105,7 +105,7 @@ Use the gen-docs agent to generate the remaining pages:
 
 ```powershell
 # Generate code documentation page
-# Use the agent at: C:\Users\TimGolden\.claude\agents\gen-docs.md
+# Use the agent at: {{USER_HOME}}\.claude\agents\gen-docs.md
 
 # Or create manually following the structure of index.html
 ```
@@ -161,7 +161,7 @@ Edit `includes/header.html` and `includes/footer.html` - changes apply to all pa
 
 ## Credits
 
-**Created by:** TimGolden - aka GoldenEye Engineering
+**Created by:** {{USERNAME}} - aka GoldenEye Engineering
 **Date:** January 2025
 **Purpose:** Comprehensive HTML documentation for Claude Code Baseline
 

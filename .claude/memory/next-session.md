@@ -162,7 +162,7 @@ for ($i = 0; $i -lt $lines.Count; $i++) {
 ```powershell
 .\add-baseline-to-existing-project.ps1 `
     -ProjectPath "E:\path\to\project" `
-    -BaselinePath "E:\github\claude_code_baseline" `
+    -BaselinePath "{{BASELINE_ROOT}}" `
     -DryRun `
     -Force
 ```
@@ -171,7 +171,7 @@ for ($i = 0; $i -lt $lines.Count; $i++) {
 ```powershell
 .\add-baseline-to-existing-project.ps1 `
     -ProjectPath "E:\path\to\project" `
-    -BaselinePath "E:\github\claude_code_baseline" `
+    -BaselinePath "{{BASELINE_ROOT}}" `
     -Force
 ```
 

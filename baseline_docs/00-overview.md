@@ -2,7 +2,7 @@
 title: {{PROJECT_NAME}} - System Overview
 version: 1.0
 last_updated: 2025-11-02
-author: TimGolden - aka GoldenEye Engineering timgolden.com
+author: {{USERNAME}} - aka GoldenEye Engineering timgolden.com
 ---
 
 # {{PROJECT_NAME}} — System Overview

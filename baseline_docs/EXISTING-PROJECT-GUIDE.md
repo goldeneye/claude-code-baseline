@@ -25,7 +25,7 @@
 
 ```powershell
 # 1. Navigate to baseline directory
-cd E:\github\claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # 2. Run the script (it will prompt for details)
 .\add-baseline-to-existing-project.ps1 -ProjectPath "E:\your-project"
@@ -577,7 +577,7 @@ Use with script:
 # Specify baseline path explicitly
 .\add-baseline-to-existing-project.ps1 `
     -ProjectPath "E:\myproject" `
-    -BaselinePath "E:\github\claude_code_baseline"
+    -BaselinePath "{{BASELINE_ROOT}}"
 ```
 
 ### Issue 5: Script Fails Mid-Execution

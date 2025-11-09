@@ -175,7 +175,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **End-of-Day Agent**
   - Created `agents/end-of-day.md` for automated session wrap-up
   - Tracks completed tasks, updates changelog, generates reports
-  - Installed globally at `C:\Users\TimGolden\.claude\agents\`
+  - Installed globally at `{{USER_HOME}}\.claude\agents\`
 
 ### Fixed
 - **PowerShell Script Documentation**
@@ -331,7 +331,7 @@ For contribution guidelines, please see the main [README.md](README.md) file.
 
 ## Maintainer
 
-**TimGolden** - aka GoldenEye Engineering
+**{{USERNAME}}** - aka GoldenEye Engineering
 
 ## License
 

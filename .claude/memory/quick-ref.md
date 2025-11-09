@@ -75,7 +75,7 @@ Before creating ANY file, ask yourself:
 ## 🏗️ Project Structure
 
 ```
-E:\github\claude_code_baseline\
+{{BASELINE_ROOT}}\
 ├── .claude/
 │   ├── agents/              # Project-specific agent customizations
 │   ├── memory/              # Session memory (quick-ref, notes)
@@ -155,7 +155,7 @@ E:\github\claude_code_baseline\
 
 **Project**: ComplianceScorecard Engineering Baseline
 **Purpose**: Standards, templates, and agent infrastructure for all projects
-**Repository**: `E:\github\claude_code_baseline`
+**Repository**: `{{BASELINE_ROOT}}`
 **GitHub**: `https://github.com/goldeneye/claude-code-baseline.git`
 
 **Key Features:**

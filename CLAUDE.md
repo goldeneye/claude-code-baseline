@@ -193,7 +193,7 @@ When updating baseline documentation:
 title: {{PROJECT_NAME}} - {{DOCUMENT_PURPOSE}}
 version: 1.0
 last_updated: {{DATE}}
-author: TimGolden - aka GoldenEye Engineering
+author: {{USERNAME}} - aka GoldenEye Engineering
 ---
 ```
 
@@ -282,7 +282,7 @@ When analyzing scripts, extract reusable patterns and create parameterized templ
 The repository follows this structure:
 
 ```
-E:\github\claude_code_baseline\
+{{BASELINE_ROOT}}\
 ├── CLAUDE.md                      # This file - AI assistant guidance
 ├── README.md                      # Repository overview
 ├── TODO.md                        # Project status and tasks
@@ -511,4 +511,4 @@ When working in this repository, ask yourself:
 
 **Last Updated**: 2025-01-15
 **Version**: 2.0
-**Maintainer**: TimGolden - aka GoldenEye Engineering
+**Maintainer**: {{USERNAME}} - aka GoldenEye Engineering

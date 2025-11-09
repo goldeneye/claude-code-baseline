@@ -6,9 +6,9 @@ param(
     [switch]$Force
 )
 
-$baselineAgentsPath = "E:\github\claude_code_baseline\agents"
-$globalAgentsPath = "C:\Users\TimGolden\.claude\agents"
-$projectAgentsPath = "E:\github\claude_code_baseline\.claude\agents"
+$baselineAgentsPath = "{{BASELINE_ROOT}}\agents"
+$globalAgentsPath = "{{USER_HOME}}\.claude\agents"
+$projectAgentsPath = "{{BASELINE_ROOT}}\.claude\agents"
 
 Write-Host "`n================================================================" -ForegroundColor Blue
 Write-Host " Sync Baseline Agents to Claude Code" -ForegroundColor Blue

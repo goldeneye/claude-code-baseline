@@ -2,7 +2,7 @@
 title: {{PROJECT_NAME}} - Testing & Quality Assurance
 version: 1.0
 last_updated: 2025-11-02
-author: TimGolden - aka GoldenEye Engineering
+author: {{USERNAME}} - aka GoldenEye Engineering
 ---
 
 # {{PROJECT_NAME}} — Testing & Quality Assurance
@@ -947,5 +947,5 @@ When implementing this testing strategy, replace the following template variable
 
 **Document Version**: 1.0
 **Last Updated**: 2025-11-02
-**Author**: TimGolden - aka GoldenEye Engineering
+**Author**: {{USERNAME}} - aka GoldenEye Engineering
 **Review Cycle**: Quarterly or after major test strategy changes

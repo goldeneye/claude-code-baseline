@@ -1,7 +1,7 @@
 # WSL & Claude Code Integration Guide
 
 **Last Updated**: 2025-11-03
-**Maintainer**: TimGolden - aka GoldenEye Engineering
+**Maintainer**: {{USERNAME}} - aka GoldenEye Engineering
 
 ---
 
@@ -20,18 +20,18 @@ Windows drives are automatically mounted in WSL under `/mnt/`:
 | Windows Path | WSL Path |
 |--------------|----------|
 | `C:\` | `/mnt/c/` |
-| `E:\github\` | `/mnt/e/github/` |
-| `E:\github\claude_code_baseline\` | `/mnt/e/github/claude_code_baseline/` |
+| `{{GITHUB_ROOT}}\` | `/mnt/e/github/` |
+| `{{BASELINE_ROOT}}\` | `{{BASELINE_ROOT}}/` |
 
 ### Navigate to Your Repository
 
 ```bash
 # From WSL terminal
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Verify you're in the right place
 pwd
-# Output: /mnt/e/github/claude_code_baseline
+# Output: {{BASELINE_ROOT}}
 
 # List files
 ls -la
@@ -43,7 +43,7 @@ Add this to your WSL `~/.bashrc` or `~/.zshrc`:
 
 ```bash
 # Quick access to baseline repo
-alias baseline='cd /mnt/e/github/claude_code_baseline'
+alias baseline='cd {{BASELINE_ROOT}}'
 alias repos='cd /mnt/e/github'
 
 # Usage
@@ -65,7 +65,7 @@ Your `.env` file on Windows is accessible from WSL:
 
 ```bash
 # Navigate to repo
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Load environment variables
 export $(cat .env | xargs)
@@ -82,7 +82,7 @@ Add to `~/.bashrc`:
 ```bash
 # Auto-load .env when entering baseline directory
 baseline() {
-    cd /mnt/e/github/claude_code_baseline
+    cd {{BASELINE_ROOT}}
     if [ -f .env ]; then
         export $(cat .env | grep -v '^#' | xargs)
         echo "✅ Environment variables loaded from .env"
@@ -94,7 +94,7 @@ baseline() {
 
 ```bash
 # Create a symlink in your WSL home directory
-ln -s /mnt/e/github/claude_code_baseline/.env ~/.env-baseline
+ln -s {{BASELINE_ROOT}}/.env ~/.env-baseline
 
 # Load it when needed
 export $(cat ~/.env-baseline | xargs)
@@ -110,7 +110,7 @@ Your current setup already works:
 
 ```powershell
 # Windows PowerShell or Command Prompt
-cd E:\github\claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Claude Code automatically reads .env
 # API key available via environment variables
@@ -120,7 +120,7 @@ cd E:\github\claude_code_baseline
 
 ```bash
 # Navigate to repo
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Load environment
 export $(cat .env | grep -v '^#' | xargs)
@@ -177,7 +177,7 @@ git config --list
 
 ```bash
 # Navigate to repo
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Check status
 git status
@@ -199,7 +199,7 @@ git push
 Create this file in your repository root:
 
 ```bash
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 cat > .gitattributes << 'EOF'
 # Auto detect text files and normalize to LF
 * text=auto eol=lf
@@ -231,7 +231,7 @@ EOF
 
 ```powershell
 # Windows - for quick edits and automation scripts
-cd E:\github\claude_code_baseline
+cd {{BASELINE_ROOT}}
 notepad README.md
 .\new-project.ps1 -ProjectName "MyApp"
 ```
@@ -252,11 +252,11 @@ npm test
 
 **Option A: Windows Claude Code Desktop**
 - Use Windows desktop application
-- Automatically reads `.env` from `E:\github\claude_code_baseline\.env`
+- Automatically reads `.env` from `{{BASELINE_ROOT}}\.env`
 
 **Option B: WSL Terminal with Claude API**
 ```bash
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 export $(cat .env | xargs)
 # Use Claude API via curl or SDK
 ```
@@ -269,7 +269,7 @@ export $(cat .env | xargs)
 
 ```bash
 # From WSL, run Windows PowerShell scripts
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Run PowerShell script
 powershell.exe -NoProfile -File .claude/scripts/check-services.ps1
@@ -288,7 +288,7 @@ Create a helper script in WSL:
 # Create a bash script
 cat > ~/scripts/load-baseline-env.sh << 'EOF'
 #!/bin/bash
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 export $(cat .env | grep -v '^#' | xargs)
 echo "✅ Loaded environment from baseline repo"
 echo "📁 Current directory: $(pwd)"
@@ -316,7 +316,7 @@ NC='\033[0m'
 echo -e "${BLUE}🚀 Starting Baseline Repo Workflow${NC}"
 
 # Navigate to repo
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Load environment
 export $(cat .env | grep -v '^#' | xargs)
@@ -418,7 +418,7 @@ python3 test-env.py
 
 ```bash
 # Navigate to repo in WSL
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Open in VS Code
 code .
@@ -431,7 +431,7 @@ code .
 
 ```bash
 # From Windows, open VS Code in WSL mode
-code --remote wsl+Ubuntu /mnt/e/github/claude_code_baseline
+code --remote wsl+Ubuntu {{BASELINE_ROOT}}
 
 # Or from VS Code terminal:
 # Press Ctrl+` (backtick) to open terminal
@@ -448,13 +448,13 @@ WSL files on Windows drives inherit Windows permissions, which can cause issues:
 
 ```bash
 # Check file permissions
-ls -la /mnt/e/github/claude_code_baseline
+ls -la {{BASELINE_ROOT}}
 
 # If scripts show wrong permissions, fix them:
 chmod +x script-name.sh
 
 # For entire directory of scripts:
-find /mnt/e/github/claude_code_baseline -name "*.sh" -exec chmod +x {} \;
+find {{BASELINE_ROOT}} -name "*.sh" -exec chmod +x {} \;
 ```
 
 ### Recommendation for Scripts
@@ -466,7 +466,7 @@ find /mnt/e/github/claude_code_baseline -name "*.sh" -exec chmod +x {} \;
 mkdir -p ~/scripts
 
 # Symlink Windows repo
-ln -s /mnt/e/github/claude_code_baseline ~/repos/baseline
+ln -s {{BASELINE_ROOT}} ~/repos/baseline
 
 # Work with scripts from WSL home
 cd ~/scripts
@@ -477,7 +477,7 @@ cd ~/scripts
 ## 🎯 Complete Setup Checklist
 
 ### Windows Setup ✅
-- [x] Repository at `E:\github\claude_code_baseline`
+- [x] Repository at `{{BASELINE_ROOT}}`
 - [x] `.env` file with Anthropic API key
 - [x] `.gitignore` protecting secrets
 - [x] PowerShell scripts working
@@ -499,12 +499,12 @@ cd ~/scripts
 cat >> ~/.bashrc << 'EOF'
 
 # Baseline repository shortcuts
-alias baseline='cd /mnt/e/github/claude_code_baseline'
+alias baseline='cd {{BASELINE_ROOT}}'
 alias repos='cd /mnt/e/github'
 
 # Load baseline environment
 load-baseline() {
-    cd /mnt/e/github/claude_code_baseline
+    cd {{BASELINE_ROOT}}
     export $(cat .env | grep -v '^#' | xargs)
     echo "✅ Environment loaded"
 }
@@ -560,11 +560,11 @@ sudo apt install dos2unix
 **Solution**:
 ```bash
 # Verify .env exists and has content
-cat /mnt/e/github/claude_code_baseline/.env
+cat {{BASELINE_ROOT}}/.env
 
 # Load with verbose output
 set -a
-source /mnt/e/github/claude_code_baseline/.env
+source {{BASELINE_ROOT}}/.env
 set +a
 
 # Check if loaded
@@ -597,7 +597,7 @@ wsl
 ### 1. Use Version Control
 ```bash
 # Always work from Git
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 git pull  # Get latest changes
 # Make your changes
 git add .
@@ -611,7 +611,7 @@ git push
 git status | grep .env  # Should be ignored
 
 # Use chmod to restrict .env access
-chmod 600 /mnt/e/github/claude_code_baseline/.env
+chmod 600 {{BASELINE_ROOT}}/.env
 ```
 
 ### 3. Use Consistent Line Endings
@@ -665,7 +665,7 @@ code .  # Open VS Code
 wsl
 
 # 2. Navigate to your repo
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # 3. Load environment
 export $(cat .env | grep -v '^#' | xargs)

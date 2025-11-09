@@ -4,7 +4,7 @@
 
 **Date**: November 4, 2025
 **Project**: claude_code_baseline
-**Repository**: E:\github\claude_code_baseline
+**Repository**: {{BASELINE_ROOT}}
 **Session Duration**: Full day session (approximately 23 hours of work)
 **Status**: Repository established, documented, secured, and production-ready
 
@@ -174,9 +174,9 @@ project_docs/
 ```
 
 **Agent Locations:**
-- Source: `E:\github\claude_code_baseline\agents\`
-- Global: `C:\Users\TimGolden\.claude\agents\`
-- Project: `E:\github\claude_code_baseline\.claude\agents\`
+- Source: `{{BASELINE_ROOT}}\agents\`
+- Global: `{{USER_HOME}}\.claude\agents\`
+- Project: `{{BASELINE_ROOT}}\.claude\agents\`
 
 ### 7. Additional Scripts & Automation
 
@@ -320,9 +320,9 @@ b4e3234 - Add GitHub account preference documentation (22 hours ago)
 
 **Source of Truth Hierarchy:**
 ```
-E:\github\claude_code_baseline\agents\  (Baseline - Git tracked)
+{{BASELINE_ROOT}}\agents\  (Baseline - Git tracked)
         ↓ sync-agents.ps1
-C:\Users\TimGolden\.claude\agents\      (Global - Shared)
+{{USER_HOME}}\.claude\agents\      (Global - Shared)
         ↓ symlinks
 20 Project Directories                   (Symlinked to global)
 ```
@@ -334,7 +334,7 @@ C:\Users\TimGolden\.claude\agents\      (Global - Shared)
 - compliance-scorecard-docs
 - PowerShell
 - networkscanner
-- (plus 13 additional projects in E:\github\)
+- (plus 13 additional projects in {{GITHUB_ROOT}}\)
 
 **Key Decision - Symbolic Links:**
 - **Rationale**: Edit once in baseline, available everywhere
@@ -379,7 +379,7 @@ C:\Users\TimGolden\.claude\agents\      (Global - Shared)
 **Decision 1: Baseline Repository as Source of Truth**
 - **Rationale**: Version control agents in Git, sync when ready
 - **Impact**: Can track agent changes over time, easy rollback
-- **Implementation**: E:\github\claude_code_baseline\agents\ as master
+- **Implementation**: {{BASELINE_ROOT}}\agents\ as master
 
 **Decision 2: Multi-Layered Memory Architecture**
 - **Rationale**: Fast loading (quick-ref) + detailed history (session notes) + automation (JSON)
@@ -389,7 +389,7 @@ C:\Users\TimGolden\.claude\agents\      (Global - Shared)
 **Decision 3: Symbolic Links for Distribution**
 - **Rationale**: Zero duplication, edit once available everywhere
 - **Impact**: All projects automatically get agent updates
-- **Implementation**: Symlinks from projects → C:\Users\TimGolden\.claude\agents\
+- **Implementation**: Symlinks from projects → {{USER_HOME}}\.claude\agents\
 
 ### Session Metrics from Browser Work
 
@@ -442,7 +442,7 @@ The browser session work complements the CLI session by:
 
 **MEDIUM-001: Hardcoded Repository Path**
 - **File**: `setup-wsl.sh` (lines 24, 47)
-- **Issue**: Hardcoded path `/mnt/e/github/claude_code_baseline`
+- **Issue**: Hardcoded path `{{BASELINE_ROOT}}`
 - **Impact**: Script fails if repository cloned to different location
 - **Recommendation**: Use dynamic path detection with `git rev-parse --show-toplevel`
 
@@ -584,7 +584,7 @@ Start-Process "project_docs/index.html"
 - **Security Audit Coverage**: 366 files scanned (~50,000 lines)
 - **Git Commits**: 6 commits in main branch (5 CLI + 1 end-of-day summary)
 - **Branches**: 1 (main/master)
-- **Contributors**: 1 (TimGolden - GoldenEye Engineering)
+- **Contributors**: 1 ({{USERNAME}} - GoldenEye Engineering)
 - **Session Duration**: ~27 hours (23h CLI + 4h browser)
 
 ### Agent Ecosystem
@@ -597,8 +597,8 @@ Start-Process "project_docs/index.html"
 - **Projects with Agents**: 20 projects via symlinks
 
 ### Global Distribution System
-- **Source of Truth**: E:\github\claude_code_baseline\agents\
-- **Global Location**: C:\Users\TimGolden\.claude\agents\
+- **Source of Truth**: {{BASELINE_ROOT}}\agents\
+- **Global Location**: {{USER_HOME}}\.claude\agents\
 - **Distribution Method**: Symbolic links to 20 projects
 - **Projects Configured**: cmmc_automate, polygon-be, polygon-fe, security-grc-tools, and 16 more
 - **Update Mechanism**: sync-agents.ps1 (automated deployment)
@@ -965,7 +965,7 @@ powershell -NoProfile -File sync-agents.ps1 -Force
 bash setup-wsl.sh
 
 # Or manually source in .bashrc
-source /mnt/e/github/claude_code_baseline/setup-wsl.sh
+source {{BASELINE_ROOT}}/setup-wsl.sh
 ```
 
 ---
@@ -1064,11 +1064,11 @@ source /mnt/e/github/claude_code_baseline/setup-wsl.sh
 
 ### Documentation Links
 
-- **Main Portal**: `E:\github\claude_code_baseline\project_docs\index.html`
-- **Security Audit**: `E:\github\claude_code_baseline\project_docs\agent-results\security-audit-2025-11-03.html`
-- **Agent Ecosystem Guide**: `E:\github\claude_code_baseline\agents\agent-ecosystem-guide.md`
-- **Environment Setup**: `E:\github\claude_code_baseline\ENVIRONMENT.md`
-- **WSL Setup**: `E:\github\claude_code_baseline\WSL-SETUP.md`
+- **Main Portal**: `{{BASELINE_ROOT}}\project_docs\index.html`
+- **Security Audit**: `{{BASELINE_ROOT}}\project_docs\agent-results\security-audit-2025-11-03.html`
+- **Agent Ecosystem Guide**: `{{BASELINE_ROOT}}\agents\agent-ecosystem-guide.md`
+- **Environment Setup**: `{{BASELINE_ROOT}}\ENVIRONMENT.md`
+- **WSL Setup**: `{{BASELINE_ROOT}}\WSL-SETUP.md`
 
 ### External Resources
 
@@ -1080,7 +1080,7 @@ source /mnt/e/github/claude_code_baseline/setup-wsl.sh
 
 ### Repository Information
 
-- **Repository Path**: `E:\github\claude_code_baseline`
+- **Repository Path**: `{{BASELINE_ROOT}}`
 - **Git Status**: Not pushed to remote (local only)
 - **Branch**: main/master
 - **Commits**: 5 commits
@@ -1103,7 +1103,7 @@ source /mnt/e/github/claude_code_baseline/setup-wsl.sh
 
 ### Contributors
 
-- **TimGolden** (GoldenEye Engineering) - Repository creator and maintainer
+- **{{USERNAME}}** (GoldenEye Engineering) - Repository creator and maintainer
 - **Claude AI** (Anthropic) - Development assistance and automation
 - **ComplianceScorecard** - Organization and branding
 
@@ -1382,7 +1382,7 @@ grep -rn "sk-ant-api03-" .
 ---
 
 **Generated by**: end-of-day-summary agent
-**Repository**: E:\github\claude_code_baseline
+**Repository**: {{BASELINE_ROOT}}
 **Timestamp**: November 4, 2025
 **Session Duration**: ~23 hours
 **Total Work Completed**: 5 major commits, 35 files created, 10,066 lines added
@@ -1391,5 +1391,5 @@ grep -rn "sk-ant-api03-" .
 
 ![ComplianceScorecard Logo](project_docs/images/cs-logo.png)
 
-**Compliance Scorecard** | **TimGolden - GoldenEye Engineering**
+**Compliance Scorecard** | **{{USERNAME}} - GoldenEye Engineering**
 *Building secure, compliant, and well-documented engineering solutions*

@@ -21,7 +21,7 @@ WSL_DISTRO=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2 | tr -d '"')
 echo -e "${GREEN}✓${NC} Detected WSL distribution: $WSL_DISTRO"
 
 # Verify we're in the right directory
-REPO_PATH="/mnt/e/github/claude_code_baseline"
+REPO_PATH="{{BASELINE_ROOT}}"
 if [ ! -d "$REPO_PATH" ]; then
     echo -e "${RED}✗${NC} Repository not found at $REPO_PATH"
     echo -e "${YELLOW}ℹ${NC} Please adjust the REPO_PATH variable in this script"
@@ -44,12 +44,12 @@ else
 # ============================================================================
 
 # Quick navigation
-alias baseline='cd /mnt/e/github/claude_code_baseline'
+alias baseline='cd {{BASELINE_ROOT}}'
 alias repos='cd /mnt/e/github'
 
 # Load baseline environment
 load-baseline() {
-    cd /mnt/e/github/claude_code_baseline
+    cd {{BASELINE_ROOT}}
     if [ -f .env ]; then
         export $(cat .env | grep -v '^#' | xargs)
         echo "✅ Environment variables loaded from .env"
@@ -62,7 +62,7 @@ load-baseline() {
 
 # Quick status check
 baseline-status() {
-    cd /mnt/e/github/claude_code_baseline
+    cd {{BASELINE_ROOT}}
     echo "📊 Repository Status:"
     git status --short
     echo ""

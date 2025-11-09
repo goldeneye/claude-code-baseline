@@ -1,6 +1,6 @@
 # Engineering Baseline Documentation Repository
 
-**Author**: TimGolden - aka GoldenEye Engineering timgolden.com
+**Author**: {{USERNAME}} - aka GoldenEye Engineering timgolden.com
 **Created**: November 2, 2025
 **Status**: Production Ready ✅
 
@@ -23,7 +23,7 @@ All documentation uses **template variables** (e.g., `{{PROJECT_NAME}}`, `{{DOMA
 ## 📁 Repository Structure
 
 ```
-E:\github\claude_code_baseline\
+{{BASELINE_ROOT}}\
 ├── README.md                          # This file
 ├── TODO.md                            # Project status and checklist
 ├── CLAUDE.md                          # Guide for Claude Code AI assistant
@@ -181,7 +181,7 @@ The script will:
 
 **Get AI-powered assistance across ALL your projects:**
 
-The agents are **already installed globally** at `C:\Users\TimGolden\.claude\agents\` and are available system-wide to all your projects!
+The agents are **already installed globally** at `{{USER_HOME}}\.claude\agents\` and are available system-wide to all your projects!
 
 **Available agents:**
 - 🔒 **security-auditor** - Scan for vulnerabilities
@@ -241,7 +241,7 @@ If you want to use this repository from WSL (Ubuntu, etc.):
 **Quick Setup:**
 ```bash
 # From WSL terminal
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 ./setup-wsl.sh
 
 # Then reload your shell
@@ -258,7 +258,7 @@ source ~/.bashrc
 **Manual Access:**
 ```bash
 # Navigate to repo from WSL
-cd /mnt/e/github/claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Load environment variables
 export $(cat .env | grep -v '^#' | xargs)
@@ -446,7 +446,7 @@ See [`TODO.md`](TODO.md) for detailed status and checklist.
 
 ## 🤝 Contributing
 
-This repository is maintained by **TimGolden - aka GoldenEye Engineering**.
+This repository is maintained by **{{USERNAME}} - aka GoldenEye Engineering**.
 
 ### Contribution Guidelines
 
@@ -480,7 +480,7 @@ For questions or issues:
 
 ## 📜 License
 
-This baseline documentation repository is maintained by TimGolden - aka GoldenEye Engineering for internal use and project standardization.
+This baseline documentation repository is maintained by {{USERNAME}} - aka GoldenEye Engineering for internal use and project standardization.
 
 ---
 
@@ -498,4 +498,4 @@ This baseline documentation repository is maintained by TimGolden - aka GoldenEy
 
 **Last Updated**: 2025-11-02
 **Repository Status**: ✅ Production Ready
-**Maintainer**: TimGolden - aka GoldenEye Engineering
+**Maintainer**: {{USERNAME}} - aka GoldenEye Engineering

@@ -2,7 +2,7 @@
 title: {{PROJECT_NAME}} - Database Schema & Data Model
 version: 1.0
 last_updated: 2025-11-02
-author: TimGolden - aka GoldenEye Engineering
+author: {{USERNAME}} - aka GoldenEye Engineering
 ---
 
 # {{PROJECT_NAME}} — Database Schema & Data Model
@@ -659,5 +659,5 @@ When implementing this database schema, replace the following template variables
 
 **Document Version**: 1.0
 **Last Updated**: 2025-11-02
-**Author**: TimGolden - aka GoldenEye Engineering
+**Author**: {{USERNAME}} - aka GoldenEye Engineering
 **Review Cycle**: Quarterly or after major schema changes

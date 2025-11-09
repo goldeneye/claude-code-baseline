@@ -50,7 +50,7 @@ This session continued from November 4, 2025 where we worked on Polygon platform
 ### Issue Discovery
 **User:** Showed error when trying to run `add-baseline-to-existing-project.ps1`:
 ```
-At E:\github\claude_code_baseline\add-baseline-to-existing-project.ps1:852 char:51
+At {{BASELINE_ROOT}}\add-baseline-to-existing-project.ps1:852 char:51
 +         if ($response -eq 'n' -or $response -eq 'N') {
 +                                                   ~~~~
 The string is missing the terminator: '.
@@ -87,7 +87,7 @@ The string is missing the terminator: '.
 
 ### Standards Violation & Correction
 
-**User Feedback:** "you didnt adhere to our standards you WIP folder is E:\github\claude_code_baseline\claude_wip but yet you made the PS scrip in the root directory why didnt you obey our standars we outline in all the agens, and MD files!!"
+**User Feedback:** "you didnt adhere to our standards you WIP folder is {{BASELINE_ROOT}}\claude_wip but yet you made the PS scrip in the root directory why didnt you obey our standars we outline in all the agens, and MD files!!"
 
 **My Error:** I created diagnostic scripts (check-quotes.ps1, test-parse.ps1, etc.) in the root directory instead of claude_wip/
 

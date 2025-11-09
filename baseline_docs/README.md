@@ -2,7 +2,7 @@
 title: Engineering Baseline Documentation Pack
 version: 1.0
 last_updated: 2025-11-02
-author: TimGolden - aka GoldenEye Engineering
+author: {{USERNAME}} - aka GoldenEye Engineering
 ---
 
 # Engineering Baseline Documentation Pack

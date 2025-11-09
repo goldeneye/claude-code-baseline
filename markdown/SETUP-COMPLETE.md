@@ -8,7 +8,7 @@
 ## ✅ What's Installed
 
 ### Global Agents (System-Wide)
-**Location:** `C:\Users\TimGolden\.claude\agents\`
+**Location:** `{{USER_HOME}}\.claude\agents\`
 
 All 9 agents are installed and active across **ALL your projects**:
 
@@ -27,7 +27,7 @@ All 9 agents are installed and active across **ALL your projects**:
 **Total:** 92KB of AI-powered assistance
 
 ### Template Library (Source of Truth)
-**Location:** `E:\github\claude_code_baseline\agents\`
+**Location:** `{{BASELINE_ROOT}}\agents\`
 
 All agents are also stored as templates (committed to git) for:
 - Backing up your agents
@@ -151,11 +151,11 @@ When you improve an agent:
 
 ```powershell
 # 1. Edit the source template
-code E:\github\claude_code_baseline\agents\security-auditor.md
+code {{BASELINE_ROOT}}\agents\security-auditor.md
 
 # 2. Copy to global
-Copy-Item E:\github\claude_code_baseline\agents\security-auditor.md `
-          C:\Users\TimGolden\.claude\agents\
+Copy-Item {{BASELINE_ROOT}}\agents\security-auditor.md `
+          {{USER_HOME}}\.claude\agents\
 
 # 3. Now all projects use the updated version!
 ```
@@ -166,7 +166,7 @@ Override for a specific project:
 
 ```powershell
 # Copy global agent to project
-Copy-Item C:\Users\TimGolden\.claude\agents\standards-enforcer.md `
+Copy-Item {{USER_HOME}}\.claude\agents\standards-enforcer.md `
           E:\your-project\.claude\agents\
 
 # Edit to customize for this project
@@ -179,7 +179,7 @@ Check that agents are installed:
 
 ```powershell
 # List global agents
-ls C:\Users\TimGolden\.claude\agents\
+ls {{USER_HOME}}\.claude\agents\
 
 # Expected output: 9 .md files
 ```
@@ -248,8 +248,8 @@ Override agents per-project when you need different behavior.
 
 Confirm your setup:
 
-- [x] Agents installed at `C:\Users\TimGolden\.claude\agents\`
-- [x] Template library at `E:\github\claude_code_baseline\agents\`
+- [x] Agents installed at `{{USER_HOME}}\.claude\agents\`
+- [x] Template library at `{{BASELINE_ROOT}}\agents\`
 - [x] 9 agent files present (8 agents + 1 README)
 - [x] All agents have YAML frontmatter
 - [x] Documentation created (AGENTS-GUIDE.md)
@@ -266,7 +266,7 @@ Confirm your setup:
 
 1. Check installation:
    ```powershell
-   ls C:\Users\TimGolden\.claude\agents\
+   ls {{USER_HOME}}\.claude\agents\
    ```
 
 2. Verify file format (must be .md)
@@ -280,23 +280,23 @@ Confirm your setup:
 
 ```powershell
 # Copy from template library
-Copy-Item E:\github\claude_code_baseline\agents\*.md `
-          C:\Users\TimGolden\.claude\agents\
+Copy-Item {{BASELINE_ROOT}}\agents\*.md `
+          {{USER_HOME}}\.claude\agents\
 ```
 
 ### Want to Remove an Agent?
 
 ```powershell
 # Delete the file
-Remove-Item C:\Users\TimGolden\.claude\agents\refactorer.md
+Remove-Item {{USER_HOME}}\.claude\agents\refactorer.md
 ```
 
 ### Want to Temporarily Disable?
 
 ```powershell
 # Rename with .disabled extension
-Rename-Item C:\Users\TimGolden\.claude\agents\security-auditor.md `
-            C:\Users\TimGolden\.claude\agents\security-auditor.md.disabled
+Rename-Item {{USER_HOME}}\.claude\agents\security-auditor.md `
+            {{USER_HOME}}\.claude\agents\security-auditor.md.disabled
 ```
 
 ---
@@ -318,5 +318,5 @@ Rename-Item C:\Users\TimGolden\.claude\agents\security-auditor.md `
 ---
 
 **Last Updated:** November 2, 2025
-**Maintainer:** TimGolden - aka GoldenEye Engineering
+**Maintainer:** {{USERNAME}} - aka GoldenEye Engineering
 **Version:** 1.0

@@ -1,7 +1,7 @@
 # Environment Configuration Guide
 
 **Last Updated**: 2025-11-03
-**Maintainer**: TimGolden - aka GoldenEye Engineering
+**Maintainer**: {{USERNAME}} - aka GoldenEye Engineering
 
 ---
 

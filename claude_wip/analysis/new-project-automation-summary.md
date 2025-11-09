@@ -19,7 +19,7 @@ Created a comprehensive automated system for bootstrapping new projects from the
 
 ### 1. new-project.ps1
 
-**Location:** `E:\github\claude_code_baseline\new-project.ps1`
+**Location:** `{{BASELINE_ROOT}}\new-project.ps1`
 
 **Purpose:** Automated PowerShell script for creating new projects from baseline
 
@@ -49,7 +49,7 @@ Created a comprehensive automated system for bootstrapping new projects from the
 
 ### 2. NEW-PROJECT-SETUP.md
 
-**Location:** `E:\github\claude_code_baseline\NEW-PROJECT-SETUP.md`
+**Location:** `{{BASELINE_ROOT}}\NEW-PROJECT-SETUP.md`
 
 **Purpose:** Complete user guide for creating new projects
 
@@ -76,7 +76,7 @@ Created a comprehensive automated system for bootstrapping new projects from the
 
 ### 3. project-config.example.json
 
-**Location:** `E:\github\claude_code_baseline\project-config.example.json`
+**Location:** `{{BASELINE_ROOT}}\project-config.example.json`
 
 **Purpose:** Full configuration template with all available variables
 
@@ -102,7 +102,7 @@ Copy-Item project-config.example.json my-project-config.json
 
 ### 4. project-config.minimal.json
 
-**Location:** `E:\github\claude_code_baseline\project-config.minimal.json`
+**Location:** `{{BASELINE_ROOT}}\project-config.minimal.json`
 
 **Purpose:** Minimal configuration with only required variables
 
@@ -221,7 +221,7 @@ new-project/
 
 ```powershell
 # Navigate to baseline
-cd E:\github\claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Run script (will prompt for values)
 .\new-project.ps1 -ProjectName "ComplianceAPI" -DestinationPath "E:\projects\compliance-api"
@@ -546,7 +546,7 @@ Get-ChildItem -Recurse -Include *.md | ForEach-Object {
 # Solution:
 # 1. Run PowerShell as Administrator
 # 2. Verify baseline path exists
-Test-Path "E:\github\claude_code_baseline"
+Test-Path "{{BASELINE_ROOT}}"
 # 3. Check destination is writable
 Test-Path "E:\projects" -IsValid
 ```

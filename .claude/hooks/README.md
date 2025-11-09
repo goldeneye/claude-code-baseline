@@ -309,12 +309,12 @@ To install hooks across multiple repositories:
 **PowerShell Script**:
 ```powershell
 $repos = @(
-    "E:\github\project1",
-    "E:\github\project2",
-    "E:\github\project3"
+    "{{GITHUB_ROOT}}\project1",
+    "{{GITHUB_ROOT}}\project2",
+    "{{GITHUB_ROOT}}\project3"
 )
 
-$hookSource = "E:\github\claude_code_baseline\.claude\hooks\pre-commit"
+$hookSource = "{{BASELINE_ROOT}}\.claude\hooks\pre-commit"
 
 foreach ($repo in $repos) {
     $hookTarget = "$repo\.git\hooks\pre-commit"

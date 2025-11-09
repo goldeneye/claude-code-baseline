@@ -9,7 +9,7 @@
 Your Claude Code agents are installed and ready to use!
 
 ### Global Agents (Active System-Wide)
-**Location:** `C:\Users\TimGolden\.claude\agents\`
+**Location:** `{{USER_HOME}}\.claude\agents\`
 
 All 9 agents are now available to **every project** on your system:
 
@@ -244,7 +244,7 @@ If a project needs different behavior:
 
 ```powershell
 # Copy global agent to project
-Copy-Item C:\Users\TimGolden\.claude\agents\standards-enforcer.md `
+Copy-Item {{USER_HOME}}\.claude\agents\standards-enforcer.md `
           E:\your-project\.claude\agents\
 
 # Edit to customize
@@ -257,11 +257,11 @@ To improve an agent for all projects:
 
 ```powershell
 # 1. Edit the template source
-code E:\github\claude_code_baseline\agents\security-auditor.md
+code {{BASELINE_ROOT}}\agents\security-auditor.md
 
 # 2. Copy to global
-Copy-Item E:\github\claude_code_baseline\agents\security-auditor.md `
-          C:\Users\TimGolden\.claude\agents\
+Copy-Item {{BASELINE_ROOT}}\agents\security-auditor.md `
+          {{USER_HOME}}\.claude\agents\
 
 # Now all projects use the updated version!
 ```
@@ -271,7 +271,7 @@ Copy-Item E:\github\claude_code_baseline\agents\security-auditor.md `
 ## 📁 Directory Structure
 
 ```
-E:\github\claude_code_baseline\
+{{BASELINE_ROOT}}\
 └── agents/                          # Template library (commit to git)
     ├── README.md
     ├── security-auditor.md
@@ -283,7 +283,7 @@ E:\github\claude_code_baseline\
     ├── git-helper.md
     └── refactorer.md
 
-C:\Users\TimGolden\.claude\agents\   # Global (active system-wide)
+{{USER_HOME}}\.claude\agents\   # Global (active system-wide)
     ├── (same 9 files)               # Available to ALL projects
 
 E:\your-project\.claude\agents\      # Project override (optional)
@@ -342,10 +342,10 @@ cd E:\your-project\
 
 ## 📖 Additional Resources
 
-- **Full Agent Documentation:** `E:\github\claude_code_baseline\agents\README.md`
-- **Individual Agent Details:** `E:\github\claude_code_baseline\agents\[agent-name].md`
-- **Coding Standards:** `E:\github\claude_code_baseline\coding-standards\`
-- **Project Setup:** `E:\github\claude_code_baseline\NEW-PROJECT-SETUP.md`
+- **Full Agent Documentation:** `{{BASELINE_ROOT}}\agents\README.md`
+- **Individual Agent Details:** `{{BASELINE_ROOT}}\agents\[agent-name].md`
+- **Coding Standards:** `{{BASELINE_ROOT}}\coding-standards\`
+- **Project Setup:** `{{BASELINE_ROOT}}\NEW-PROJECT-SETUP.md`
 
 ---
 
@@ -355,7 +355,7 @@ cd E:\your-project\
 
 1. Verify installation:
    ```powershell
-   ls C:\Users\TimGolden\.claude\agents\
+   ls {{USER_HOME}}\.claude\agents\
    ```
 
 2. Check agent files are .md format
@@ -365,21 +365,21 @@ cd E:\your-project\
 
 Rename the file:
 ```powershell
-Rename-Item C:\Users\TimGolden\.claude\agents\security-auditor.md `
-            C:\Users\TimGolden\.claude\agents\security-auditor.md.disabled
+Rename-Item {{USER_HOME}}\.claude\agents\security-auditor.md `
+            {{USER_HOME}}\.claude\agents\security-auditor.md.disabled
 ```
 
 ### Want to Remove an Agent?
 
 Delete the file:
 ```powershell
-Remove-Item C:\Users\TimGolden\.claude\agents\refactorer.md
+Remove-Item {{USER_HOME}}\.claude\agents\refactorer.md
 ```
 
 ---
 
 **Last Updated:** November 2025
 **Version:** 1.0
-**Maintainer:** TimGolden - aka GoldenEye Engineering
+**Maintainer:** {{USERNAME}} - aka GoldenEye Engineering
 
 **You're all set! Your agents are protecting and improving all your projects system-wide.** 🚀

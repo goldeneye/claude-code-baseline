@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="How-To Guides - Claude Code Baseline Step-by-Step Instructions">
-    <meta name="author" content="TimGolden - aka GoldenEye Engineering">
+    <meta name="author" content="{{USERNAME}} - aka GoldenEye Engineering">
     <title>How-To Guides - Claude Code Baseline</title>
 
     <!-- Bootstrap 5 CSS -->
@@ -158,21 +158,21 @@
 
                         <div class="mb-4">
                             <h6><span class="step-number">1</span> Navigate to Baseline Directory</h6>
-                            <pre class="ms-5"><code>cd E:\github\claude_code_baseline</code></pre>
+                            <pre class="ms-5"><code>cd {{BASELINE_ROOT}}</code></pre>
                         </div>
 
                         <div class="mb-4">
                             <h6><span class="step-number">2</span> Run the Script</h6>
                             <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
     -ProjectName "MyAwesomeApp" `
-    -DestinationPath "E:\projects\my-awesome-app"</code></pre>
+    -DestinationPath "{{PROJECT_PATH}}"</code></pre>
                         </div>
 
                         <div class="mb-4">
                             <h6><span class="step-number">3</span> Add Optional Parameters (if needed)</h6>
                             <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
     -ProjectName "MyAwesomeApp" `
-    -DestinationPath "E:\projects\my-awesome-app" `
+    -DestinationPath "{{PROJECT_PATH}}" `
     -CompanyName "ACME Corporation" `
     -InitGit `
     -Verbose</code></pre>
@@ -199,7 +199,7 @@
 
                         <div class="mb-4">
                             <h6><span class="step-number">5</span> Open Your New Project</h6>
-                            <pre class="ms-5"><code>cd E:\projects\my-awesome-app
+                            <pre class="ms-5"><code>cd {{PROJECT_PATH}}
 code .</code></pre>
                         </div>
 
@@ -496,15 +496,15 @@ Choose a conflict resolution strategy:
                             <h6><span class="step-number">1</span> Copy Agent Templates</h6>
                             <p class="ms-5">Copy agents to Claude Code's agent directory:</p>
                             <pre class="ms-5"><code class="language-powershell"># Create agents directory if it doesn't exist
-mkdir C:\Users\TimGolden\.claude\agents -Force
+mkdir {{USER_HOME}}\.claude\agents -Force
 
 # Copy agent templates
-copy E:\github\claude_code_baseline\agents\*.md C:\Users\TimGolden\.claude\agents\</code></pre>
+copy {{BASELINE_ROOT}}\agents\*.md {{USER_HOME}}\.claude\agents\</code></pre>
                         </div>
 
                         <div class="mb-4">
                             <h6><span class="step-number">2</span> Verify Installation</h6>
-                            <pre class="ms-5"><code class="language-powershell">dir C:\Users\TimGolden\.claude\agents</code></pre>
+                            <pre class="ms-5"><code class="language-powershell">dir {{USER_HOME}}\.claude\agents</code></pre>
                             <p class="ms-5 mt-2"><small class="text-muted">
                                 You should see all 8 agent .md files.
                             </small></p>
@@ -758,12 +758,12 @@ Check for OWASP Top 10 vulnerabilities.</code></pre>
                                 <tr>
                                     <td><code>{{REPO_PATH}}</code></td>
                                     <td>Full path to repository</td>
-                                    <td>E:\projects\my-awesome-app</td>
+                                    <td>{{PROJECT_PATH}}</td>
                                 </tr>
                                 <tr>
                                     <td><code>{{CLAUDE_WIP_PATH}}</code></td>
                                     <td>Path to claude_wip directory</td>
-                                    <td>E:\projects\my-awesome-app\claude_wip</td>
+                                    <td>{{PROJECT_PATH}}\claude_wip</td>
                                 </tr>
                                 <tr>
                                     <td><code>{{DATE}}</code></td>
@@ -796,7 +796,7 @@ Check for OWASP Top 10 vulnerabilities.</code></pre>
                             <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
     -ProjectName "MyAwesomeApp" `
     -CompanyName "ACME Corp" `
-    -DestinationPath "E:\projects\my-awesome-app"</code></pre>
+    -DestinationPath "{{PROJECT_PATH}}"</code></pre>
                         </div>
 
                         <div class="mb-4">
@@ -805,7 +805,7 @@ Check for OWASP Top 10 vulnerabilities.</code></pre>
                             <pre class="ms-5"><code class="language-markdown"># MyAwesomeApp
 
 **Company:** ACME Corp
-**Repository:** E:\projects\my-awesome-app
+**Repository:** {{PROJECT_PATH}}
 **Last Updated:** 2025-01-15</code></pre>
                         </div>
 
@@ -993,7 +993,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
         <div class="row">
             <div class="col-md-6 text-center text-md-start">
                 <p class="mb-0">
-                    &copy; 2025 Compliance Scorecard | TimGolden - GoldenEye Engineering. All rights reserved.
+                    &copy; 2025 Compliance Scorecard | {{USERNAME}} - GoldenEye Engineering. All rights reserved.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end">

@@ -1,14 +1,14 @@
 # CLAUDE CODE PROMPT — BASELINE FILE GENERATOR
 
 ## 🎯 Objective
-Create a **ComplianceScorecard Engineering Baseline Pack** by normalizing all legacy Markdown documentation under `E:\github\claude_code_baseline\tim_wip\markdown` into a clean, modular set of reusable templates.
+Create a **ComplianceScorecard Engineering Baseline Pack** by normalizing all legacy Markdown documentation under `{{BASELINE_ROOT}}\tim_wip\markdown` into a clean, modular set of reusable templates.
 
 The output must include exactly **10 Markdown files** formatted for reuse across all future microservices, AI agents, and internal tooling projects.
 
 ---
 
 ## 📁 OUTPUT DIRECTORY
-`E:\github\claude_code_baseline\baseline_docs\`
+`{{BASELINE_ROOT}}\baseline_docs\`
 
 ---
 
@@ -68,14 +68,14 @@ Save this as `CLAUDE_CREATE_BASELINE_PROMPT.md` inside your `/claude_wip` direct
 # CLAUDE CODE PROMPT — BASELINE FILE GENERATOR
 
 ## 🎯 Objective
-Create a **ComplianceScorecard Engineering Baseline Pack** by normalizing all legacy Markdown documentation under `E:\github\claude_code_baseline\tim_wip\markdown` into a clean, modular set of reusable templates.
+Create a **ComplianceScorecard Engineering Baseline Pack** by normalizing all legacy Markdown documentation under `{{BASELINE_ROOT}}\tim_wip\markdown` into a clean, modular set of reusable templates.
 
 The output must include exactly **10 Markdown files** formatted for reuse across all future microservices, AI agents, and internal tooling projects.
 
 ---
 
 ## 📁 OUTPUT DIRECTORY
-`E:\github\claude_code_baseline\baseline_docs\`
+`{{BASELINE_ROOT}}\baseline_docs\`
 
 ---
 
@@ -154,7 +154,7 @@ Ignore `.ps1`, `.sh`, `.php`, and temporary `.html` files.
 ## 🚀 DELIVERABLE
 
 Output each file to:
-`E:\github\claude_code_baseline\baseline_docs\`
+`{{BASELINE_ROOT}}\baseline_docs\`
 and generate a summary index file named `README.md` containing:
 
 * File descriptions
@@ -205,12 +205,12 @@ Claude Code should:
 
 In your terminal:
 ```bash
-/claude --prompt "E:\github\claude_code_baseline\claude-instrctions.md"
+/claude --prompt "{{BASELINE_ROOT}}\claude-instrctions.md"
 ````
 
 Claude Code will:
 
-* Read all `.md` and `.html` docs under `E:\github\claude_code_baseline\tim_wip\markdown`
+* Read all `.md` and `.html` docs under `{{BASELINE_ROOT}}\tim_wip\markdown`
 * Normalize and merge into `/baseline_docs/`
 * Output all 10 standardized baseline templates + index
 

@@ -2,7 +2,7 @@
 title: {{PROJECT_NAME}} - Project Roadmap Template
 version: 1.0
 last_updated: 2025-11-02
-author: TimGolden - aka GoldenEye Engineering
+author: {{USERNAME}} - aka GoldenEye Engineering
 ---
 
 # {{PROJECT_NAME}} — Project Roadmap Template
@@ -679,5 +679,5 @@ Legend: █ Completed  ░ Planned
 
 **Document Version**: 1.0
 **Last Updated**: 2025-11-02
-**Author**: TimGolden - aka GoldenEye Engineering
+**Author**: {{USERNAME}} - aka GoldenEye Engineering
 **Review Cycle**: Monthly or as project phases change

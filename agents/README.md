@@ -35,11 +35,11 @@ Copy agents to your project's `.claude/agents/` directory:
 
 ```powershell
 # Copy all agents
-Copy-Item -Recurse E:\github\claude_code_baseline\agents\*.md `
+Copy-Item -Recurse {{BASELINE_ROOT}}\agents\*.md `
           E:\your-project\.claude\agents\
 
 # Or copy specific agent
-Copy-Item E:\github\claude_code_baseline\agents\gen-docs.md `
+Copy-Item {{BASELINE_ROOT}}\agents\gen-docs.md `
           E:\your-project\.claude\agents\
 ```
 
@@ -51,7 +51,7 @@ Create symbolic links to keep agents in sync:
 # Windows (requires admin)
 New-Item -ItemType SymbolicLink `
          -Path "E:\your-project\.claude\agents\gen-docs.md" `
-         -Target "E:\github\claude_code_baseline\agents\gen-docs.md"
+         -Target "{{BASELINE_ROOT}}\agents\gen-docs.md"
 ```
 
 ### Option 3: Global User Agents
@@ -60,7 +60,7 @@ Copy to your global Claude config (available to ALL projects):
 
 ```powershell
 # Copy to user config
-Copy-Item E:\github\claude_code_baseline\agents\*.md `
+Copy-Item {{BASELINE_ROOT}}\agents\*.md `
           $HOME\.claude\agents\
 ```
 
@@ -184,7 +184,7 @@ You can also explicitly invoke agents (if supported by your version of Claude Co
 
 When you improve an agent template:
 
-1. Update in `E:\github\claude_code_baseline\agents\`
+1. Update in `{{BASELINE_ROOT}}\agents\`
 2. Copy to projects that use it
 3. Or use symlinks for automatic sync
 
@@ -210,9 +210,9 @@ When you improve an agent template:
 
 - **Claude Code Docs**: https://docs.claude.com/en/docs/claude-code/
 - **Sub-agents Guide**: https://docs.claude.com/en/docs/claude-code/sub-agents.md
-- **This baseline**: See `E:\github\claude_code_baseline\CLAUDE.md`
+- **This baseline**: See `{{BASELINE_ROOT}}\CLAUDE.md`
 
 ---
 
 **Last Updated:** 2025-01-15
-**Maintainer:** TimGolden - aka GoldenEye Engineering
+**Maintainer:** {{USERNAME}} - aka GoldenEye Engineering

@@ -23,7 +23,7 @@
 
 ```powershell
 # Navigate to the baseline directory
-cd E:\github\claude_code_baseline
+cd {{BASELINE_ROOT}}
 
 # Run the setup script
 .\new-project.ps1 -ProjectName "MyNewProject" -DestinationPath "E:\projects\my-new-project"
@@ -72,10 +72,10 @@ cd E:\projects\my-new-project
 
 ### Step 2: Copy Baseline Files
 
-Copy these directories from `E:\github\claude_code_baseline`:
+Copy these directories from `{{BASELINE_ROOT}}`:
 
 ```powershell
-$baseline = "E:\github\claude_code_baseline"
+$baseline = "{{BASELINE_ROOT}}"
 $project = "E:\projects\my-new-project"
 
 # Copy documentation
@@ -422,7 +422,7 @@ Get-ChildItem -Recurse -Include *.md | ForEach-Object {
 
 **Solution:**
 - Run PowerShell as Administrator
-- Verify baseline path exists: `E:\github\claude_code_baseline`
+- Verify baseline path exists: `{{BASELINE_ROOT}}`
 - Check destination path is writable
 
 ### Issue: Git Not Initialized
