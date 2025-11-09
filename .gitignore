@@ -73,6 +73,14 @@ scratch.md
 claude_wip/
 tim_wip/
 
+# Claude Code internal files (session-specific, not for sharing)
+.claude/memory/
+.claude/context/
+
+# Project-specific documentation (contains session reports & audits)
+project_docs/session-reports/
+project_docs/agent-results/
+
 # Claude local settings (user-specific configuration)
 *.local.json
 .claude/settings.local.json
