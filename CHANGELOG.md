@@ -7,6 +7,96 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.2] - 2025-11-05
+
+### Fixed
+- **PowerShell Script Parsing Errors** - Critical bug in add-baseline-to-existing-project.ps1
+  - **Files**: `add-baseline-to-existing-project.ps1` (lines 161, 166, 171, 176)
+  - **Root cause**: Corrupted Unicode emoji characters (✓, →, ⚠, ⊘) containing curly quotes and malformed byte sequences
+  - **Symptoms**: Script failed to parse with "missing string terminator" error at line 852
+  - **Solution**: Replaced all corrupted Unicode with ASCII-safe alternatives
+    - ✓ → `[OK]`
+    - → → `>`
+    - ⚠ → `[!]`
+    - ⊘ → `[SKIP]`
+  - **Impact**: Script now parses successfully and works across all Windows systems
+  - **Testing**: Verified with PowerShell parser and successful deployment to test project
+
+### Added
+- **.claude Directory Copying** - Enhanced baseline script functionality
+  - **Files**: `add-baseline-to-existing-project.ps1` (lines 312-327)
+  - **Feature**: Script now copies `.claude/settings.local.json` and other Claude Code configuration
+  - **Component**: New "claude-config" component option
+  - **Rationale**: Projects need Claude Code configuration for proper agent operation
+  - **Impact**: Complete baseline setup now includes agent ecosystem configuration
+
+- **agents/ Directory Copying** - Added 15 agent definition files to baseline deployment
+  - **Files**: `add-baseline-to-existing-project.ps1` (lines 329-344)
+  - **Feature**: Script now copies all agent definition files from `agents/` directory
+  - **Files copied**: 15 agent definitions (session-start.md, end-of-day.md, security-auditor.md, etc.)
+  - **Component**: New "agents" component option
+  - **Rationale**: Agent definitions are critical for Claude Code workflow
+  - **Impact**: Projects get complete agent ecosystem out of the box
+
+- **Diagnostic Scripts** - Created 5 PowerShell scripts for encoding troubleshooting
+  - **Files**: Created in `claude_wip/` directory
+    - `check-quotes.ps1` - Scan for curly quotes in files
+    - `test-parse.ps1` - Test PowerShell script parsing programmatically
+    - `find-all-unicode.ps1` - Find all non-ASCII characters
+    - `analyze-line-166.ps1` - Character-by-character analysis
+    - `find-all-curly-quotes.ps1` - Specific curly quote detection
+  - **Purpose**: Debugging tools for future encoding issues
+  - **Total**: ~200 lines of diagnostic PowerShell code
+
+### Changed
+- **Component Parameters** - Updated ValidateSet for baseline script
+  - **Files**: `add-baseline-to-existing-project.ps1` (lines 102, 22)
+  - **Before**: baseline-docs, coding-standards, claude-wip, scripts, gitignore, all
+  - **After**: Added "claude-config" and "agents" options
+  - **Impact**: More granular control over which components to deploy
+
+- **File Count** - Baseline deployment significantly enhanced
+  - **Before**: 29 files
+  - **After**: 45 files (+55% increase)
+  - **New files**: 1 Claude config file + 15 agent definition files
+  - **Testing**: Successfully deployed to E:\xampp\domainscanner (1.22 seconds, 0.73 MB backup)
+
+### Documentation
+- **Session Notes** - Comprehensive memory file for November 5, 2025
+  - **Files**: `.claude/memory/session-notes-2025-11-05.md`
+  - **Content**: Full conversation transcript, debugging process, decisions made, patterns discovered
+  - **Size**: ~18 KB markdown
+  - **Purpose**: Enable future Claude sessions to understand today's work
+
+- **TODO.md** - Updated with today's accomplishments
+  - **Files**: `TODO.md`
+  - **Added**: Recently Completed (2025-11-05) section
+  - **Tasks**: 8 completed tasks with key accomplishments
+
+### Security
+- **Cross-Platform Compatibility** - Eliminated encoding vulnerabilities
+  - **Issue**: Unicode emojis corrupt when copied across systems
+  - **Solution**: ASCII-only characters in PowerShell scripts
+  - **Prevention**: Created diagnostic tools to detect non-ASCII characters
+  - **Impact**: Scripts now work reliably regardless of encoding settings
+
+### Performance
+- **Deployment Speed** - Tested baseline application performance
+  - **Test project**: E:\xampp\domainscanner
+  - **Duration**: 1.22 seconds for 45 files
+  - **Backup size**: 0.73 MB
+  - **Conflicts handled**: 17 files (all resolved with .baseline suffix)
+  - **Status**: ✅ All tests passed
+
+### Lessons Learned
+- **Project Standards Adherence** - Reinforced WIP file organization rules
+  - **Issue**: Created diagnostic scripts in root directory instead of claude_wip/
+  - **Correction**: Immediately moved all files to proper location
+  - **Standard**: ALL temporary/diagnostic/WIP files MUST go in claude_wip/
+  - **Documentation**: Standard documented in all agent files and CLAUDE.md
+
+---
+
 ## [2.1.1] - 2025-11-04
 
 ### Added

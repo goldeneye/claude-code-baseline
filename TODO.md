@@ -1,6 +1,6 @@
 # TODO - Engineering Baseline Documentation Repository
 
-**Last Updated**: 2025-11-03
+**Last Updated**: 2025-11-05
 **Status**: ✅ Production Ready
 **Maintainer**: TimGolden - aka GoldenEye Engineering
 
@@ -79,6 +79,28 @@
 ## 🔄 In Progress
 
 *No items currently in progress - all core tasks complete!*
+
+---
+
+## 📋 Recently Completed (2025-11-05)
+
+### Critical Script Fixes & Feature Enhancements ✅
+
+- [x] **Fixed PowerShell script parsing errors** - Corrupted Unicode characters causing script failure
+- [x] **Replaced corrupted emojis with ASCII-safe alternatives** - ([OK], >, [!], [SKIP])
+- [x] **Added .claude directory copying** - Script now copies Claude Code configuration
+- [x] **Added agents/ directory copying** - Script now copies 15 agent definition files
+- [x] **Updated Components parameter validation** - Added "claude-config" and "agents" options
+- [x] **Created diagnostic scripts** - 5 scripts for debugging Unicode issues (in claude_wip/)
+- [x] **Tested and deployed baseline to domainscanner** - Successfully copied 45 files (previously 29)
+- [x] **Learned project standards lesson** - WIP files must go in claude_wip/ directory
+
+### Key Accomplishments
+- **add-baseline-to-existing-project.ps1** now fully functional
+- Script parsing: ✅ No errors
+- Files copied: **45** (up from 29)
+- New components: `.claude` and `agents/` directories
+- Deployment test: ✅ Success (E:\xampp\domainscanner, 1.22 seconds, 0.73 MB backup)
 
 ---
 
