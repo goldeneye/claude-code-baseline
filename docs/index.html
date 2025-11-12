@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Claude Code Baseline - Comprehensive engineering documentation templates and coding standards">
-    <meta name="author" content="{{USERNAME}} - aka GoldenEye Engineering">
+    <meta name="author" content="Tim Golden - Founder of ComplianceScorecard">
     <title>Claude Code Baseline - Documentation Home</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,16 +23,23 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/cs-logo.png" alt="ComplianceScorecard" height="40" class="me-2">
-                <strong>Claude Code Baseline</strong>
-            </a>
+                        <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">🏠 Home</a>
                     </li>
@@ -39,7 +47,19 @@
                         <a class="nav-link" href="code-documentation.html">💻 Code Docs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="agent-results/index.html">🤖 Agent Results</a>
+                        <a class="nav-link" href="agents.html">🤖 AI Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="getting-started.html">🚀 Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">⚙️ How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="utilities.html">🛠️ Utilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="samples/index.html">📊 Sample Reports</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="changelog.html">📋 Changelog</a>
@@ -49,6 +69,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="how-to-guides.html">📖 How-To Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">👤 About</a>
                     </li>
                 </ul>
             </div>
@@ -246,22 +269,22 @@
             <div class="col-lg-6 mb-4">
                 <div class="card doc-card h-100 border-primary">
                     <div class="card-header bg-primary text-white">
-                        <i class="fas fa-robot"></i> Agent Results & Scans
+                        <i class="fas fa-robot"></i> Sample Agent Reports
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">AI-Powered Code Analysis</h5>
                         <p class="card-text">
-                            View automated code analysis reports from specialized AI agents. Each agent
-                            scans different aspects of the codebase for quality, security, and compliance.
+                            View sample reports showing what AI agents can produce. These demonstrations use
+                            fictional data to illustrate documentation audits, security scans, and code reviews.
                         </p>
                         <ul class="list-unstyled mb-3">
-                            <li><i class="fas fa-check text-success"></i> Documentation Audit (9.0/10)</li>
+                            <li><i class="fas fa-file-alt text-info"></i> Sample Documentation Audit</li>
                             <li><i class="fas fa-robot text-info"></i> 8 Agents Available</li>
                             <li><i class="fas fa-shield-alt text-success"></i> Security Scanning</li>
                             <li><i class="fas fa-tasks text-warning"></i> Standards Compliance</li>
                         </ul>
-                        <a href="agent-results/index.html" class="btn btn-primary">
-                            View Agent Results <i class="fas fa-arrow-right"></i>
+                        <a href="samples/index.html" class="btn btn-primary">
+                            View Sample Reports <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -331,14 +354,14 @@
                     <div class="col-md-6 mb-4">
                         <h6 class="fw-bold"><i class="fas fa-plus-circle text-success"></i> New Project</h6>
                         <p>Create a brand new project from scratch:</p>
-                        <pre><code class="language-powershell">.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp"</code></pre>
+                        <pre><code class="language-powershell">.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "[YOUR-PROJECT-PATH]"</code></pre>
                         <a href="how-to-guides.html#new-project" class="btn btn-sm btn-outline-primary">Learn More</a>
                     </div>
 
                     <div class="col-md-6 mb-4">
                         <h6 class="fw-bold"><i class="fas fa-folder-plus text-info"></i> Existing Project</h6>
                         <p>Add baseline to an existing project safely:</p>
-                        <pre><code class="language-powershell">.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject"</code></pre>
+                        <pre><code class="language-powershell">.\add-baseline-to-existing-project.ps1 -ProjectPath "[YOUR-PROJECT-PATH]"</code></pre>
                         <a href="how-to-guides.html#existing-project" class="btn btn-sm btn-outline-primary">Learn More</a>
                     </div>
                 </div>
@@ -406,8 +429,8 @@
                 <ul class="list-unstyled">
                     <li><a href="../README.md">Repository README</a></li>
                     <li><a href="../CLAUDE.md">Claude Code Guide</a></li>
-                    <li><a href="../NEW-PROJECT-SETUP.md">New Project Setup</a></li>
-                    <li><a href="../EXISTING-PROJECT-GUIDE.md">Existing Project Guide</a></li>
+                    <li><a href="../baseline_docs/NEW-PROJECT-SETUP.md">New Project Setup</a></li>
+                    <li><a href="../baseline_docs/EXISTING-PROJECT-GUIDE.md">Existing Project Guide</a></li>
                     <li><a href="../baseline_docs/README.md">Baseline Docs</a></li>
                 </ul>
             </div>
@@ -416,7 +439,7 @@
         <div class="row">
             <div class="col-md-6 text-center text-md-start">
                 <p class="mb-0">
-                    &copy; 2025 Compliance Scorecard | {{USERNAME}} - GoldenEye Engineering. All rights reserved.
+                    &copy; 2025 Claude Code Baseline. All rights reserved.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end">

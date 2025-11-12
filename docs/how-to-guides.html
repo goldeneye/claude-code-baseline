@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="How-To Guides - Claude Code Baseline Step-by-Step Instructions">
-    <meta name="author" content="{{USERNAME}} - aka GoldenEye Engineering">
+    <meta name="author" content="Tim Golden - Founder of ComplianceScorecard">
     <title>How-To Guides - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -44,16 +45,23 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/cs-logo.png" alt="ComplianceScorecard" height="40" class="me-2">
-                <strong>Claude Code Baseline</strong>
-            </a>
+                        <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">🏠 Home</a>
                     </li>
@@ -61,7 +69,19 @@
                         <a class="nav-link" href="code-documentation.html">💻 Code Docs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="agent-results/index.html">🤖 Agent Results</a>
+                        <a class="nav-link" href="agents.html">🤖 AI Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="getting-started.html">🚀 Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">⚙️ How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="utilities.html">🛠️ Utilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="samples/index.html">📊 Sample Reports</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="changelog.html">📋 Changelog</a>
@@ -73,9 +93,7 @@
                         <a class="nav-link" href="how-to-guides.html">📖 How-To Guides</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/username/claude_code_baseline" target="_blank">
-                            🔗 GitHub
-                        </a>
+                        <a class="nav-link" href="about.html">👤 About</a>
                     </li>
                 </ul>
             </div>
@@ -300,7 +318,7 @@ code .</code></pre>
                             <h6><span class="step-number">1</span> Preview Changes (Dry-Run)</h6>
                             <p class="ms-5">Always start with a dry-run to see what would happen:</p>
                             <pre class="ms-5"><code class="language-powershell">.\add-baseline-to-existing-project.ps1 `
-    -ProjectPath "E:\myproject" `
+    -ProjectPath "[YOUR-PROJECT-PATH]" `
     -DryRun</code></pre>
                             <p class="ms-5 mt-2"><small class="text-muted">
                                 This shows you what would be copied/created without actually doing it.
@@ -310,8 +328,8 @@ code .</code></pre>
                         <div class="mb-4">
                             <h6><span class="step-number">2</span> Review Conflicts</h6>
                             <p class="ms-5">The dry-run will report any conflicts:</p>
-                            <pre class="ms-5"><code>CONFLICT: E:\myproject\CLAUDE.md already exists
-CONFLICT: E:\myproject\docs\baseline\README.md already exists
+                            <pre class="ms-5"><code>CONFLICT: [YOUR-PROJECT-PATH]\CLAUDE.md already exists
+CONFLICT: [YOUR-PROJECT-PATH]\docs\baseline\README.md already exists
 
 Choose a conflict resolution strategy:
 - skip: Skip conflicting files (safest)
@@ -325,22 +343,22 @@ Choose a conflict resolution strategy:
                             <p class="ms-5">Select the strategy that fits your needs:</p>
                             <pre class="ms-5"><code class="language-powershell"># Option A: Skip conflicts (safest)
 .\add-baseline-to-existing-project.ps1 `
-    -ProjectPath "E:\myproject" `
+    -ProjectPath "[YOUR-PROJECT-PATH]" `
     -ConflictStrategy "skip"
 
 # Option B: Add suffix to new files
 .\add-baseline-to-existing-project.ps1 `
-    -ProjectPath "E:\myproject" `
+    -ProjectPath "[YOUR-PROJECT-PATH]" `
     -ConflictStrategy "suffix"
 
 # Option C: Interactive prompts
 .\add-baseline-to-existing-project.ps1 `
-    -ProjectPath "E:\myproject" `
+    -ProjectPath "[YOUR-PROJECT-PATH]" `
     -ConflictStrategy "interactive"
 
 # Option D: Alternate directory
 .\add-baseline-to-existing-project.ps1 `
-    -ProjectPath "E:\myproject" `
+    -ProjectPath "[YOUR-PROJECT-PATH]" `
     -ConflictStrategy "alternate-directory"</code></pre>
                         </div>
 
@@ -348,7 +366,7 @@ Choose a conflict resolution strategy:
                             <h6><span class="step-number">4</span> Apply Changes</h6>
                             <p class="ms-5">Run without <code>-DryRun</code> to apply:</p>
                             <pre class="ms-5"><code class="language-powershell">.\add-baseline-to-existing-project.ps1 `
-    -ProjectPath "E:\myproject" `
+    -ProjectPath "[YOUR-PROJECT-PATH]" `
     -ConflictStrategy "skip" `
     -BackupStrategy "selective"</code></pre>
                         </div>
@@ -841,7 +859,7 @@ $replacements = @{
                             <pre class="ms-5"><code class="language-powershell">.\new-project.ps1 `
     -ProjectName "MyApp" `
     -Author "John Smith" `
-    -DestinationPath "E:\projects\myapp"</code></pre>
+    -DestinationPath "[YOUR-PROJECT-PATH]"</code></pre>
                         </div>
 
                         <div class="alert alert-info mt-4">
@@ -885,7 +903,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
                             <p><strong>Solution:</strong> Use quotes around paths:</p>
                             <pre><code class="language-powershell">.\new-project.ps1 `
     -ProjectName "MyApp" `
-    -DestinationPath "E:\My Projects\myapp"  # Quoted path</code></pre>
+    -DestinationPath "[YOUR Projects\myapp"  # Quoted path</code></pre>
                         </div>
 
                         <div class="mb-4">
@@ -943,7 +961,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
                         <div class="alert alert-primary">
                             <i class="fas fa-question-circle"></i> <strong>Still Having Issues?</strong>
                             <ul class="mb-0">
-                                <li>Check the <a href="../TROUBLESHOOTING.md">TROUBLESHOOTING.md</a> file</li>
+                                <li>Check the the troubleshooting section above file</li>
                                 <li>Review the <code>-Verbose</code> output from scripts</li>
                                 <li>Check the backup directory for clues</li>
                                 <li>Open an issue on GitHub</li>
@@ -983,8 +1001,8 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
                 <ul class="list-unstyled">
                     <li><a href="../README.md">Repository README</a></li>
                     <li><a href="../CLAUDE.md">Claude Code Guide</a></li>
-                    <li><a href="../NEW-PROJECT-SETUP.md">New Project Setup</a></li>
-                    <li><a href="../EXISTING-PROJECT-GUIDE.md">Existing Project Guide</a></li>
+                    <li><a href="../baseline_docs/NEW-PROJECT-SETUP.md">New Project Setup</a></li>
+                    <li><a href="../baseline_docs/EXISTING-PROJECT-GUIDE.md">Existing Project Guide</a></li>
                     <li><a href="../baseline_docs/README.md">Baseline Docs</a></li>
                 </ul>
             </div>
@@ -993,7 +1011,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
         <div class="row">
             <div class="col-md-6 text-center text-md-start">
                 <p class="mb-0">
-                    &copy; 2025 Compliance Scorecard | {{USERNAME}} - GoldenEye Engineering. All rights reserved.
+                    &copy; 2025 Claude Code Baseline. All rights reserved.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end">

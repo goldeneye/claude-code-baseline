@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Getting Started - Claude Code Baseline Quick Start Guide">
+    <meta name="author" content="Tim Golden - Compliance & Cybersecurity Expert">
+    <title>Getting Started - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="code-documentation.html">💻 Code Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agents.html">🤖 AI Agents</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="getting-started.html">🚀 Get Started</a></li>
+                    <li class="nav-item"><a class="nav-link" href="samples/index.html">📊 Sample Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="changelog.html">📋 Changelog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="todo.html">✅ TODO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="how-to-guides.html">📖 How-To Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">👤 About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-rocket"></i> Getting Started
+        </h1>
+        <p class="lead">
+            Get up and running with the Claude Code Baseline in 10 minutes. This guide walks you through
+            creating your first project with complete documentation, coding standards, and AI agents.
+        </p>
+    </div>
+</section>
+
+<main class="container my-5">
+
+    <!-- Quick Start Steps -->
+    <section class="mb-5">
+        <h2 class="section-title">Quick Start (3 Steps)</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">1. Request Access</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>This is a private repository. Request access:</p>
+                        <a href="https://timgolden.com/contact/" target="_blank" class="btn btn-primary btn-sm">
+                            <i class="fas fa-envelope"></i> Contact Tim Golden
+                        </a>
+                        <p class="small text-muted mt-3">Include "Claude Code Baseline Access" in subject</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-success">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">2. Clone & Setup</h4>
+                    </div>
+                    <div class="card-body">
+                        <pre class="bg-light p-2 small"><code>git clone [repo-url]
+cd claude_code_baseline</code></pre>
+                        <p class="small">Review README.md and CLAUDE.md</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-info">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">3. Create Project</h4>
+                    </div>
+                    <div class="card-body">
+                        <pre class="bg-light p-2 small"><code>.\new-project.ps1 `
+  -ProjectName "MyApp" `
+  -DestinationPath "E:\projects\myapp"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Walkthrough -->
+    <section class="mb-5">
+        <h2 class="section-title">Detailed Walkthrough</h2>
+
+        <div class="card doc-card mb-4">
+            <div class="card-header">
+                <h4 class="mb-0">Step 1: Prerequisites</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Required</h5>
+                        <ul>
+                            <li><strong>Claude Code</strong> - AI-powered IDE (<a href="https://claude.ai/code" target="_blank">claude.ai/code</a>)</li>
+                            <li><strong>Git</strong> - Version control</li>
+                            <li><strong>PowerShell 5.1+</strong> - Windows automation</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Recommended</h5>
+                        <ul>
+                            <li>Windows 10/11 or WSL2</li>
+                            <li>VS Code (optional, for editing)</li>
+                            <li>GitHub account</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card mb-4">
+            <div class="card-header">
+                <h4 class="mb-0">Step 2: Choose Your Path</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">New Project</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Best for:</strong> Starting from scratch</p>
+                                <h6>What You Get:</h6>
+                                <ul class="small">
+                                    <li>Complete project structure</li>
+                                    <li>11 baseline documentation templates</li>
+                                    <li>13 modular coding standards</li>
+                                    <li>10 AI agents pre-installed</li>
+                                    <li>Git repository initialized</li>
+                                    <li>GitHub Pages ready</li>
+                                </ul>
+                                <pre class="bg-light p-2 mt-3 small"><code>.\new-project.ps1 `
+  -ProjectName "MyApp" `
+  -DestinationPath "E:\projects\myapp"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-success">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">Existing Project</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Best for:</strong> Adding to existing codebase</p>
+                                <h6>Features:</h6>
+                                <ul class="small">
+                                    <li>Automatic backups before changes</li>
+                                    <li>Conflict detection</li>
+                                    <li>Merge strategies (skip/rename/overwrite)</li>
+                                    <li>Dry-run mode for preview</li>
+                                    <li>Rollback capability</li>
+                                </ul>
+                                <pre class="bg-light p-2 mt-3 small"><code>.\add-baseline-to-existing-project.ps1 `
+  -ProjectPath "E:\projects\myapp" `
+  -DryRun</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card mb-4">
+            <div class="card-header">
+                <h4 class="mb-0">Step 3: Configure Your Project</h4>
+            </div>
+            <div class="card-body">
+                <p>After creation, customize template variables:</p>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Replace With</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>{{PROJECT_NAME}}</code></td>
+                                <td>Your project name</td>
+                                <td>MyApp</td>
+                            </tr>
+                            <tr>
+                                <td><code>{{REPO_PATH}}</code></td>
+                                <td>Repository path</td>
+                                <td>E:\projects\myapp</td>
+                            </tr>
+                            <tr>
+                                <td><code>{{CONTACT_EMAIL}}</code></td>
+                                <td>Your email</td>
+                                <td>dev@myapp.com</td>
+                            </tr>
+                            <tr>
+                                <td><code>{{DOMAIN}}</code></td>
+                                <td>Your domain</td>
+                                <td>myapp.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="alert alert-info">
+                    <i class="fas fa-lightbulb"></i> Use find-and-replace in your editor to update all variables at once.
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card mb-4">
+            <div class="card-header">
+                <h4 class="mb-0">Step 4: Start Development with Claude Code</h4>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li><strong>Open Claude Code</strong> in your project directory</li>
+                    <li><strong>Ask:</strong> "What should I work on?"
+                        <ul class="small">
+                            <li>session-start agent loads context</li>
+                            <li>Briefs you on TODO items</li>
+                            <li>Shows project status</li>
+                        </ul>
+                    </li>
+                    <li><strong>Develop:</strong> Use agents as needed
+                        <ul class="small">
+                            <li>"Review this code" → code-reviewer</li>
+                            <li>"Run tests" → test-runner</li>
+                            <li>"Scan for security issues" → security-auditor</li>
+                        </ul>
+                    </li>
+                    <li><strong>End Session:</strong> Say "End of day"
+                        <ul class="small">
+                            <li>end-of-day agent runs all quality checks</li>
+                            <li>Creates memory for next session</li>
+                            <li>Generates comprehensive report</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Session Example -->
+    <section class="mb-5">
+        <h2 class="section-title">Your First Session</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <h5>Example Workflow</h5>
+                <div class="bg-light p-3">
+                    <p class="mb-2"><strong>You:</strong> "What should I work on?"</p>
+                    <p class="mb-2 text-success"><strong>Claude (via session-start):</strong> "Based on TODO.md, priority tasks are: 1) Set up authentication, 2) Create database schema, 3) Implement API endpoints. Quality status: All green. No outstanding issues."</p>
+
+                    <hr>
+
+                    <p class="mb-2"><strong>You:</strong> "Let's implement authentication using Auth0"</p>
+                    <p class="mb-2 text-success"><strong>Claude:</strong> [Implements Auth0 integration...]</p>
+
+                    <hr>
+
+                    <p class="mb-2"><strong>You:</strong> "Review this authentication code"</p>
+                    <p class="mb-2 text-success"><strong>Claude (via code-reviewer):</strong> "Code review complete. Found 2 suggestions: 1) Add error handling for token expiration, 2) Cache user profile to reduce API calls..."</p>
+
+                    <hr>
+
+                    <p class="mb-2"><strong>You:</strong> "End of day"</p>
+                    <p class="mb-0 text-success"><strong>Claude (via end-of-day):</strong> "Running quality checks... Tests: 45/45 passing ✓ | Security: No vulnerabilities ✓ | Standards: Compliant ✓ | Docs: 95% coverage ✓ | Session report created."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Tasks -->
+    <section class="mb-5">
+        <h2 class="section-title">Common Tasks</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card doc-card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-book"></i> Documentation</h5>
+                    </div>
+                    <div class="card-body">
+                        <pre class="small"><code># Generate README
+"Generate a README for this project"
+
+# Document code
+"Document the UserService class"
+
+# Create API docs
+"Generate API documentation"</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card doc-card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-shield-alt"></i> Quality Checks</h5>
+                    </div>
+                    <div class="card-body">
+                        <pre class="small"><code># Run tests
+"Run all tests"
+
+# Security scan
+"Scan for security vulnerabilities"
+
+# Check standards
+"Check coding standards compliance"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="mb-5">
+        <h2 class="section-title">Next Steps</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-robot fa-3x text-primary mb-3"></i>
+                        <h5>Learn About Agents</h5>
+                        <p class="small">Explore all 10 AI agents and what they can do</p>
+                        <a href="agents.html" class="btn btn-primary btn-sm">View Agents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-cogs fa-3x text-info mb-3"></i>
+                        <h5>How It Works</h5>
+                        <p class="small">Understand the architecture and workflow</p>
+                        <a href="how-it-works.html" class="btn btn-info btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-wrench fa-3x text-success mb-3"></i>
+                        <h5>Scripts & Utilities</h5>
+                        <p class="small">PowerShell scripts and helper tools</p>
+                        <a href="utilities.html" class="btn btn-success btn-sm">View Utilities</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="mb-5">
+        <h2 class="section-title">Troubleshooting</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="accordion" id="troubleshootingAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#issue1">
+                                PowerShell script won't run (execution policy)
+                            </button>
+                        </h2>
+                        <div id="issue1" class="accordion-collapse collapse show" data-bs-parent="#troubleshootingAccordion">
+                            <div class="accordion-body">
+                                <p>Run PowerShell as Administrator and execute:</p>
+                                <pre class="bg-light p-2"><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#issue2">
+                                Agents not activating
+                            </button>
+                        </h2>
+                        <div id="issue2" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+                            <div class="accordion-body">
+                                <p>Verify agents are in <code>.claude/agents/</code> directory and have <code>.md</code> extension.</p>
+                                <p>Check Claude Code settings for agent configuration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#issue3">
+                                Template variables not replaced
+                            </button>
+                        </h2>
+                        <div id="issue3" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+                            <div class="accordion-body">
+                                <p>Template variables are intentionally left in baseline files. Replace them manually or use the PowerShell scripts with <code>-ConfigFile</code> parameter for automatic replacement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    fetch('includes/footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

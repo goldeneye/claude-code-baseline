@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How It Works - Claude Code Baseline Architecture and Workflow">
+    <meta name="author" content="Tim Golden - Compliance & Cybersecurity Expert">
+    <title>How It Works - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="code-documentation.html">💻 Code Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agents.html">🤖 AI Agents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="getting-started.html">🚀 Get Started</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="how-it-works.html">⚙️ How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="utilities.html">🛠️ Utilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="samples/index.html">📊 Sample Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="changelog.html">📋 Changelog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">👤 About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-project-diagram"></i> How It Works
+        </h1>
+        <p class="lead">
+            Understand the architecture, workflow, and philosophy behind the Claude Code Baseline.
+            Learn how all components work together to create a comprehensive development environment.
+        </p>
+    </div>
+</section>
+
+<main class="container my-5">
+
+    <!-- The Big Picture -->
+    <section class="mb-5">
+        <h2 class="section-title">The Big Picture</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p class="lead">
+                    The Claude Code Baseline is a <strong>complete development ecosystem</strong> that combines documentation templates,
+                    coding standards, AI agents, and automation scripts into a cohesive workflow.
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-md-3 text-center mb-3">
+                        <i class="fas fa-file-alt fa-3x text-primary mb-2"></i>
+                        <h5>Documentation Templates</h5>
+                        <p class="small text-muted">11 baseline docs covering architecture to deployment</p>
+                    </div>
+                    <div class="col-md-3 text-center mb-3">
+                        <i class="fas fa-code fa-3x text-success mb-2"></i>
+                        <h5>Coding Standards</h5>
+                        <p class="small text-muted">13 modular standards for consistent quality</p>
+                    </div>
+                    <div class="col-md-3 text-center mb-3">
+                        <i class="fas fa-robot fa-3x text-info mb-2"></i>
+                        <h5>AI Agents</h5>
+                        <p class="small text-muted">10 specialized agents for automation</p>
+                    </div>
+                    <div class="col-md-3 text-center mb-3">
+                        <i class="fas fa-tools fa-3x text-warning mb-2"></i>
+                        <h5>Automation Scripts</h5>
+                        <p class="small text-muted">PowerShell scripts for project setup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Components -->
+    <section class="mb-5">
+        <h2 class="section-title">Core Components</h2>
+
+        <div class="card doc-card mb-3">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-folder"></i> 1. Baseline Documentation (baseline_docs/)</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Reusable documentation templates for any project</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>What's Included</h6>
+                        <ul class="small">
+                            <li>00-overview.md - System overview</li>
+                            <li>01-architecture.md - Architecture patterns</li>
+                            <li>02-security.md - Security model</li>
+                            <li>04-ai-agent-protocol.md - AI workflow</li>
+                            <li>05-deployment-guide.md - Deployment steps</li>
+                            <li>06-database-schema.md - DB design</li>
+                            <li>...and 5 more</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>How It Works</h6>
+                        <p class="small">Uses template variables like <code>{{PROJECT_NAME}}</code> and <code>{{DOMAIN}}</code> for project-agnostic reuse. Copy templates to your project and replace variables.</p>
+                        <div class="alert alert-info small mb-0">
+                            <i class="fas fa-lightbulb"></i> Templates adapt to any tech stack - Laravel, React, Python, or custom
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card mb-3">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0"><i class="fas fa-ruler-combined"></i> 2. Coding Standards (coding-standards/)</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Modular, enforceable coding standards</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>13 Standard Modules</h6>
+                        <ul class="small">
+                            <li>Pseudo-code (plan before coding)</li>
+                            <li>Project structure (organization)</li>
+                            <li>PHP standards (PSR-12)</li>
+                            <li>JavaScript standards (ES6+)</li>
+                            <li>Database standards</li>
+                            <li>Logging standards</li>
+                            <li><strong>Safety rules</strong> (critical)</li>
+                            <li>Quality standards</li>
+                            <li>GitHub/JIRA workflow</li>
+                            <li>Testing standards</li>
+                            <li>Security standards</li>
+                            <li>Performance standards</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Enforcement</h6>
+                        <p class="small">The <strong>standards-enforcer agent</strong> automatically checks compliance:</p>
+                        <ul class="small">
+                            <li>Validates naming conventions</li>
+                            <li>Checks documentation completeness</li>
+                            <li>Verifies logging format</li>
+                            <li>Ensures safety rules followed</li>
+                            <li>Reports violations with fixes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card doc-card mb-3">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0"><i class="fas fa-robot"></i> 3. AI Agents (agents/)</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Specialized AI assistants with domain expertise</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Session Orchestrators</h6>
+                        <ul class="small">
+                            <li>session-start</li>
+                            <li>end-of-day</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Quality Enforcers</h6>
+                        <ul class="small">
+                            <li>test-runner</li>
+                            <li>security-auditor</li>
+                            <li>standards-enforcer</li>
+                            <li>code-documenter</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Code Improvers</h6>
+                        <ul class="small">
+                            <li>code-reviewer</li>
+                            <li>refactorer</li>
+                            <li>gen-docs</li>
+                            <li>git-helper</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="small mt-3 mb-0"><a href="agents.html">→ Learn more about agents</a></p>
+            </div>
+        </div>
+
+        <div class="card doc-card mb-3">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="mb-0"><i class="fas fa-cog"></i> 4. Automation Scripts</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Automate project creation and integration</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>new-project.ps1</h6>
+                        <p class="small">Creates complete new project from baseline</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>add-baseline-to-existing-project.ps1</h6>
+                        <p class="small">Safely integrates baseline into existing projects</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>backup-project.ps1</h6>
+                        <p class="small">Creates timestamped backups</p>
+                    </div>
+                </div>
+                <p class="small mb-0"><a href="utilities.html">→ View all utilities</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Workflow -->
+    <section class="mb-5">
+        <h2 class="section-title">Development Workflow</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <h5>Complete Session Lifecycle</h5>
+
+                <div class="workflow-visual mt-4">
+                    <!-- Project Creation -->
+                    <div class="card border-primary mb-3">
+                        <div class="card-header bg-primary text-white">
+                            <h6 class="mb-0"><i class="fas fa-plus-circle"></i> Phase 1: Project Creation</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="small mb-2"><strong>Action:</strong></p>
+                                    <pre class="bg-light p-2 small"><code>.\new-project.ps1 -ProjectName "MyApp"</code></pre>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="small mb-2"><strong>Result:</strong></p>
+                                    <ul class="small mb-0">
+                                        <li>Complete directory structure</li>
+                                        <li>All templates copied</li>
+                                        <li>Git repository initialized</li>
+                                        <li>Agents installed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Session Start -->
+                    <div class="card border-success mb-3">
+                        <div class="card-header bg-success text-white">
+                            <h6 class="mb-0"><i class="fas fa-play"></i> Phase 2: Session Start</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="small mb-2"><strong>Trigger:</strong></p>
+                                    <p class="small">"What should I work on?"</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="small mb-2"><strong>session-start agent:</strong></p>
+                                    <ul class="small mb-0">
+                                        <li>Loads .claude/memory/ files</li>
+                                        <li>Reviews TODO.md priorities</li>
+                                        <li>Checks last session quality</li>
+                                        <li>Briefs you on context</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Development -->
+                    <div class="card border-info mb-3">
+                        <div class="card-header bg-info text-white">
+                            <h6 class="mb-0"><i class="fas fa-code"></i> Phase 3: Active Development</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="small mb-2"><strong>Workflow:</strong></p>
+                            <ol class="small">
+                                <li>Plan feature (pseudo-code)</li>
+                                <li>Implement with Claude Code</li>
+                                <li>Invoke agents as needed:
+                                    <ul>
+                                        <li>"Review this code" (code-reviewer)</li>
+                                        <li>"Run tests" (test-runner)</li>
+                                        <li>"Check security" (security-auditor)</li>
+                                    </ul>
+                                </li>
+                                <li>Iterate based on feedback</li>
+                                <li>Create git commits (git-helper)</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Session End -->
+                    <div class="card border-danger mb-3">
+                        <div class="card-header bg-danger text-white">
+                            <h6 class="mb-0"><i class="fas fa-moon"></i> Phase 4: Session End</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="small mb-2"><strong>Trigger:</strong></p>
+                                    <p class="small">"End of day"</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="small mb-2"><strong>end-of-day agent orchestrates:</strong></p>
+                                    <ul class="small mb-0">
+                                        <li>test-runner → Run all tests</li>
+                                        <li>security-auditor → Security scan</li>
+                                        <li>standards-enforcer → Check compliance</li>
+                                        <li>code-documenter → Doc coverage</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <hr class="my-2">
+                            <p class="small mb-2"><strong>Outputs:</strong></p>
+                            <ul class="small mb-0">
+                                <li><code>.claude/memory/session-notes-[date].md</code> - Memory for next session</li>
+                                <li><code>project_docs/session-reports/session-[date].html</code> - Comprehensive report</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Next Session -->
+                    <div class="card border-secondary">
+                        <div class="card-header bg-light">
+                            <h6 class="mb-0"><i class="fas fa-redo"></i> Phase 5: Next Session</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="small mb-0">session-start loads memory → Instant context → Continue from where you left off</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory System -->
+    <section class="mb-5">
+        <h2 class="section-title">Memory & Context System</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p class="lead">Persistent memory across sessions ensures you never lose context</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>Memory Files</h5>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>File</th>
+                                        <th>Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>quick-ref.md</code></td>
+                                        <td class="small">30-second brief loaded by session-start</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>session-notes-[date].md</code></td>
+                                        <td class="small">Detailed session history</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>project-context.json</code></td>
+                                        <td class="small">Machine-readable context</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Quality Feedback Loop</h5>
+                        <ol class="small">
+                            <li>end-of-day runs quality checks</li>
+                            <li>Results stored in memory</li>
+                            <li>session-start shows status</li>
+                            <li>You address issues</li>
+                            <li>Next end-of-day tracks improvement</li>
+                            <li><strong>Quality trends over time</strong> 📈</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Approach Works -->
+    <section class="mb-5">
+        <h2 class="section-title">Why This Approach Works</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-check-circle text-success"></i> Benefits</h5>
+                        <ul>
+                            <li><strong>Consistency</strong> - Same standards across all projects</li>
+                            <li><strong>Quality</strong> - Automated checks catch issues early</li>
+                            <li><strong>Speed</strong> - Templates eliminate repetitive documentation</li>
+                            <li><strong>Context</strong> - Memory system preserves knowledge</li>
+                            <li><strong>Scalability</strong> - Add to any project, new or existing</li>
+                            <li><strong>Automation</strong> - Agents handle routine quality tasks</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-lightbulb text-warning"></i> Philosophy</h5>
+                        <blockquote class="small">
+                            <p>"Start every project with comprehensive documentation, enforced standards, and automated quality checks. Don't add them later - build them in from day one."</p>
+                            <footer class="blockquote-footer">Tim Golden</footer>
+                        </blockquote>
+                        <p class="small">This baseline embodies 20+ years of lessons learned building compliant, secure systems for MSPs and enterprises.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Example -->
+    <section class="mb-5">
+        <h2 class="section-title">Real-World Example</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <h5>Building a SaaS Application</h5>
+                <p>How the baseline helps at each stage:</p>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Baseline Provides</th>
+                                <th>Time Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Day 1</strong><br>Project Setup</td>
+                                <td>Complete structure, docs, standards, agents</td>
+                                <td>~8 hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Week 1</strong><br>Architecture</td>
+                                <td>Architecture template, security model, DB schema</td>
+                                <td>~16 hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Month 1</strong><br>Development</td>
+                                <td>Coding standards, automated tests, security scans</td>
+                                <td>~40 hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ongoing</strong><br>Maintenance</td>
+                                <td>Session memory, quality checks, documentation</td>
+                                <td>~4 hrs/week</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-success">
+                    <i class="fas fa-calculator"></i> <strong>ROI:</strong> Save 64+ hours in first month, 4+ hours per week ongoing
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="mb-5">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <h5>Ready to Start?</h5>
+                        <a href="getting-started.html" class="btn btn-primary">Get Started Guide</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-robot fa-3x text-info mb-3"></i>
+                        <h5>Explore Agents</h5>
+                        <a href="agents.html" class="btn btn-info">View All Agents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-tools fa-3x text-success mb-3"></i>
+                        <h5>View Utilities</h5>
+                        <a href="utilities.html" class="btn btn-success">Scripts & Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    fetch('includes/footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

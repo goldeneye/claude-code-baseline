@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Code Documentation - Claude Code Baseline Project Structure">
-    <meta name="author" content="{{USERNAME}} - aka GoldenEye Engineering">
+    <meta name="author" content="Tim Golden - Founder of ComplianceScorecard">
     <title>Code Documentation - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,16 +23,23 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/cs-logo.png" alt="ComplianceScorecard" height="40" class="me-2">
-                <strong>Claude Code Baseline</strong>
-            </a>
+                        <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">🏠 Home</a>
                     </li>
@@ -39,7 +47,19 @@
                         <a class="nav-link" href="code-documentation.html">💻 Code Docs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="agent-results/index.html">🤖 Agent Results</a>
+                        <a class="nav-link" href="agents.html">🤖 AI Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="getting-started.html">🚀 Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">⚙️ How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="utilities.html">🛠️ Utilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="samples/index.html">📊 Sample Reports</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="changelog.html">📋 Changelog</a>
@@ -49,6 +69,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="how-to-guides.html">📖 How-To Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">👤 About</a>
                     </li>
                 </ul>
             </div>
@@ -173,7 +196,7 @@
                 <h6 class="mt-4">Usage:</h6>
                 <pre><code class="language-powershell">.\new-project.ps1 `
     -ProjectName "MyApp" `
-    -DestinationPath "E:\projects\myapp" `
+    -DestinationPath "[YOUR-PROJECT-PATH]" `
     -CompanyName "ACME Corp" `
     -InitGit</code></pre>
 
@@ -215,7 +238,7 @@
                     </tbody>
                 </table>
 
-                <a href="../NEW-PROJECT-SETUP.md" class="btn btn-outline-primary mt-3">
+                <a href="../baseline_docs/NEW-PROJECT-SETUP.md" class="btn btn-outline-primary mt-3">
                     <i class="fas fa-book"></i> View Full Documentation
                 </a>
             </div>
@@ -253,14 +276,14 @@
 
                 <h6 class="mt-4">Usage:</h6>
                 <pre><code class="language-powershell"># Basic usage
-.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject"
+.\add-baseline-to-existing-project.ps1 -ProjectPath "[YOUR-PROJECT-PATH]"
 
 # Dry-run (preview only)
-.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject" -DryRun
+.\add-baseline-to-existing-project.ps1 -ProjectPath "[YOUR-PROJECT-PATH]" -DryRun
 
 # Custom conflict resolution
 .\add-baseline-to-existing-project.ps1 `
-    -ProjectPath "E:\myproject" `
+    -ProjectPath "[YOUR-PROJECT-PATH]" `
     -ConflictStrategy "suffix" `
     -BackupStrategy "selective"</code></pre>
 
@@ -297,7 +320,7 @@
                     </tbody>
                 </table>
 
-                <a href="../EXISTING-PROJECT-GUIDE.md" class="btn btn-outline-primary mt-3">
+                <a href="../baseline_docs/EXISTING-PROJECT-GUIDE.md" class="btn btn-outline-primary mt-3">
                     <i class="fas fa-book"></i> View Full Documentation
                 </a>
             </div>
@@ -315,7 +338,7 @@
                 </p>
 
                 <h6 class="mt-4">Usage:</h6>
-                <pre><code class="language-powershell">.\backup-project.ps1 -ProjectPath "E:\myproject" -BackupPath "E:\backups"</code></pre>
+                <pre><code class="language-powershell">.\backup-project.ps1 -ProjectPath "[YOUR-PROJECT-PATH]" -BackupPath "[YOUR-BACKUP-PATH]"</code></pre>
             </div>
         </div>
     </section>
@@ -635,12 +658,12 @@
                         <tr>
                             <td><code>{{REPO_PATH}}</code></td>
                             <td>Full path to repository</td>
-                            <td>E:\projects\myapp</td>
+                            <td>[YOUR-PROJECT-PATH]</td>
                         </tr>
                         <tr>
                             <td><code>{{CLAUDE_WIP_PATH}}</code></td>
                             <td>Path to claude_wip directory</td>
-                            <td>E:\projects\myapp\claude_wip</td>
+                            <td>[YOUR-PROJECT-PATH]\claude_wip</td>
                         </tr>
                         <tr>
                             <td><code>{{DATE}}</code></td>

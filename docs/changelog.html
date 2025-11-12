@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Changelog - Claude Code Baseline Version History">
-    <meta name="author" content="{{USERNAME}} - aka GoldenEye Engineering">
+    <meta name="author" content="Tim Golden - Compliance & Cybersecurity Expert">
     <title>Changelog - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,16 +23,23 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/cs-logo.png" alt="ComplianceScorecard" height="40" class="me-2">
-                <strong>Claude Code Baseline</strong>
-            </a>
+                        <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">🏠 Home</a>
                     </li>
@@ -39,7 +47,19 @@
                         <a class="nav-link" href="code-documentation.html">💻 Code Docs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="agent-results/index.html">🤖 Agent Results</a>
+                        <a class="nav-link" href="agents.html">🤖 AI Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="getting-started.html">🚀 Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">⚙️ How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="utilities.html">🛠️ Utilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="samples/index.html">📊 Sample Reports</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="changelog.html">📋 Changelog</a>
@@ -49,6 +69,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="how-to-guides.html">📖 How-To Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">👤 About</a>
                     </li>
                 </ul>
             </div>
@@ -71,21 +94,117 @@
 <!-- Main Content -->
 <main class="container my-5">
 
-    <!-- Version 2.0 -->
+    <!-- Version 2.2 -->
     <section class="mb-5">
         <div class="card doc-card">
             <div class="card-header bg-primary text-white">
                 <div class="d-flex justify-content-between align-items-center">
                     <h3 class="mb-0">
-                        <i class="fas fa-rocket"></i> Version 2.0 - Major Update
+                        <i class="fas fa-rocket"></i> Version 2.2 - Comprehensive Documentation Expansion
                     </h3>
-                    <span class="badge bg-light text-dark">January 15, 2025</span>
+                    <span class="badge bg-light text-dark">November 12, 2025 (PM)</span>
                 </div>
             </div>
             <div class="card-body">
                 <p class="lead">
-                    Major release introducing modular coding standards, existing project integration,
-                    and enhanced automation capabilities.
+                    Major documentation expansion with 4 new comprehensive pages covering agents, getting started,
+                    architecture, utilities, and contact/access request integration.
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-plus-circle text-success"></i> New Pages Added</h5>
+                        <ul>
+                            <li>
+                                <strong>agents.html</strong> - AI Agents Documentation
+                                <br><small class="text-muted">
+                                    Complete guide to all 10 AI agents with use cases, workflows, and installation.
+                                    Covers session orchestrators, quality enforcers, code improvers, and dev helpers.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>getting-started.html</strong> - Quick Start Guide
+                                <br><small class="text-muted">
+                                    Step-by-step walkthrough from requesting access through first development session.
+                                    Includes prerequisites, project creation, configuration, and troubleshooting.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>how-it-works.html</strong> - Architecture & Workflow
+                                <br><small class="text-muted">
+                                    Explains how all components work together. Covers core components, development
+                                    workflow (5 phases), memory system, and real-world ROI examples.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>utilities.html</strong> - Scripts & Tools Documentation
+                                <br><small class="text-muted">
+                                    Complete reference for PowerShell automation scripts and Python utilities.
+                                    Documents new-project.ps1, add-baseline, sync-agents, and 6 Python scripts.
+                                </small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-sync text-info"></i> Updates & Enhancements</h5>
+                        <ul>
+                            <li>
+                                <strong>Contact/Access Integration</strong>
+                                <br><small class="text-muted">
+                                    Added "Contact / Request Access" to footer and prominent section on About page
+                                    linking to timgolden.com/contact/ for private repository access requests.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Navigation Updated (All Pages)</strong>
+                                <br><small class="text-muted">
+                                    Updated navigation on all 12 pages to include 4 new pages. Created Python script
+                                    to automate navigation updates across site with proper relative paths.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Footer Enhanced</strong>
+                                <br><small class="text-muted">
+                                    Updated Quick Links section with all pages including new agent, getting-started,
+                                    how-it-works, and utilities pages.
+                                </small>
+                            </li>
+                        </ul>
+
+                        <h5 class="mt-4"><i class="fas fa-chart-line text-warning"></i> Site Growth</h5>
+                        <ul class="small">
+                            <li>Pages: 7 → 12 (+71%)</li>
+                            <li>Navigation items: 7 → 11 (+57%)</li>
+                            <li>Coverage: Basic → Comprehensive</li>
+                            <li>User journey: Clear entry → advanced topics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-4">
+                    <i class="fas fa-check-circle"></i> <strong>Complete Documentation:</strong>
+                    Site now provides end-to-end documentation from initial access request through advanced usage,
+                    with clear navigation and professional presentation ready for public deployment.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Version 2.1 -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header bg-success text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-paint-brush"></i> Version 2.1 - GitHub Pages Branding
+                    </h3>
+                    <span class="badge bg-light text-dark">November 12, 2025 (AM)</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Complete GitHub Pages overhaul with personal branding, professional About page,
+                    and comprehensive link cleanup for public release.
                 </p>
 
                 <div class="row mt-4">
@@ -93,83 +212,165 @@
                         <h5><i class="fas fa-plus-circle text-success"></i> New Features</h5>
                         <ul>
                             <li>
-                                <strong>Add-to-Existing-Project Script</strong>
+                                <strong>Complete Personal Branding</strong>
                                 <br><small class="text-muted">
-                                    Safely integrate baseline into existing projects with automatic backups,
-                                    conflict detection, and rollback capabilities.
+                                    Added Tim Golden logo, favicon, and professional headshot across all pages.
+                                    Replaced generic ComplianceScorecard branding with personal brand.
                                 </small>
                             </li>
                             <li>
-                                <strong>Modular Coding Standards</strong>
+                                <strong>Comprehensive About Page</strong>
                                 <br><small class="text-muted">
-                                    Split monolithic coding standards into 13 focused, navigable documents
-                                    with central README hub.
+                                    Created professional About page with bio, awards (2024 CompTIA Cybersecurity
+                                    Leadership Award, CANIT Community Engagement Award), and social media links.
                                 </small>
                             </li>
                             <li>
-                                <strong>HTML Documentation Site</strong>
+                                <strong>"Buy Me a Coffee" Feature</strong>
                                 <br><small class="text-muted">
-                                    Professional Bootstrap-based documentation site with responsive design
-                                    and shared navigation components.
+                                    Added sponsorship links in header (under title) and prominent footer banner
+                                    with GitHub Sponsors and PayPal donation buttons on all pages.
                                 </small>
                             </li>
                             <li>
-                                <strong>Enhanced Template Variables</strong>
+                                <strong>Sample Reports with Fictional Data</strong>
                                 <br><small class="text-muted">
-                                    Expanded variable system with {{CLAUDE_WIP_PATH}}, {{DATE}}, {{YEAR}}
-                                    for better automation.
-                                </small>
-                            </li>
-                            <li>
-                                <strong>8 AI Agent Templates</strong>
-                                <br><small class="text-muted">
-                                    Pre-configured agents for documentation, code review, testing,
-                                    security, refactoring, API design, database optimization, and troubleshooting.
+                                    Created sample documentation audit report to demonstrate agent capabilities
+                                    without exposing sensitive information.
                                 </small>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h5><i class="fas fa-sync text-info"></i> Changes</h5>
+                        <h5><i class="fas fa-wrench text-warning"></i> Improvements</h5>
                         <ul>
                             <li>
-                                <strong>Folder Rename: coding-standards/</strong>
+                                <strong>Fixed 19 Broken Links</strong>
                                 <br><small class="text-muted">
-                                    Renamed from <code>03-coding-standards/</code> to <code>coding-standards/</code>
-                                    for cleaner project structure.
+                                    Automated link checker and fixer resolved all broken internal links,
+                                    removed private agent-results navigation, and updated markdown paths.
                                 </small>
                             </li>
                             <li>
-                                <strong>Claude WIP Convention</strong>
+                                <strong>Complete Data Sanitization</strong>
                                 <br><small class="text-muted">
-                                    Formalized <code>claude_wip/</code> as standard working directory
-                                    for all AI-assisted development across projects.
+                                    Removed 16 hardcoded Windows paths and 9 username references.
+                                    Security scan verified zero sensitive data remaining.
                                 </small>
                             </li>
                             <li>
-                                <strong>Updated Documentation</strong>
+                                <strong>Updated Navigation</strong>
                                 <br><small class="text-muted">
-                                    Enhanced CLAUDE.md, README.md, and all baseline templates with
-                                    latest best practices and clearer instructions.
+                                    Added About link to all 8+ pages with proper relative path handling
+                                    for subdirectories.
+                                </small>
+                            </li>
+                        </ul>
+
+                        <h5 class="mt-4"><i class="fas fa-file-code text-info"></i> Scripts Created</h5>
+                        <ul>
+                            <li>check_github_pages_links.py - Link analyzer</li>
+                            <li>fix_github_pages_links.py - Automated fixer</li>
+                            <li>sanitize_github_pages.py - Path/username cleaner</li>
+                            <li>scan_for_sensitive_data.py - Security validator</li>
+                            <li>add_about_nav_to_all_pages.py - Navigation updater</li>
+                            <li>add_coffee_link_all_pages.py - Branding automaton</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-4">
+                    <i class="fas fa-check-circle"></i> <strong>Production Ready:</strong>
+                    GitHub Pages now professionally branded, zero sensitive data, all links working.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Version 2.0 -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header bg-primary text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-rocket"></i> Version 2.0 - Repository Sanitization
+                    </h3>
+                    <span class="badge bg-light text-dark">November 9, 2025</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Major sanitization release preparing repository for public GitHub release.
+                    Introduced memory system, removed private files, and replaced all hardcoded paths.
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-plus-circle text-success"></i> New Features</h5>
+                        <ul>
+                            <li>
+                                <strong>Memory System (v3.0.0)</strong>
+                                <br><small class="text-muted">
+                                    Comprehensive end-of-day summaries with persistent memory across sessions.
+                                    Added session reports tracking project history and decisions.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Git Hooks Documentation</strong>
+                                <br><small class="text-muted">
+                                    Complete Git hooks system for pre-commit validation, automated checks,
+                                    and workflow enforcement.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Template Variable System</strong>
+                                <br><small class="text-muted">
+                                    Introduced {{PROJECT_NAME}}, {{REPO_PATH}}, and other variables
+                                    for project-agnostic documentation templates.
+                                </small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-shield-alt text-danger"></i> Security & Sanitization</h5>
+                        <ul>
+                            <li>
+                                <strong>Complete Path Sanitization</strong>
+                                <br><small class="text-muted">
+                                    Replaced all hardcoded Windows paths with template variables.
+                                    Removed private directory references and sensitive data.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Removed Private Files</strong>
+                                <br><small class="text-muted">
+                                    Cleaned .claude/memory and .claude/context directories.
+                                    Sanitized /docs for public GitHub Pages release.
+                                </small>
+                            </li>
+                            <li>
+                                <strong>Public Release Preparation</strong>
+                                <br><small class="text-muted">
+                                    Complete repository sanitization making it safe for public GitHub hosting
+                                    while preserving all functionality and templates.
                                 </small>
                             </li>
                         </ul>
 
                         <h5 class="mt-4"><i class="fas fa-wrench text-warning"></i> Improvements</h5>
                         <ul>
-                            <li>Better error handling in PowerShell scripts</li>
-                            <li>Comprehensive logging and reporting</li>
-                            <li>Dry-run mode for all scripts</li>
-                            <li>Git integration detection</li>
-                            <li>Automatic verification checks</li>
+                            <li>Enhanced documentation structure</li>
+                            <li>Better gitignore patterns</li>
+                            <li>Comprehensive session tracking</li>
+                            <li>Improved project organization</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="alert alert-success mt-4">
-                    <i class="fas fa-check-circle"></i> <strong>Migration Guide:</strong>
-                    Existing projects can safely upgrade using <code>add-baseline-to-existing-project.ps1</code>
-                    with the <code>-DryRun</code> flag to preview changes first.
+                <div class="alert alert-warning mt-4">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Breaking Change:</strong>
+                    Private .claude/ memory files removed. Existing installations should back up
+                    personal memory content before upgrading.
                 </div>
             </div>
         </div>
@@ -181,23 +382,30 @@
             <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
                 <div class="d-flex justify-content-between align-items-center">
                     <h3 class="mb-0">
-                        <i class="fas fa-star"></i> Version 1.5 - Enhancement Release
+                        <i class="fas fa-star"></i> Version 1.5 - GitHub Pages & Project Structure
                     </h3>
-                    <span class="badge bg-light text-dark">January 10, 2025</span>
+                    <span class="badge bg-light text-dark">November 5, 2025</span>
                 </div>
             </div>
             <div class="card-body">
                 <p class="lead">
-                    Focused release improving AI assistant guidance and template variable system.
+                    Major reorganization introducing GitHub Pages documentation site and improved project structure.
                 </p>
 
                 <h5 class="mt-4"><i class="fas fa-plus-circle text-success"></i> New Features</h5>
                 <ul>
                     <li>
-                        <strong>Template Variable System</strong>
+                        <strong>GitHub Pages Documentation Site</strong>
                         <br><small class="text-muted">
-                            Introduced {{PROJECT_NAME}}, {{COMPANY_NAME}}, {{REPO_PATH}} variables
-                            for automated customization of baseline templates.
+                            Professional Bootstrap 5-based documentation site with responsive design,
+                            shared navigation components (header/footer), and custom CSS styling.
+                        </small>
+                    </li>
+                    <li>
+                        <strong>Settings Template System</strong>
+                        <br><small class="text-muted">
+                            Added .claude/settings.local.json template and configuration guide.
+                            Excluded local configs from version control with proper .gitignore patterns.
                         </small>
                     </li>
                     <li>
@@ -207,28 +415,28 @@
                             and integration instructions for Claude Code.
                         </small>
                     </li>
-                    <li>
-                        <strong>Backup Script</strong>
-                        <br><small class="text-muted">
-                            Added <code>backup-project.ps1</code> for creating timestamped project backups
-                            before major changes.
-                        </small>
-                    </li>
                 </ul>
 
                 <h5 class="mt-4"><i class="fas fa-sync text-info"></i> Changes</h5>
                 <ul>
-                    <li>Updated all baseline templates to use template variables</li>
-                    <li>Improved PowerShell script parameter validation</li>
-                    <li>Enhanced documentation with more examples</li>
-                    <li>Added troubleshooting sections to guides</li>
+                    <li>
+                        <strong>Reorganized Project Structure</strong>
+                        <br><small class="text-muted">
+                            Moved documentation to /docs for GitHub Pages, created /baseline_docs
+                            for templates, and established /coding-standards as modular directory.
+                        </small>
+                    </li>
+                    <li>Improved HTML page structure with shared includes</li>
+                    <li>Enhanced documentation with navigation and search</li>
+                    <li>Added Font Awesome icons throughout site</li>
                 </ul>
 
-                <h5 class="mt-4"><i class="fas fa-bug text-danger"></i> Bug Fixes</h5>
+                <h5 class="mt-4"><i class="fas fa-wrench text-warning"></i> Improvements</h5>
                 <ul>
-                    <li>Fixed path handling for spaces in directory names</li>
-                    <li>Corrected git initialization issues in new-project script</li>
-                    <li>Resolved template variable replacement edge cases</li>
+                    <li>Better mobile responsiveness for documentation</li>
+                    <li>Consistent branding across all pages</li>
+                    <li>Improved code syntax highlighting</li>
+                    <li>Added breadcrumb navigation</li>
                 </ul>
             </div>
         </div>
@@ -242,12 +450,13 @@
                     <h3 class="mb-0">
                         <i class="fas fa-flag-checkered"></i> Version 1.0 - Initial Release
                     </h3>
-                    <span class="badge bg-light text-dark">August 2024</span>
+                    <span class="badge bg-light text-dark">November 3, 2025</span>
                 </div>
             </div>
             <div class="card-body">
                 <p class="lead">
-                    Initial baseline repository creation with core documentation templates and automation.
+                    Initial baseline repository creation with core documentation templates, coding standards,
+                    and comprehensive automation scripts for project setup.
                 </p>
 
                 <h5 class="mt-4"><i class="fas fa-plus-circle text-success"></i> Initial Features</h5>
@@ -256,46 +465,56 @@
                         <h6>Core Components</h6>
                         <ul>
                             <li>11 baseline documentation templates</li>
-                            <li>Comprehensive coding standards document</li>
+                            <li>13 modular coding standards documents</li>
                             <li>README.md with project overview</li>
-                            <li>Basic CLAUDE.md for AI guidance</li>
+                            <li>CLAUDE.md for AI guidance</li>
                             <li>Git workflow guidelines</li>
+                            <li>GitHub account preferences documentation</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h6>Automation</h6>
+                        <h6>Automation & Tools</h6>
                         <ul>
                             <li><code>new-project.ps1</code> script</li>
+                            <li><code>add-baseline-to-existing-project.ps1</code></li>
+                            <li><code>backup-project.ps1</code> utility</li>
                             <li>Directory structure creation</li>
-                            <li>File copying automation</li>
                             <li>Git repository initialization</li>
-                            <li>Basic verification checks</li>
+                            <li>Comprehensive verification checks</li>
                         </ul>
                     </div>
                 </div>
 
-                <h5 class="mt-4"><i class="fas fa-file-alt text-primary"></i> Documentation Templates</h5>
+                <h5 class="mt-4"><i class="fas fa-paint-brush text-info"></i> HTML Documentation</h5>
                 <div class="row">
                     <div class="col-md-6">
                         <ul>
-                            <li>README.md</li>
-                            <li>README-USAGE.md</li>
-                            <li>IMPLEMENTATION-PLAN.md</li>
-                            <li>ARCHITECTURE.md</li>
-                            <li>API-ENDPOINTS.md</li>
-                            <li>DATABASE-SCHEMA.md</li>
+                            <li>Bootstrap 5 framework integration</li>
+                            <li>Responsive navigation with shared header/footer</li>
+                            <li>Custom CSS with gradient styling</li>
+                            <li>Font Awesome icon integration</li>
+                            <li>ComplianceScorecard branding (later updated to Tim Golden)</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul>
-                            <li>USER-GUIDES.md</li>
-                            <li>TESTING-STRATEGY.md</li>
-                            <li>DEPLOYMENT.md</li>
-                            <li>MAINTENANCE.md</li>
-                            <li>TROUBLESHOOTING.md</li>
+                            <li>Security audit report templates</li>
+                            <li>Agent result report templates</li>
+                            <li>Code documentation pages</li>
+                            <li>How-to guides and changelog</li>
+                            <li>TODO tracking page</li>
                         </ul>
                     </div>
                 </div>
+
+                <h5 class="mt-4"><i class="fas fa-folder text-warning"></i> Project Structure</h5>
+                <ul>
+                    <li><code>baseline_docs/</code> - 11 markdown templates</li>
+                    <li><code>coding-standards/</code> - 13 modular standards</li>
+                    <li><code>claude_wip/</code> - Claude Code working directory</li>
+                    <li><code>.claude/</code> - Configuration and scripts</li>
+                    <li>Project configuration examples (JSON, PowerShell)</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -360,9 +579,11 @@
                         <thead>
                             <tr>
                                 <th>Feature</th>
-                                <th class="text-center">v1.0</th>
-                                <th class="text-center">v1.5</th>
-                                <th class="text-center">v2.0</th>
+                                <th class="text-center">v1.0<br><small>Nov 3</small></th>
+                                <th class="text-center">v1.5<br><small>Nov 5</small></th>
+                                <th class="text-center">v2.0<br><small>Nov 9</small></th>
+                                <th class="text-center">v2.1<br><small>Nov 12 AM</small></th>
+                                <th class="text-center">v2.2<br><small>Nov 12 PM</small></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -371,59 +592,111 @@
                                 <td class="text-center"><span class="badge bg-success">11</span></td>
                                 <td class="text-center"><span class="badge bg-success">11</span></td>
                                 <td class="text-center"><span class="badge bg-success">11</span></td>
+                                <td class="text-center"><span class="badge bg-success">11</span></td>
+                                <td class="text-center"><span class="badge bg-success">11</span></td>
                             </tr>
                             <tr>
                                 <td>Coding Standards Modules</td>
-                                <td class="text-center"><span class="badge bg-warning">1</span></td>
-                                <td class="text-center"><span class="badge bg-warning">1</span></td>
+                                <td class="text-center"><span class="badge bg-success">13</span></td>
+                                <td class="text-center"><span class="badge bg-success">13</span></td>
+                                <td class="text-center"><span class="badge bg-success">13</span></td>
+                                <td class="text-center"><span class="badge bg-success">13</span></td>
                                 <td class="text-center"><span class="badge bg-success">13</span></td>
                             </tr>
                             <tr>
                                 <td>PowerShell Automation Scripts</td>
-                                <td class="text-center"><span class="badge bg-success">1</span></td>
-                                <td class="text-center"><span class="badge bg-success">2</span></td>
+                                <td class="text-center"><span class="badge bg-success">3</span></td>
+                                <td class="text-center"><span class="badge bg-success">3</span></td>
+                                <td class="text-center"><span class="badge bg-success">3</span></td>
+                                <td class="text-center"><span class="badge bg-success">3</span></td>
                                 <td class="text-center"><span class="badge bg-success">3</span></td>
                             </tr>
                             <tr>
-                                <td>AI Agent Templates</td>
+                                <td>Python Automation Scripts</td>
                                 <td class="text-center"><span class="badge bg-secondary">0</span></td>
                                 <td class="text-center"><span class="badge bg-secondary">0</span></td>
-                                <td class="text-center"><span class="badge bg-success">8</span></td>
+                                <td class="text-center"><span class="badge bg-secondary">0</span></td>
+                                <td class="text-center"><span class="badge bg-success">6</span></td>
+                                <td class="text-center"><span class="badge bg-success">7</span></td>
+                            </tr>
+                            <tr>
+                                <td>GitHub Pages HTML Pages</td>
+                                <td class="text-center"><span class="badge bg-secondary">7</span></td>
+                                <td class="text-center"><span class="badge bg-secondary">7</span></td>
+                                <td class="text-center"><span class="badge bg-secondary">7</span></td>
+                                <td class="text-center"><span class="badge bg-warning">7</span></td>
+                                <td class="text-center"><span class="badge bg-success">12</span></td>
                             </tr>
                             <tr>
                                 <td>Template Variable System</td>
-                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
                                 <td class="text-center"><i class="fas fa-check text-success"></i></td>
                                 <td class="text-center"><i class="fas fa-check text-success"></i></td>
                             </tr>
                             <tr>
                                 <td>Existing Project Integration</td>
-                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
-                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
                                 <td class="text-center"><i class="fas fa-check text-success"></i></td>
                             </tr>
                             <tr>
                                 <td>HTML Documentation Site</td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>GitHub Pages Ready</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><span class="badge bg-warning">Partial</span></td>
+                                <td class="text-center"><span class="badge bg-warning">Sanitized</span></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Personal Branding</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Sponsorship Links</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Contact / Access Request</td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
                                 <td class="text-center"><i class="fas fa-times text-danger"></i></td>
                                 <td class="text-center"><i class="fas fa-times text-danger"></i></td>
                                 <td class="text-center"><i class="fas fa-check text-success"></i></td>
                             </tr>
                             <tr>
-                                <td>Conflict Resolution</td>
+                                <td>Memory System</td>
                                 <td class="text-center"><i class="fas fa-times text-danger"></i></td>
                                 <td class="text-center"><i class="fas fa-times text-danger"></i></td>
-                                <td class="text-center"><span class="badge bg-success">4 Strategies</span></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
                             </tr>
                             <tr>
-                                <td>Automatic Backup</td>
-                                <td class="text-center"><i class="fas fa-times text-danger"></i></td>
-                                <td class="text-center"><span class="badge bg-warning">Manual</span></td>
-                                <td class="text-center"><span class="badge bg-success">Auto</span></td>
-                            </tr>
-                            <tr>
-                                <td>Dry-Run Mode</td>
+                                <td>Security Sanitization</td>
                                 <td class="text-center"><i class="fas fa-times text-danger"></i></td>
                                 <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                                <td class="text-center"><i class="fas fa-check text-success"></i></td>
                                 <td class="text-center"><i class="fas fa-check text-success"></i></td>
                             </tr>
                         </tbody>
@@ -438,45 +711,69 @@
         <div class="card doc-card">
             <div class="card-header">
                 <h3 class="mb-0">
-                    <i class="fas fa-arrow-up"></i> Upgrade Instructions
+                    <i class="fas fa-arrow-up"></i> Getting Started
                 </h3>
             </div>
             <div class="card-body">
-                <h5>Upgrading from v1.x to v2.0</h5>
+                <h5>Using This Baseline</h5>
 
-                <div class="alert alert-warning">
-                    <i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong>
-                    Always create a backup before upgrading. Version 2.0 includes structural changes.
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> <strong>Current Version:</strong>
+                    v2.1 (November 12, 2025) - Production ready for GitHub Pages deployment
                 </div>
 
                 <h6 class="mt-4">For New Projects:</h6>
-                <pre><code class="language-powershell"># Simply use the latest new-project script
-.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "E:\projects\myapp"</code></pre>
+                <pre><code class="language-powershell"># Create new project from baseline
+.\new-project.ps1 -ProjectName "MyApp" -DestinationPath "[YOUR-PROJECT-PATH]"
+
+# Or with configuration file
+.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -DestinationPath "[YOUR-PROJECT-PATH]" `
+    -ConfigFile "project-config.json"</code></pre>
 
                 <h6 class="mt-4">For Existing Projects:</h6>
                 <pre><code class="language-powershell"># Step 1: Preview changes (dry-run)
-.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject" -DryRun
+.\add-baseline-to-existing-project.ps1 -ProjectPath "[YOUR-PROJECT-PATH]" -DryRun
 
-# Step 2: Apply changes
-.\add-baseline-to-existing-project.ps1 -ProjectPath "E:\myproject"
+# Step 2: Apply changes with automatic backups
+.\add-baseline-to-existing-project.ps1 -ProjectPath "[YOUR-PROJECT-PATH]"</code></pre>
 
-# Step 3: Manually rename coding standards folder if present
-# From: docs\03-coding-standards\
-# To:   docs\coding-standards\</code></pre>
+                <h6 class="mt-4">What You Get:</h6>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <ul>
+                            <li>11 baseline documentation templates</li>
+                            <li>13 modular coding standards</li>
+                            <li>3 PowerShell automation scripts</li>
+                            <li>Professional HTML documentation site</li>
+                            <li>GitHub Pages ready structure</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>Template variable system</li>
+                            <li>Claude Code integration (CLAUDE.md)</li>
+                            <li><code>claude_wip/</code> working directory</li>
+                            <li>Git workflow and hooks</li>
+                            <li>Security-focused structure</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <h6 class="mt-4">Breaking Changes:</h6>
-                <ul>
-                    <li>Folder renamed: <code>03-coding-standards/</code> → <code>coding-standards/</code></li>
-                    <li>Coding standards split into 13 files (previously 1 monolithic file)</li>
-                    <li>New required directory: <code>claude_wip/</code> with subdirectories</li>
-                </ul>
+                <h6 class="mt-4">Quick Customization:</h6>
+                <ol>
+                    <li>Replace template variables ({{PROJECT_NAME}}, {{REPO_PATH}}, etc.)</li>
+                    <li>Update personal branding in docs/images/</li>
+                    <li>Customize about.html with your information</li>
+                    <li>Update footer.html and header.html with your links</li>
+                    <li>Run sanitization script to remove sample data</li>
+                </ol>
 
-                <h6 class="mt-4">Compatible Changes:</h6>
-                <ul>
-                    <li>All baseline documentation templates remain compatible</li>
-                    <li>Template variable system is backward compatible</li>
-                    <li>PowerShell scripts have improved error handling but same interface</li>
-                </ul>
+                <div class="alert alert-success mt-4">
+                    <i class="fas fa-rocket"></i> <strong>Ready to Deploy:</strong>
+                    Enable GitHub Pages in repository settings → Pages → Source: main branch /docs folder
+                </div>
             </div>
         </div>
     </section>

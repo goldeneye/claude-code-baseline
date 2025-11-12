@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="TODO List - Claude Code Baseline Project Tasks">
-    <meta name="author" content="{{USERNAME}} - aka GoldenEye Engineering">
+    <meta name="author" content="Tim Golden - Founder of ComplianceScorecard">
     <title>TODO List - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -50,16 +51,23 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/cs-logo.png" alt="ComplianceScorecard" height="40" class="me-2">
-                <strong>Claude Code Baseline</strong>
-            </a>
+                        <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">🏠 Home</a>
                     </li>
@@ -67,7 +75,19 @@
                         <a class="nav-link" href="code-documentation.html">💻 Code Docs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="agent-results/index.html">🤖 Agent Results</a>
+                        <a class="nav-link" href="agents.html">🤖 AI Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="getting-started.html">🚀 Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">⚙️ How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="utilities.html">🛠️ Utilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="samples/index.html">📊 Sample Reports</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="changelog.html">📋 Changelog</a>
@@ -79,9 +99,7 @@
                         <a class="nav-link" href="how-to-guides.html">📖 How-To Guides</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/username/claude_code_baseline" target="_blank">
-                            🔗 GitHub
-                        </a>
+                        <a class="nav-link" href="about.html">👤 About</a>
                     </li>
                 </ul>
             </div>
@@ -618,8 +636,8 @@
                 <ul class="list-unstyled">
                     <li><a href="../README.md">Repository README</a></li>
                     <li><a href="../CLAUDE.md">Claude Code Guide</a></li>
-                    <li><a href="../NEW-PROJECT-SETUP.md">New Project Setup</a></li>
-                    <li><a href="../EXISTING-PROJECT-GUIDE.md">Existing Project Guide</a></li>
+                    <li><a href="../baseline_docs/NEW-PROJECT-SETUP.md">New Project Setup</a></li>
+                    <li><a href="../baseline_docs/EXISTING-PROJECT-GUIDE.md">Existing Project Guide</a></li>
                     <li><a href="../baseline_docs/README.md">Baseline Docs</a></li>
                 </ul>
             </div>
@@ -628,7 +646,7 @@
         <div class="row">
             <div class="col-md-6 text-center text-md-start">
                 <p class="mb-0">
-                    &copy; 2025 Compliance Scorecard | {{USERNAME}} - GoldenEye Engineering. All rights reserved.
+                    &copy; 2025 Claude Code Baseline. All rights reserved.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end">

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Claude Code Agents - Specialized AI assistants for development workflow">
+    <meta name="author" content="Tim Golden - Compliance & Cybersecurity Expert">
+    <title>AI Agents - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header Navigation -->
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">🏠 Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="code-documentation.html">💻 Code Docs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="agents.html">🤖 AI Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="samples/index.html">📊 Sample Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="changelog.html">📋 Changelog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="todo.html">✅ TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-to-guides.html">📖 How-To Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">👤 About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-robot"></i> Claude Code AI Agents
+        </h1>
+        <p class="lead">
+            Specialized AI assistants that handle specific development tasks with domain expertise.
+            From code review to security audits, agents automate quality checks and streamline your workflow.
+        </p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="container my-5">
+
+    <!-- Quick Navigation -->
+    <section class="mb-5">
+        <div class="card doc-card">
+            <div class="card-header">
+                <h3 class="mb-0"><i class="fas fa-compass"></i> Quick Navigation</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Learn About Agents</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#what-are-agents"><i class="fas fa-question-circle"></i> What Are Agents?</a></li>
+                            <li><a href="#how-they-work"><i class="fas fa-cogs"></i> How They Work</a></li>
+                            <li><a href="#agent-types"><i class="fas fa-layer-group"></i> Agent Types</a></li>
+                            <li><a href="#workflow"><i class="fas fa-project-diagram"></i> Session Workflow</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>All Agents</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#session-start"><i class="fas fa-play-circle"></i> session-start</a></li>
+                            <li><a href="#end-of-day"><i class="fas fa-moon"></i> end-of-day</a></li>
+                            <li><a href="#code-reviewer"><i class="fas fa-search"></i> code-reviewer</a></li>
+                            <li><a href="#security-auditor"><i class="fas fa-shield-alt"></i> security-auditor</a></li>
+                            <li><a href="#test-runner"><i class="fas fa-vial"></i> test-runner</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>More Agents</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#standards-enforcer"><i class="fas fa-ruler"></i> standards-enforcer</a></li>
+                            <li><a href="#code-documenter"><i class="fas fa-file-alt"></i> code-documenter</a></li>
+                            <li><a href="#gen-docs"><i class="fas fa-book"></i> gen-docs</a></li>
+                            <li><a href="#refactorer"><i class="fas fa-recycle"></i> refactorer</a></li>
+                            <li><a href="#git-helper"><i class="fab fa-git-alt"></i> git-helper</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Are Agents -->
+    <section id="what-are-agents" class="mb-5">
+        <h2 class="section-title">What Are AI Agents?</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p class="lead">
+                    AI agents are specialized assistants with custom system prompts, specific tool access,
+                    and separate context windows designed to excel at particular development tasks.
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-star text-warning"></i> Key Features</h5>
+                        <ul>
+                            <li><strong>Domain Expertise</strong> - Each agent is trained for specific tasks</li>
+                            <li><strong>Tool Access</strong> - Restricted to relevant tools only</li>
+                            <li><strong>Separate Context</strong> - Independent memory and workflow</li>
+                            <li><strong>Automatic Activation</strong> - Triggered when tasks match their specialty</li>
+                            <li><strong>Quality Focus</strong> - Built-in best practices and standards</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-check-circle text-success"></i> Benefits</h5>
+                        <ul>
+                            <li>Automated code quality checks</li>
+                            <li>Consistent enforcement of standards</li>
+                            <li>Security vulnerability detection</li>
+                            <li>Comprehensive documentation generation</li>
+                            <li>Test automation and failure fixing</li>
+                            <li>Session context persistence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-4">
+                    <i class="fas fa-lightbulb"></i> <strong>Think of agents as specialist developers on your team</strong> -
+                    each with deep expertise in their domain (security, testing, documentation, etc.) who work
+                    alongside Claude Code to maintain quality and consistency.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Types -->
+    <section id="agent-types" class="mb-5">
+        <h2 class="section-title">Agent Types</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0"><i class="fas fa-clock"></i> Session Orchestrators</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Purpose:</strong> Manage session start and end</p>
+                                <ul>
+                                    <li><strong>session-start</strong> - Loads project context at beginning</li>
+                                    <li><strong>end-of-day</strong> - Wraps up session with quality checks</li>
+                                </ul>
+                                <p class="small text-muted">
+                                    These agents ensure you start each session with full context and end
+                                    with comprehensive quality reports and memory persistence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-success">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="fas fa-shield-alt"></i> Quality Enforcers</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Purpose:</strong> Automated quality checks</p>
+                                <ul>
+                                    <li><strong>test-runner</strong> - Runs tests, fixes failures</li>
+                                    <li><strong>security-auditor</strong> - Scans for vulnerabilities</li>
+                                    <li><strong>standards-enforcer</strong> - Enforces coding standards</li>
+                                    <li><strong>code-documenter</strong> - Ensures documentation completeness</li>
+                                </ul>
+                                <p class="small text-muted">
+                                    Automatically run by end-of-day agent to maintain code quality.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-info">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0"><i class="fas fa-code"></i> Code Improvers</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Purpose:</strong> On-demand code enhancement</p>
+                                <ul>
+                                    <li><strong>code-reviewer</strong> - Reviews code quality and patterns</li>
+                                    <li><strong>refactorer</strong> - Refactors and modernizes code</li>
+                                    <li><strong>gen-docs</strong> - Generates comprehensive documentation</li>
+                                </ul>
+                                <p class="small text-muted">
+                                    Invoke these when you need deeper code analysis or improvements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-warning">
+                            <div class="card-header bg-warning text-dark">
+                                <h5 class="mb-0"><i class="fas fa-wrench"></i> Development Helpers</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Purpose:</strong> Development workflow assistance</p>
+                                <ul>
+                                    <li><strong>git-helper</strong> - Git operations and workflow</li>
+                                </ul>
+                                <p class="small text-muted">
+                                    Assists with common development tasks and operations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Session Workflow -->
+    <section id="workflow" class="mb-5">
+        <h2 class="section-title">Typical Session Workflow</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p class="lead">Agents work together in a coordinated workflow throughout your development session:</p>
+
+                <div class="workflow-diagram mt-4">
+                    <div class="card mb-3 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-play"></i> SESSION START</h5>
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                <li>User opens Claude Code</li>
+                                <li>User asks "What should I work on?" or similar</li>
+                                <li><strong>session-start agent</strong> activates automatically</li>
+                                <li>Agent loads memory files and project context</li>
+                                <li>Agent briefs user on:
+                                    <ul>
+                                        <li>What you were working on last</li>
+                                        <li>Priority tasks from TODO list</li>
+                                        <li>Outstanding quality issues</li>
+                                        <li>Recent decisions and gotchas</li>
+                                    </ul>
+                                </li>
+                                <li>User starts working with full context</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="text-center my-3">
+                        <i class="fas fa-arrow-down fa-2x text-muted"></i>
+                    </div>
+
+                    <div class="card mb-3 border-info">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="fas fa-code"></i> ACTIVE DEVELOPMENT</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>During development, invoke agents as needed:</p>
+                            <ul>
+                                <li><strong>code-reviewer</strong> - "Review this code"</li>
+                                <li><strong>refactorer</strong> - "Refactor this service"</li>
+                                <li><strong>test-runner</strong> - "Run tests"</li>
+                                <li><strong>security-auditor</strong> - "Scan for security issues"</li>
+                                <li><strong>standards-enforcer</strong> - "Check coding standards"</li>
+                                <li><strong>code-documenter</strong> - "Document this code"</li>
+                                <li><strong>gen-docs</strong> - "Generate project documentation"</li>
+                                <li><strong>git-helper</strong> - "Create a commit"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center my-3">
+                        <i class="fas fa-arrow-down fa-2x text-muted"></i>
+                    </div>
+
+                    <div class="card mb-3 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-moon"></i> SESSION END</h5>
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                <li>User says "End of day" or similar</li>
+                                <li><strong>end-of-day agent</strong> activates</li>
+                                <li>Agent orchestrates quality checks:
+                                    <ul>
+                                        <li>Runs <strong>test-runner</strong> → Test results</li>
+                                        <li>Runs <strong>security-auditor</strong> → Security scan</li>
+                                        <li>Runs <strong>standards-enforcer</strong> → Compliance check</li>
+                                        <li>Runs <strong>code-documenter</strong> → Documentation coverage</li>
+                                    </ul>
+                                </li>
+                                <li>Creates memory files for next session</li>
+                                <li>Generates comprehensive session report</li>
+                                <li>User reviews summary and quality status</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="text-center my-3">
+                        <i class="fas fa-arrow-down fa-2x text-muted"></i>
+                    </div>
+
+                    <div class="card border-primary">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0"><i class="fas fa-redo"></i> NEXT SESSION</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>session-start</strong> loads memory → Instant context restoration → Continue working</p>
+                            <p class="text-muted mb-0 small">
+                                Quality trends tracked over time, ensuring continuous improvement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Agents Detail -->
+    <section class="mb-5">
+        <h2 class="section-title">All Agents Reference</h2>
+
+        <!-- session-start -->
+        <div id="session-start" class="card doc-card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-play-circle"></i> session-start</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Loads project context and briefs you at the start of each session.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>What It Does</h5>
+                        <ul>
+                            <li>Reads memory files from previous session</li>
+                            <li>Loads TODO.md and priority tasks</li>
+                            <li>Reviews recent session reports</li>
+                            <li>Checks quality status (tests, security, standards)</li>
+                            <li>Briefs you on where you left off</li>
+                            <li>Provides instant context restoration</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>When to Use</h5>
+                        <p><strong>Automatic activation</strong> - triggers when you:</p>
+                        <ul>
+                            <li>Ask "What should I work on?"</li>
+                            <li>Say "What was I doing last?"</li>
+                            <li>Request "Brief me on the project"</li>
+                            <li>Start with "What's the status?"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong>
+                    Always start your session by asking "What should I work on?" to get full context loading.
+                </div>
+            </div>
+        </div>
+
+        <!-- end-of-day -->
+        <div id="end-of-day" class="card doc-card mb-4">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0"><i class="fas fa-moon"></i> end-of-day</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Comprehensive session wrap-up with quality checks and memory creation.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>What It Does</h5>
+                        <ul>
+                            <li>Orchestrates all quality-enforcer agents</li>
+                            <li>Runs tests and reports failures</li>
+                            <li>Performs security vulnerability scan</li>
+                            <li>Checks coding standards compliance</li>
+                            <li>Validates documentation completeness</li>
+                            <li>Creates memory files for next session</li>
+                            <li>Generates HTML session report</li>
+                            <li>Provides quality trend analysis</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>When to Use</h5>
+                        <p><strong>End of every session</strong> - invoke by saying:</p>
+                        <ul>
+                            <li>"End of day"</li>
+                            <li>"Wrap up this session"</li>
+                            <li>"Create session summary"</li>
+                            <li>"Run quality checks"</li>
+                        </ul>
+
+                        <h6 class="mt-3">Output Files</h6>
+                        <ul class="small">
+                            <li><code>.claude/memory/session-notes-[date].md</code></li>
+                            <li><code>.claude/memory/quick-ref.md</code></li>
+                            <li><code>project_docs/session-reports/session-[date].html</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-3">
+                    <i class="fas fa-check-circle"></i> <strong>Best Practice:</strong>
+                    Run end-of-day before committing to git to ensure all quality checks pass.
+                </div>
+            </div>
+        </div>
+
+        <!-- code-reviewer -->
+        <div id="code-reviewer" class="card doc-card mb-4">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0"><i class="fas fa-search"></i> code-reviewer</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Reviews code for quality, best practices, and consistency.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>What It Reviews</h5>
+                        <ul>
+                            <li>Code structure and organization</li>
+                            <li>Design patterns and architecture</li>
+                            <li>Error handling and edge cases</li>
+                            <li>Performance considerations</li>
+                            <li>Security vulnerabilities</li>
+                            <li>Naming conventions</li>
+                            <li>Code duplication (DRY principle)</li>
+                            <li>Documentation quality</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>When to Use</h5>
+                        <ul>
+                            <li>After implementing a new feature</li>
+                            <li>Before creating a pull request</li>
+                            <li>When refactoring existing code</li>
+                            <li>For peer review automation</li>
+                            <li>To identify improvement opportunities</li>
+                        </ul>
+
+                        <h6 class="mt-3">Example Usage</h6>
+                        <pre class="bg-light p-2 small"><code>"Review the UserService class"
+"Review all changes in src/auth/"
+"Check this code for issues"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- security-auditor -->
+        <div id="security-auditor" class="card doc-card mb-4">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0"><i class="fas fa-shield-alt"></i> security-auditor</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Scans codebase for security vulnerabilities and OWASP Top 10 issues.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Security Checks</h5>
+                        <ul>
+                            <li>SQL Injection vulnerabilities</li>
+                            <li>Cross-Site Scripting (XSS)</li>
+                            <li>Authentication and authorization flaws</li>
+                            <li>Sensitive data exposure</li>
+                            <li>Security misconfigurations</li>
+                            <li>Broken access control</li>
+                            <li>Insecure dependencies</li>
+                            <li>API security issues</li>
+                            <li>Hardcoded secrets or credentials</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Report Includes</h5>
+                        <ul>
+                            <li>Vulnerability severity ratings</li>
+                            <li>OWASP Top 10 category mapping</li>
+                            <li>CWE (Common Weakness Enumeration) references</li>
+                            <li>Remediation recommendations</li>
+                            <li>Code examples of fixes</li>
+                            <li>Risk impact assessment</li>
+                        </ul>
+
+                        <div class="alert alert-warning mt-3 small">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Run security audit before every production deployment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- test-runner -->
+        <div id="test-runner" class="card doc-card mb-4">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0"><i class="fas fa-vial"></i> test-runner</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Runs tests and automatically fixes failures while preserving test intent.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Capabilities</h5>
+                        <ul>
+                            <li>Runs unit, feature, and integration tests</li>
+                            <li>Analyzes test failures</li>
+                            <li>Suggests fixes for failing tests</li>
+                            <li>Preserves original test intent</li>
+                            <li>Updates tests for code changes</li>
+                            <li>Generates missing tests</li>
+                            <li>Reports test coverage</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Workflow</h5>
+                        <ol>
+                            <li>Runs test suite</li>
+                            <li>Identifies failures</li>
+                            <li>Analyzes root cause</li>
+                            <li>Proposes fixes</li>
+                            <li>Re-runs to verify</li>
+                            <li>Reports results</li>
+                        </ol>
+
+                        <div class="alert alert-info mt-3 small">
+                            <i class="fas fa-info-circle"></i>
+                            Automatically run by end-of-day agent to ensure code quality.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- standards-enforcer -->
+        <div id="standards-enforcer" class="card doc-card mb-4">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="mb-0"><i class="fas fa-ruler"></i> standards-enforcer</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Ensures all code follows project coding standards.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Standards Checked</h5>
+                        <ul>
+                            <li>PSR-12 PHP standards</li>
+                            <li>ES6+ JavaScript standards</li>
+                            <li>File structure conventions</li>
+                            <li>Naming conventions</li>
+                            <li>Documentation requirements</li>
+                            <li>Logging format compliance</li>
+                            <li>Database naming standards</li>
+                            <li>Git workflow compliance</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Configuration</h5>
+                        <p>Reads standards from:</p>
+                        <ul class="small">
+                            <li><code>coding-standards/</code> directory</li>
+                            <li><code>CLAUDE.md</code> project guidance</li>
+                            <li><code>.editorconfig</code> file</li>
+                            <li><code>.eslintrc</code> and <code>phpcs.xml</code></li>
+                        </ul>
+
+                        <p class="mt-3">Reports violations with:</p>
+                        <ul class="small">
+                            <li>File path and line number</li>
+                            <li>Standard violated</li>
+                            <li>Correction guidance</li>
+                            <li>Code examples</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- code-documenter -->
+        <div id="code-documenter" class="card doc-card mb-4">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0"><i class="fas fa-file-alt"></i> code-documenter</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Documents codebase to quality standards with PHPDoc-style output.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Documentation Generated</h5>
+                        <ul>
+                            <li>Class and method documentation</li>
+                            <li>PHPDoc / JSDoc comments</li>
+                            <li>README files</li>
+                            <li>API documentation</li>
+                            <li>Code examples</li>
+                            <li>Architecture diagrams</li>
+                            <li>Usage guides</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Quality Standards</h5>
+                        <ul>
+                            <li>Every public method documented</li>
+                            <li>Parameter types and descriptions</li>
+                            <li>Return type documentation</li>
+                            <li>Exception documentation</li>
+                            <li>Usage examples where helpful</li>
+                            <li>Complex logic explained</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- gen-docs -->
+        <div id="gen-docs" class="card doc-card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-book"></i> gen-docs</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Generate comprehensive documentation in multiple formats (Markdown, HTML, API docs).</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Documentation Types</h5>
+                        <ul>
+                            <li>Project README</li>
+                            <li>Architecture documentation</li>
+                            <li>API reference (OpenAPI/Swagger)</li>
+                            <li>Developer guides</li>
+                            <li>Deployment guides</li>
+                            <li>Troubleshooting guides</li>
+                            <li>Change logs</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Output Formats</h5>
+                        <ul>
+                            <li>Markdown (.md)</li>
+                            <li>HTML (styled)</li>
+                            <li>PDF (via HTML)</li>
+                            <li>OpenAPI/Swagger JSON</li>
+                            <li>PHPDoc HTML</li>
+                        </ul>
+
+                        <h6 class="mt-3">Usage</h6>
+                        <pre class="bg-light p-2 small"><code>"Generate project documentation"
+"Create API documentation"
+"Generate README for this module"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- refactorer -->
+        <div id="refactorer" class="card doc-card mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0"><i class="fas fa-recycle"></i> refactorer</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Refactors and modernizes code while maintaining functionality.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Refactoring Techniques</h5>
+                        <ul>
+                            <li>Extract method/class</li>
+                            <li>Rename variables/methods</li>
+                            <li>Remove code duplication</li>
+                            <li>Simplify complex conditionals</li>
+                            <li>Modernize syntax (ES6+, PHP 8+)</li>
+                            <li>Improve error handling</li>
+                            <li>Optimize performance</li>
+                            <li>Apply design patterns</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Safety Measures</h5>
+                        <ul>
+                            <li>Creates backups before changes</li>
+                            <li>Runs tests after each refactor</li>
+                            <li>Preserves functionality</li>
+                            <li>Documents changes made</li>
+                            <li>Provides rollback instructions</li>
+                        </ul>
+
+                        <div class="alert alert-warning mt-3 small">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Always review refactored code and run full test suite.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- git-helper -->
+        <div id="git-helper" class="card doc-card mb-4">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0"><i class="fab fa-git-alt"></i> git-helper</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Assists with git operations (commits, branches, merges, conflict resolution).</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Git Operations</h5>
+                        <ul>
+                            <li>Create commits with descriptive messages</li>
+                            <li>Branch creation and management</li>
+                            <li>Merge conflict resolution</li>
+                            <li>Cherry-pick commits</li>
+                            <li>Rebase operations</li>
+                            <li>Tag management</li>
+                            <li>Stash operations</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Commit Message Standards</h5>
+                        <p>Follows conventional commits:</p>
+                        <ul class="small">
+                            <li><code>feat:</code> New feature</li>
+                            <li><code>fix:</code> Bug fix</li>
+                            <li><code>docs:</code> Documentation</li>
+                            <li><code>refactor:</code> Code refactoring</li>
+                            <li><code>test:</code> Tests</li>
+                            <li><code>chore:</code> Maintenance</li>
+                        </ul>
+
+                        <h6 class="mt-3">Example</h6>
+                        <pre class="bg-light p-2 small"><code>"Create a commit for these changes"
+"Resolve merge conflicts in auth module"
+"Create feature branch for user-roles"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation -->
+    <section class="mb-5">
+        <h2 class="section-title">Installation & Setup</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p class="lead">Agents are included with the Claude Code Baseline. Choose your installation method:</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>Option 1: New Project (Automatic)</h5>
+                        <p>Agents are automatically included when creating a new project:</p>
+                        <pre class="bg-light p-3"><code>.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -DestinationPath "E:\projects\myapp"</code></pre>
+                        <p class="small text-muted">Agents will be copied to <code>.claude/agents/</code></p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h5>Option 2: Existing Project</h5>
+                        <p>Add agents to an existing project:</p>
+                        <pre class="bg-light p-3"><code>.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\projects\myapp"</code></pre>
+                        <p class="small text-muted">Agents will be merged into existing <code>.claude/agents/</code></p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>Option 3: Manual Installation</h5>
+                        <p>Copy agents manually to your project:</p>
+                        <pre class="bg-light p-3"><code>Copy-Item -Recurse `
+    {{BASELINE_ROOT}}\agents\*.md `
+    E:\your-project\.claude\agents\</code></pre>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h5>Option 4: Global Installation</h5>
+                        <p>Install agents globally for all projects:</p>
+                        <pre class="bg-light p-3"><code>Copy-Item -Recurse `
+    {{BASELINE_ROOT}}\agents\*.md `
+    $env:USERPROFILE\.claude\agents\</code></pre>
+                        <p class="small text-muted">Agents will be available to every Claude Code project</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-4">
+                    <i class="fas fa-check-circle"></i> <strong>Verification:</strong>
+                    After installation, agents will automatically activate when you invoke tasks matching their expertise.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="mb-5">
+        <h2 class="section-title">Next Steps</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-rocket fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="text-center">Get Started</h5>
+                        <p class="text-center">
+                            <a href="getting-started.html" class="btn btn-primary">
+                                <i class="fas fa-play"></i> Getting Started Guide
+                            </a>
+                        </p>
+                        <p class="small text-center text-muted">
+                            Step-by-step walkthrough of setting up your first project with agents
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-project-diagram fa-3x text-info"></i>
+                        </div>
+                        <h5 class="text-center">How It Works</h5>
+                        <p class="text-center">
+                            <a href="how-it-works.html" class="btn btn-info">
+                                <i class="fas fa-cogs"></i> Architecture Guide
+                            </a>
+                        </p>
+                        <p class="small text-center text-muted">
+                            Understand how all components work together
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-code fa-3x text-success"></i>
+                        </div>
+                        <h5 class="text-center">View Examples</h5>
+                        <p class="text-center">
+                            <a href="samples/index.html" class="btn btn-success">
+                                <i class="fas fa-file-alt"></i> Sample Reports
+                            </a>
+                        </p>
+                        <p class="small text-center text-muted">
+                            See what agents produce with fictional data examples
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Include Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Load Header and Footer -->
+<script>
+    fetch('includes/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    fetch('includes/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

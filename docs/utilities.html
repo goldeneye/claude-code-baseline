@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Utilities & Scripts - Claude Code Baseline Helper Tools">
+    <meta name="author" content="Tim Golden - Compliance & Cybersecurity Expert">
+    <title>Utilities & Scripts - Claude Code Baseline</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <img src="images/tim-golden-logo.png" alt="Tim Golden" height="40" class="me-2">
+                    <strong class="text-white">Claude Code Baseline</strong>
+                </a>
+                <div class="d-none d-lg-block">
+                    <a href="about.html#sponsor" class="badge bg-warning text-dark text-decoration-none" style="font-size: 0.75rem;">
+                        <i class="fas fa-coffee"></i> Buy me a coffee
+                    </a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="code-documentation.html">💻 Code Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agents.html">🤖 AI Agents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="getting-started.html">🚀 Get Started</a></li>
+                    <li class="nav-item"><a class="nav-link" href="how-it-works.html">⚙️ How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="utilities.html">🛠️ Utilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="samples/index.html">📊 Sample Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="changelog.html">📋 Changelog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">👤 About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+            <i class="fas fa-tools"></i> Utilities & Scripts
+        </h1>
+        <p class="lead">
+            PowerShell automation scripts and helper tools for project setup, integration, and maintenance.
+            These utilities eliminate manual work and ensure consistent project configuration.
+        </p>
+    </div>
+</section>
+
+<main class="container my-5">
+
+    <!-- Quick Reference -->
+    <section class="mb-5">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-plus-circle fa-3x text-primary mb-3"></i>
+                        <h5>new-project.ps1</h5>
+                        <p class="small">Create new projects from baseline</p>
+                        <a href="#new-project" class="btn btn-primary btn-sm">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-layer-group fa-3x text-success mb-3"></i>
+                        <h5>add-baseline-to-existing-project.ps1</h5>
+                        <p class="small">Integrate baseline into existing projects</p>
+                        <a href="#add-baseline" class="btn btn-success btn-sm">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card doc-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-sync fa-3x text-info mb-3"></i>
+                        <h5>sync-agents.ps1</h5>
+                        <p class="small">Sync agents across projects</p>
+                        <a href="#sync-agents" class="btn btn-info btn-sm">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- new-project.ps1 -->
+    <section id="new-project" class="mb-5">
+        <h2 class="section-title">new-project.ps1</h2>
+        <div class="card doc-card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Create New Project from Baseline</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Creates a complete new project with all baseline components</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>What It Does</h5>
+                        <ul>
+                            <li>Creates directory structure</li>
+                            <li>Copies all baseline documentation</li>
+                            <li>Copies coding standards (13 files)</li>
+                            <li>Installs AI agents (10 agents)</li>
+                            <li>Initializes Git repository</li>
+                            <li>Replaces template variables (optional)</li>
+                            <li>Creates .gitignore</li>
+                            <li>Generates verification report</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Parameters</h5>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Required</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>-ProjectName</code></td>
+                                        <td>Yes</td>
+                                        <td>Name of your project</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-DestinationPath</code></td>
+                                        <td>Yes</td>
+                                        <td>Where to create project</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-ConfigFile</code></td>
+                                        <td>No</td>
+                                        <td>JSON config for auto-replacement</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-ContactEmail</code></td>
+                                        <td>No</td>
+                                        <td>Contact email address</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-Domain</code></td>
+                                        <td>No</td>
+                                        <td>Project domain name</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mt-4">Usage Examples</h5>
+
+                <h6>Basic Usage</h6>
+                <pre class="bg-light p-3"><code>.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -DestinationPath "E:\projects\myapp"</code></pre>
+
+                <h6>With Configuration File</h6>
+                <pre class="bg-light p-3"><code># Create config file
+Copy-Item project-config.example.json project-config.json
+# Edit project-config.json with your values
+
+# Run with config
+.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -DestinationPath "E:\projects\myapp" `
+    -ConfigFile "project-config.json"</code></pre>
+
+                <h6>With Inline Parameters</h6>
+                <pre class="bg-light p-3"><code>.\new-project.ps1 `
+    -ProjectName "MyApp" `
+    -DestinationPath "E:\projects\myapp" `
+    -ContactEmail "dev@myapp.com" `
+    -Domain "myapp.com"</code></pre>
+
+                <div class="alert alert-success mt-3">
+                    <i class="fas fa-check-circle"></i> <strong>Result:</strong>
+                    Complete project structure ready for development in &lt;1 minute
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- add-baseline-to-existing-project.ps1 -->
+    <section id="add-baseline" class="mb-5">
+        <h2 class="section-title">add-baseline-to-existing-project.ps1</h2>
+        <div class="card doc-card">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Integrate Baseline into Existing Project</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Safely adds baseline components to existing projects with conflict resolution</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>Safety Features</h5>
+                        <ul>
+                            <li><strong>Automatic backups</strong> before any changes</li>
+                            <li><strong>Conflict detection</strong> - detects existing files</li>
+                            <li><strong>Merge strategies</strong> - skip, rename, or overwrite</li>
+                            <li><strong>Dry-run mode</strong> - preview changes first</li>
+                            <li><strong>Rollback capability</strong> - restore from backup</li>
+                            <li><strong>Verification</strong> - ensures successful integration</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Parameters</h5>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Required</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>-ProjectPath</code></td>
+                                        <td>Yes</td>
+                                        <td>Path to existing project</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-DryRun</code></td>
+                                        <td>No</td>
+                                        <td>Preview without making changes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-ConflictStrategy</code></td>
+                                        <td>No</td>
+                                        <td>skip | rename | overwrite</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-Force</code></td>
+                                        <td>No</td>
+                                        <td>Skip confirmations</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mt-4">Usage Examples</h5>
+
+                <h6>Dry Run (Recommended First Step)</h6>
+                <pre class="bg-light p-3"><code>.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\projects\myapp" `
+    -DryRun</code></pre>
+
+                <h6>Apply Changes (Skip Conflicts)</h6>
+                <pre class="bg-light p-3"><code>.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\projects\myapp" `
+    -ConflictStrategy skip</code></pre>
+
+                <h6>Apply Changes (Rename Conflicts)</h6>
+                <pre class="bg-light p-3"><code>.\add-baseline-to-existing-project.ps1 `
+    -ProjectPath "E:\projects\myapp" `
+    -ConflictStrategy rename</code></pre>
+
+                <div class="alert alert-warning mt-3">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Best Practice:</strong>
+                    Always run with <code>-DryRun</code> first to preview changes, then commit existing work before applying.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sync-agents.ps1 -->
+    <section id="sync-agents" class="mb-5">
+        <h2 class="section-title">sync-agents.ps1</h2>
+        <div class="card doc-card">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Sync AI Agents Across Projects</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Update agents in multiple projects from the baseline repository</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>What It Does</h5>
+                        <ul>
+                            <li>Scans specified directory for projects</li>
+                            <li>Detects projects with <code>.claude/agents/</code></li>
+                            <li>Compares agent versions</li>
+                            <li>Updates outdated agents</li>
+                            <li>Reports sync status</li>
+                            <li>Maintains project-specific customizations (optional)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Parameters</h5>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Required</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>-ProjectsRoot</code></td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-DryRun</code></td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-Force</code></td>
+                                        <td>No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mt-4">Usage Examples</h5>
+
+                <h6>Sync All Projects in Directory</h6>
+                <pre class="bg-light p-3"><code>.\sync-agents.ps1 -ProjectsRoot "E:\projects"</code></pre>
+
+                <h6>Preview Changes (Dry Run)</h6>
+                <pre class="bg-light p-3"><code>.\sync-agents.ps1 `
+    -ProjectsRoot "E:\projects" `
+    -DryRun</code></pre>
+
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-info-circle"></i> <strong>Use Case:</strong>
+                    When agents are updated in the baseline, run this to propagate updates to all your projects.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- backup-project.ps1 -->
+    <section class="mb-5">
+        <h2 class="section-title">backup-project.ps1</h2>
+        <div class="card doc-card">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="mb-0">Project Backup Utility</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Create timestamped backups of your project</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Features</h5>
+                        <ul>
+                            <li>Timestamped backup directories</li>
+                            <li>Excludes node_modules, .git, vendor</li>
+                            <li>Compression option (zip)</li>
+                            <li>Incremental backups</li>
+                            <li>Backup verification</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Usage</h5>
+                        <pre class="bg-light p-2"><code>.\baseline_docs\backup-project.ps1 `
+    -ProjectPath "E:\projects\myapp" `
+    -BackupPath "E:\backups"</code></pre>
+                        <p class="small text-muted mt-2">Creates: <code>E:\backups\myapp-2025-11-12-143022\</code></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python Automation Scripts -->
+    <section class="mb-5">
+        <h2 class="section-title">Python Automation Scripts</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <p class="lead">Python scripts created during GitHub Pages setup (November 12, 2025)</p>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h6><i class="fas fa-link"></i> check_github_pages_links.py</h6>
+                        <p class="small">Scans all HTML files for broken links and reports findings</p>
+                        <pre class="bg-light p-2 small"><code>python check_github_pages_links.py</code></pre>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6><i class="fas fa-wrench"></i> fix_github_pages_links.py</h6>
+                        <p class="small">Automatically fixes broken links with pattern matching</p>
+                        <pre class="bg-light p-2 small"><code>python fix_github_pages_links.py</code></pre>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6><i class="fas fa-shield-alt"></i> sanitize_github_pages.py</h6>
+                        <p class="small">Removes hardcoded paths and usernames from HTML files</p>
+                        <pre class="bg-light p-2 small"><code>python sanitize_github_pages.py</code></pre>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6><i class="fas fa-search"></i> scan_for_sensitive_data.py</h6>
+                        <p class="small">Security scanner for sensitive data patterns</p>
+                        <pre class="bg-light p-2 small"><code>python scan_for_sensitive_data.py</code></pre>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6><i class="fas fa-link"></i> add_about_nav_to_all_pages.py</h6>
+                        <p class="small">Adds About link to navigation on all pages</p>
+                        <pre class="bg-light p-2 small"><code>python add_about_nav_to_all_pages.py</code></pre>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6><i class="fas fa-coffee"></i> add_coffee_link_all_pages.py</h6>
+                        <p class="small">Adds "Buy me a coffee" to all page headers and footer</p>
+                        <pre class="bg-light p-2 small"><code>python add_coffee_link_all_pages.py</code></pre>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <i class="fas fa-folder"></i> <strong>Location:</strong> All Python scripts are in <code>claude_wip/</code> directory
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration Files -->
+    <section class="mb-5">
+        <h2 class="section-title">Configuration Files</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>File</th>
+                                <th>Purpose</th>
+                                <th>When to Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>project-config.example.json</code></td>
+                                <td>Full configuration template</td>
+                                <td>Copy and customize for automated setup</td>
+                            </tr>
+                            <tr>
+                                <td><code>project-config.minimal.json</code></td>
+                                <td>Minimal configuration template</td>
+                                <td>Quick setup with only required fields</td>
+                            </tr>
+                            <tr>
+                                <td><code>.gitignore</code></td>
+                                <td>Git exclusion patterns</td>
+                                <td>Automatically created by scripts</td>
+                            </tr>
+                            <tr>
+                                <td><code>CLAUDE.md</code></td>
+                                <td>AI assistant guidance</td>
+                                <td>Guides Claude Code in your project</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="mb-5">
+        <h2 class="section-title">Best Practices</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-check-circle text-success"></i> Do</h5>
+                        <ul>
+                            <li>Run scripts with <code>-DryRun</code> first</li>
+                            <li>Commit existing work before adding baseline</li>
+                            <li>Review generated files after setup</li>
+                            <li>Keep baseline repository updated</li>
+                            <li>Use configuration files for consistency</li>
+                            <li>Test scripts in non-production first</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-times-circle text-danger"></i> Don't</h5>
+                        <ul>
+                            <li>Run scripts without reviewing parameters</li>
+                            <li>Skip backups before major changes</li>
+                            <li>Ignore conflict warnings</li>
+                            <li>Modify scripts without testing</li>
+                            <li>Use <code>-Force</code> without understanding impact</li>
+                            <li>Run on production without dry-run first</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="mb-5">
+        <h2 class="section-title">Troubleshooting</h2>
+        <div class="card doc-card">
+            <div class="card-body">
+                <h5>Common Issues</h5>
+                <div class="accordion" id="troubleshootingAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#issue1">
+                                Script execution policy error
+                            </button>
+                        </h2>
+                        <div id="issue1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <p><strong>Error:</strong> "cannot be loaded because running scripts is disabled"</p>
+                                <p><strong>Solution:</strong></p>
+                                <pre class="bg-light p-2"><code># Run PowerShell as Administrator
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#issue2">
+                                Path with spaces not working
+                            </button>
+                        </h2>
+                        <div id="issue2" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p><strong>Solution:</strong> Use quotes around paths with spaces</p>
+                                <pre class="bg-light p-2"><code>.\new-project.ps1 `
+    -ProjectName "My App" `
+    -DestinationPath "E:\My Projects\myapp"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#issue3">
+                                Permission denied on file copy
+                            </button>
+                        </h2>
+                        <div id="issue3" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p><strong>Cause:</strong> Files are read-only or in use</p>
+                                <p><strong>Solution:</strong> Close editors, check file properties, run PowerShell as Administrator if needed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    fetch('includes/footer.html').then(r => r.text()).then(d => document.getElementById('footer-placeholder').innerHTML = d);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
