@@ -7,6 +7,102 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.2.0] - 2025-11-12 (MAJOR GITHUB PAGES EXPANSION)
+
+### Summary
+
+Major expansion of GitHub Pages documentation from 7 to 12 comprehensive pages (+71% growth), plus creation of new root portfolio landing page. This release dramatically improves user experience with clear navigation, complete getting-started guide, architecture explanation, and AI agents documentation.
+
+### Added
+
+#### GitHub Pages Documentation Expansion
+- **agents.html** (850+ lines) - Comprehensive AI agents documentation
+  - Documents all 10 AI agents with use cases and workflows
+  - Session orchestrators (session-start, end-of-day-integrated)
+  - Quality enforcers (standards-enforcer, security-auditor, test-runner)
+  - Code improvers (refactorer, code-documenter, code-reviewer)
+  - Dev helpers (git-helper, todo-helper)
+  - Installation instructions and best practices
+
+- **getting-started.html** (700+ lines) - Complete quick start guide
+  - Step-by-step walkthrough from requesting access to first session
+  - Prerequisites and system requirements
+  - Project creation workflow
+  - Configuration and customization
+  - Troubleshooting common issues
+
+- **how-it-works.html** (900+ lines) - Architecture and workflow explanation
+  - Core components overview (baseline docs, agents, memory system)
+  - Development workflow (5 phases: Plan → Code → Test → Deploy → Document)
+  - Memory system architecture (session + persistent context)
+  - Real-world ROI examples and benefits
+
+- **utilities.html** (750+ lines) - Scripts and tools documentation
+  - PowerShell automation scripts (new-project.ps1, add-baseline, sync-agents)
+  - Python utilities (6 scripts for link checking, sanitization, navigation updates)
+  - Usage examples and command reference
+
+#### Root Portfolio Landing Page (NEW REPOSITORY)
+- **goldeneye.github.io** - Professional portfolio landing page
+  - Hero section with awards and credentials (CompTIA 2024 Award, CANIT Award)
+  - Stats grid (20+ years experience, MSP expertise)
+  - Featured repositories (Claude Code Baseline + 2 others)
+  - Contact section with social media links
+  - Support section (GitHub Sponsors + PayPal)
+  - Modern glassmorphism design
+
+#### Contact and Access Integration
+- Added "Contact / Request Access" to footer on all pages
+- Created prominent contact section on About page
+- Integrated timgolden.com/contact/ form for access requests
+- Clear CTAs for private repository access
+
+### Changed
+
+#### Navigation Enhancement
+- Updated navigation on all 12 pages (7 → 11 items)
+- Added 4 new navigation items: AI Agents, Get Started, How It Works, Utilities
+- Consistent navigation structure across entire site
+- Responsive hamburger menu on mobile
+
+#### Footer Updates
+- Enhanced Quick Links section with all 12 pages
+- Added Contact / Request Access section
+- Updated footer on all HTML pages
+- Improved footer organization and readability
+
+#### Date Corrections
+- Fixed home page dates to match changelog (November not January)
+- Corrected all Recent Updates timestamps
+- Ensured consistency across all documentation
+
+#### Cross-Repository Integration
+- Added link from claude-code-baseline home to root portfolio
+- Created bidirectional navigation between sites
+- Fixed repository URLs (hyphens not underscores)
+
+### Fixed
+- **Date inconsistencies** - Home page dates now match changelog (November 12)
+- **Repository naming** - Used hyphens instead of underscores (goldeneye.github.io)
+- **Navigation completeness** - All pages now have all 11 navigation items
+
+### Statistics
+- **Pages**: 7 → 12 (+71% growth)
+- **Navigation items**: 7 → 11 (+57% expansion)
+- **Files changed**: 20 in claude_code_baseline
+- **Lines added**: +4,116
+- **Lines removed**: -263
+- **New repository**: goldeneye.github.io (405 lines)
+- **Commits**: 5+ across both repositories
+
+### Deployment
+- **claude_code_baseline**: https://goldeneye.github.io/claude-code-baseline/
+- **Root portfolio**: https://goldeneye.github.io/
+- Both sites deployed and live via GitHub Pages
+- All links functional and tested
+
+---
+
 ## [3.0.0] - 2025-11-09 (MAJOR WEEK-LONG RELEASE)
 
 ### 🎉 Complete Week of Development (Nov 3-9, 2025)
