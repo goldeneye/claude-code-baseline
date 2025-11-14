@@ -6,6 +6,20 @@
 
 ---
 
+## 🌐 GitHub Pages Documentation
+
+**Live Documentation Site**: [https://goldeneye.github.io/claude-code-baseline/](https://goldeneye.github.io/claude-code-baseline/)
+
+**Quick Links:**
+- 🏠 [**Home**](https://goldeneye.github.io/claude-code-baseline/) - Main documentation portal
+- 🤖 [**Agent Results**](https://goldeneye.github.io/claude-code-baseline/agent-results/) - AI agent audit reports and analysis
+- 📚 [**Code Documentation**](https://goldeneye.github.io/claude-code-baseline/code-documentation.html) - Complete code reference
+- 📝 [**Changelog**](https://goldeneye.github.io/claude-code-baseline/changelog.html) - Release history and updates
+- ✅ [**TODO List**](https://goldeneye.github.io/claude-code-baseline/todo.html) - Project status and roadmap
+- 📖 [**How-To Guides**](https://goldeneye.github.io/claude-code-baseline/how-to-guides.html) - Step-by-step tutorials
+
+---
+
 ## 🎯 Purpose
 
 This repository contains **baseline documentation templates** for engineering projects. These templates provide a comprehensive starting point for:
