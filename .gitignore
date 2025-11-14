@@ -77,8 +77,11 @@ tim_wip/
 *.local.json
 .claude/settings.local.json
 
-# NOTE: .claude/memory/ and .claude/context/ SHOULD be committed!
-# They contain the persistent memory system for future Claude sessions.
+# Claude memory and context (user-specific, not for baseline template)
+# NOTE: For baseline template repos, these are user-specific and should NOT be committed
+# Users will generate their own memory/context when using this baseline
+.claude/memory/
+.claude/context/
 
 # Session reports and agent results (may contain sensitive data)
 # These files often contain API keys, credentials, or other sensitive info
