@@ -79,3 +79,17 @@ tim_wip/
 
 # NOTE: .claude/memory/ and .claude/context/ SHOULD be committed!
 # They contain the persistent memory system for future Claude sessions.
+
+# Session reports and agent results (may contain sensitive data)
+# These files often contain API keys, credentials, or other sensitive info
+project_docs/session-reports/
+project_docs/agent-results/WIP/
+project_docs/agent-results/*-audit-*.md
+project_docs/agent-results/*-audit-*.html
+project_docs/agent-results/*-summary-*.md
+project_docs/agent-results/*-summary-*.html
+
+# GitHub support and incident response files
+github_support_message.txt
+incident*.txt
+security-incident*.md
