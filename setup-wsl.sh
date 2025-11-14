@@ -45,7 +45,7 @@ else
 
 # Quick navigation
 alias baseline='cd {{BASELINE_ROOT}}'
-alias repos='cd /mnt/e/github'
+alias repos='cd {{REPOS_ROOT}}'
 
 # Load baseline environment
 load-baseline() {
@@ -163,7 +163,7 @@ echo -e "     ${BLUE}baseline-status${NC}"
 echo ""
 echo -e "${GREEN}Quick Commands:${NC}"
 echo -e "  ${BLUE}baseline${NC}        - Navigate to repository"
-echo -e "  ${BLUE}repos${NC}           - Navigate to E:\\github\\"
+echo -e "  ${BLUE}repos${NC}           - Navigate to repositories directory"
 echo -e "  ${BLUE}load-baseline${NC}   - Load environment variables"
 echo -e "  ${BLUE}baseline-status${NC} - Check repository status"
 echo ""

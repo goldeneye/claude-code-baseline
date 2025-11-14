@@ -649,7 +649,7 @@ When implementing this database schema, replace the following template variables
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `{{PROJECT_NAME}}` | Project display name | ComplianceScorecard Platform |
+| `{{PROJECT_NAME}}` | Project display name | MyProject Platform |
 | `{{DB_HOST}}` | Database host | localhost, db.example.com |
 | `{{DB_BACKUP_PRIMARY}}` | Primary backup location | s3://backups/mysql |
 | `{{DB_BACKUP_SECONDARY}}` | Secondary backup location | azure://backups/mysql |

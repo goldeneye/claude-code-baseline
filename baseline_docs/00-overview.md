@@ -9,7 +9,8 @@ author: {{USERNAME}} - aka GoldenEye Engineering timgolden.com
 
 ## Purpose
 
-This document provides a high-level overview of {{PROJECT_NAME}}, 
+This document provides a high-level overview of {{PROJECT_NAME}}, including system architecture, technology stack, deployment models, and key operational procedures. It serves as the central reference point for developers, DevOps engineers, and stakeholders.
+
 ---
 
 ## System Identity
@@ -19,13 +20,24 @@ This document provides a high-level overview of {{PROJECT_NAME}},
 | **Project Name** | {{PROJECT_NAME}} |
 | **Service Type** | Multi-tenant SaaS Platform |
 | **Primary Framework** | Laravel 11+ / React |
-| **Target Users** | MSPs, MSSPs, vCISOs, Compliance Teams |
+| **Target Users** | {{TARGET_USERS}} |
 | **Deployment Model** | Docker-first, cloud-native |
 | **Repository Path** | {{REPO_PATH}} |
 
 ---
 
 ## Core Capabilities
+
+- **Multi-tenant Architecture**: Database-level tenant isolation with row-level filtering
+- **Role-Based Access Control**: Granular permissions system with 6+ role types
+- **RESTful API**: Comprehensive API with JWT authentication and rate limiting
+- **Asynchronous Processing**: Background job queue system for long-running tasks
+- **Real-time Updates**: Event-driven architecture with notifications
+- **Audit Logging**: Comprehensive activity tracking and compliance reporting
+- **Data Encryption**: Field-level and at-rest encryption for sensitive data
+- **AI Integration**: Multi-provider AI support with secure API key management
+
+---
 
 ## Technology Stack
 
@@ -49,9 +61,10 @@ This document provides a high-level overview of {{PROJECT_NAME}},
 - **Monitoring**: Health checks + metrics dashboard
 
 ### Specialized Components
-- **Python Scanners**: 
-- **AI Integration**: Multi-provider support with encryption
-- **PDF Generation**: Laravel Dompdf/Snappy
+- **Background Workers**: Celery/Python workers for specialized processing
+- **AI Integration**: Multi-provider support (OpenAI, Anthropic) with encryption
+- **PDF Generation**: Laravel Dompdf/Snappy for document export
+- **Email Services**: Laravel Mail with queue support
 
 ---
 
@@ -78,6 +91,27 @@ This document provides a high-level overview of {{PROJECT_NAME}},
 
 ## Key Differentiators
 
+1. **Security-First Design**
+   - Field-level encryption for sensitive data
+   - Comprehensive audit logging
+   - FTC Safeguards Rule and SOC 2 alignment
+
+2. **Multi-Tenant Architecture**
+   - Complete data isolation between tenants
+   - Scalable from 1 to 1000+ tenants
+   - Tenant-specific customization support
+
+3. **Developer Experience**
+   - Comprehensive API documentation
+   - AI-assisted development workflow (Claude Code integration)
+   - Automated testing and quality standards
+
+4. **Operational Excellence**
+   - Docker-first deployment model
+   - Automated backup and disaster recovery
+   - Health monitoring and alerting
+
+---
 
 ## Deployment Models
 
@@ -145,10 +179,10 @@ API_RATE_LIMIT_DEFAULT=60
 - Zero critical security vulnerabilities
 
 ### Business Metrics
-- Assessment completion rate > 80%
-- User adoption across MSP teams
-- Export/report generation frequency
-- Client satisfaction scores
+- Task completion rate > 80%
+- User adoption across teams
+- Feature utilization rates
+- Customer satisfaction scores (NPS)
 
 ---
 
@@ -185,6 +219,6 @@ API_RATE_LIMIT_DEFAULT=60
 
 ---
 
-**Last Updated**: 
-**Document Version**:
-**Status**:  Baseline
+**Last Updated**: 2025-11-14
+**Document Version**: 1.0
+**Status**: Baseline Template

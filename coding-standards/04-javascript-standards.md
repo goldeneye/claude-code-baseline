@@ -36,7 +36,7 @@
 
 ```javascript
 // ✅ GOOD - Use const/let
-const API_URL = 'https://api.compliancescorecard.com';
+const API_URL = 'https://api.{{DOMAIN}}';
 let counter = 0;
 const user = { id: 1, name: 'John' };
 
@@ -634,7 +634,7 @@ export const useAssessmentContext = () => {
 import axios from 'axios';
 import { getAuthToken } from './auth';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://api.compliancescorecard.com';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://api.{{DOMAIN}}';
 
 // Create axios instance
 const apiClient = axios.create({

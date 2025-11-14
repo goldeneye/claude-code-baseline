@@ -948,11 +948,11 @@ Access interactive API documentation:
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `{{PROJECT_NAME}}` | Project display name | ComplianceScorecard Platform |
+| `{{PROJECT_NAME}}` | Project display name | MyProject Platform |
 | `{{DOMAIN}}` | API base domain | https://api.example.com |
 | `{{AUTH0_DOMAIN}}` | Auth0 domain | https://example.auth0.com |
-| `{{PROJECT_NAMESPACE}}` | PHP namespace | ComplianceScorecard |
-| `{{ORG}}` | GitHub organization | compliancescorecard |
+| `{{PROJECT_NAMESPACE}}` | PHP namespace | MyApp |
+| `{{ORG}}` | GitHub organization | myproject |
 | `{{CLIENT_ID}}` | OAuth client ID | abc123... |
 | `{{CLIENT_SECRET}}` | OAuth client secret | xyz789... |
 | `{{CONTACT_EMAIL}}` | API support email | api-support@example.com |

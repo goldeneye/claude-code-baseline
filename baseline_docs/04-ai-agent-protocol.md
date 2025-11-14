@@ -2,7 +2,7 @@
 title: {{PROJECT_NAME}} - AI Agent Protocol & Claude Code Workflow
 version: 1.0
 last_updated: 2025-11-02
-author: ComplianceScorecard Engineering
+author: GoldenEye Engineering (@goldeneye)
 ---
 
 # {{PROJECT_NAME}} — AI Agent Protocol & Claude Code Workflow
@@ -339,11 +339,11 @@ public function test_evaluate_result_set_with_zero_total(): void
 tail -100 storage/logs/laravel.log | grep ERROR
 
 # Claude examines failing code
-cat app/Jobs/RunDomainScanner.php
+cat app/Jobs/ProcessDataJob.php
 
 # Claude checks database state
 php artisan tinker
->>> ScanResult::find(101)->results->count()
+>>> ProcessResult::find(101)->results->count()
 ```
 
 **Step 2: Hypothesize Root Cause**

@@ -790,7 +790,7 @@ php artisan audit:export \
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `{{PROJECT_NAME}}` | Project display name | ComplianceScorecard Platform |
+| `{{PROJECT_NAME}}` | Project display name | MyProject Platform |
 | `{{BACKUP_PRIMARY}}` | Primary backup location | s3://backups-primary/mysql |
 | `{{BACKUP_SECONDARY}}` | Secondary backup location | s3://backups-dr/mysql |
 | `{{BACKUP_BUCKET}}` | S3 backup bucket | company-backups |

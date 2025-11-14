@@ -106,7 +106,7 @@ if ($condition) {
 // File: app/Models/Assessment/AssessmentTemplate.php
 
 /*
- * © 2025 ComplianceRisk.io Inc. ...
+ * © {{COPYRIGHT_YEAR}} {{COMPANY_NAME}}
  */
 
 namespace App\Models\Assessment;
@@ -470,10 +470,10 @@ public function get(): array { }  // Not descriptive
  * // Returns: ['success' => true, 'data' => [...], 'count' => 10]
  *
  * @see UserService::getUser()
- * @link https://docs.compliancescorecard.com/api/users
+ * @link https://docs.{{DOMAIN}}/api/users
  *
  * @since 1.2.0
- * @author ComplianceScorecard Dev Team
+ * @author {{PROJECT_NAME}} Dev Team
  */
 public function getUserData(
     string $userId,

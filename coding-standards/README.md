@@ -1,13 +1,13 @@
 # Coding Standards & Best Practices
 
-**ComplianceScorecard Assessment System**
+**{{PROJECT_NAME}}**
 Enhanced for Claude Code & AI Development Assistants
 
 ---
 
 ## Overview
 
-This directory contains comprehensive coding standards, conventions, and best practices for the ComplianceScorecard Assessment System. All team members and AI assistants (including Claude Code) must follow these guidelines to ensure code consistency, maintainability, security, and quality.
+This directory contains comprehensive coding standards, conventions, and best practices for {{PROJECT_NAME}}. All team members and AI assistants (including Claude Code) must follow these guidelines to ensure code consistency, maintainability, security, and quality.
 
 ### Core Principles
 
@@ -133,7 +133,7 @@ Every PHP file must start with:
 // File: app/Http/Controllers/ExampleController.php
 
 /*
- * © 2025 ComplianceRisk.io Inc. doing business as Compliance Scorecard. All rights reserved.
+ * © {{COPYRIGHT_YEAR}} {{COMPANY_NAME}}. All rights reserved.
  * [Full copyright notice...]
  */
 
@@ -192,5 +192,5 @@ When updating these standards:
 ---
 
 **Last Updated:** January 2025
-**Maintained By:** ComplianceScorecard Development Team
+**Maintained By:** GoldenEye Engineering (@goldeneye)
 **For:** Developers, QA, DevOps, and AI Development Assistants

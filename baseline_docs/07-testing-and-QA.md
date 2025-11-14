@@ -480,7 +480,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 
-public function test_compliance_scorecard_sync()
+public function test_external_api_sync()
 {
     // Create mock responses
     $mock = new MockHandler([
@@ -939,7 +939,7 @@ When implementing this testing strategy, replace the following template variable
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `{{PROJECT_NAME}}` | Project display name | ComplianceScorecard Platform |
+| `{{PROJECT_NAME}}` | Project display name | MyProject Platform |
 | `{{REPO_PATH}}` | Repository path | /var/www/project |
 | `{{CONTACT_EMAIL}}` | QA team contact | qa-team@example.com |
 

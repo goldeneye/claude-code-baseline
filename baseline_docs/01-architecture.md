@@ -2,14 +2,14 @@
 title: {{PROJECT_NAME}} - System Architecture
 version: 1.0
 last_updated: 2025-11-02
-author: ComplianceScorecard Engineering
+author: GoldenEye Engineering (@goldeneye)
 ---
 
 # {{PROJECT_NAME}} — System Architecture
 
 ## 1. Overview
 
-{{PROJECT_NAME}} is a multi-tenant compliance and security assessment platform built on modern microservice principles. This document details the architectural patterns, data flows, and component interactions that power the system.
+{{PROJECT_NAME}} is a multi-tenant SaaS platform built on modern microservice principles. This document details the architectural patterns, data flows, and component interactions that power the system.
 
 ---
 
@@ -59,7 +59,7 @@ author: ComplianceScorecard Engineering
 ### 3.1 Frontend Layer (React SPA)
 
 **Technology**: React 18+ with Redux Toolkit
-**Location**: `{{REPO_PATH}}/polygon-fe/`
+**Location**: `{{REPO_PATH}}/frontend-app/`
 
 | Component | Responsibility |
 |-----------|---------------|
@@ -378,7 +378,7 @@ Examples:
 | Service | Purpose | Authentication |
 |---------|---------|---------------|
 | **Auth0** | User authentication | OIDC/OAuth2 |
-| **Compliance Scorecard API** | Client data sync | API Key (encrypted) |
+| **External Client API** | Client data sync | API Key (encrypted) |
 | **PSA Systems** | Client import (via CS) | Via CS API |
 | **AI Providers** | Analysis (OpenAI/Anthropic) | BYO API Key |
 | **GPT-OSS** | Free AI inference | None (local) |

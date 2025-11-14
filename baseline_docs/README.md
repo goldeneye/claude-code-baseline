@@ -17,7 +17,7 @@ All baseline documents use template variables for project-agnostic reuse:
 
 | Variable | Purpose | Example |
 |----------|---------|---------|
-| `{{PROJECT_NAME}}` | Project/product name | ComplianceScorecard, SecurityAudit |
+| `{{PROJECT_NAME}}` | Project/product name | MyProject, AnotherProject |
 | `{{SERVICE_NAME}}` | Microservice name | client-segmentation, scan-engine |
 | `{{REPO_PATH}}` | Repository location | github.com/company/repo |
 | `{{CONTACT_EMAIL}}` | Support contact | support@company.com |

@@ -414,8 +414,8 @@ return [
     'paths' => ['api/*'],
     'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE'],
     'allowed_origins' => [
-        'https://app.compliancescorecard.com',
-        'https://dashboard.compliancescorecard.com'
+        'https://app.{{DOMAIN}}',
+        'https://dashboard.{{DOMAIN}}'
     ],
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['*'],

@@ -163,7 +163,7 @@ Frontend:
 
 ---
 
-#### Feature Set 3: Compliance Assessment System
+#### Feature Set 3: Core Feature Set
 
 **Priority**: High
 **Timeline**: Weeks 7-10
@@ -663,7 +663,7 @@ Legend: █ Completed  ░ Planned
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `{{PROJECT_NAME}}` | Project display name | ComplianceScorecard Platform |
+| `{{PROJECT_NAME}}` | Project display name | MyProject Platform |
 | `{{PROJECT_PHASE}}` | Current project phase | Development |
 | `{{START_DATE}}` | Project start date | 2025-11-01 |
 | `{{TARGET_DATE}}` | Target completion date | 2026-06-30 |

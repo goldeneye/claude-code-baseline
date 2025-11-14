@@ -107,7 +107,7 @@ Copy-Item "$baseline\claude_wip\README.md" "$project\claude_wip\README.md"
 **Find and replace these in ALL copied files:**
 
 ```
-{{PROJECT_NAME}}        → Your Project Name (e.g., "ComplianceScorecard")
+{{PROJECT_NAME}}        → Your Project Name (e.g., "MyProject")
 {{SERVICE_NAME}}        → Service Name (e.g., "API Service")
 {{REPO_PATH}}           → Full path (e.g., "E:\projects\my-new-project")
 {{CLAUDE_WIP_PATH}}     → claude_wip path (e.g., "E:\projects\my-new-project\claude_wip")
@@ -198,11 +198,11 @@ Create `project-config.json`:
 
 ```json
 {
-  "PROJECT_NAME": "ComplianceScorecard",
+  "PROJECT_NAME": "MyProject",
   "SERVICE_NAME": "Assessment API",
   "REPO_PATH": "E:\\projects\\compliance-scorecard",
-  "CONTACT_EMAIL": "dev@compliancescorecard.com",
-  "DOMAIN": "compliancescorecard.com",
+  "CONTACT_EMAIL": "dev@myproject.com",
+  "DOMAIN": "myproject.com",
   "AUTH0_DOMAIN": "your-tenant.auth0.com",
   "AUTH0_CLIENT_ID": "your-client-id",
   "DB_HOST": "localhost",
@@ -214,7 +214,7 @@ Create `project-config.json`:
 Then run:
 
 ```powershell
-.\new-project.ps1 -ProjectName "ComplianceScorecard" `
+.\new-project.ps1 -ProjectName "MyProject" `
                   -DestinationPath "E:\projects\compliance-scorecard" `
                   -ConfigFile "project-config.json"
 ```
@@ -227,7 +227,7 @@ Then run:
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `{{PROJECT_NAME}}` | Official project name | "ComplianceScorecard" |
+| `{{PROJECT_NAME}}` | Official project name | "MyProject" |
 | `{{SERVICE_NAME}}` | Service/component name | "Assessment API" |
 | `{{REPO_PATH}}` | Full repository path | "E:\projects\myapp" |
 | `{{CLAUDE_WIP_PATH}}` | Claude working directory | "E:\projects\myapp\claude_wip" |
@@ -467,7 +467,7 @@ git commit -m "Initial commit"
 **Create `my-config.json`:**
 ```json
 {
-  "PROJECT_NAME": "ComplianceScorecard",
+  "PROJECT_NAME": "MyProject",
   "SERVICE_NAME": "Full-Stack Application",
   "REPO_PATH": "E:\\projects\\compliance-full",
   "CONTACT_EMAIL": "dev@compliance.com",
@@ -480,7 +480,7 @@ git commit -m "Initial commit"
 **Run:**
 ```powershell
 .\new-project.ps1 `
-    -ProjectName "ComplianceScorecard" `
+    -ProjectName "MyProject" `
     -DestinationPath "E:\projects\compliance-full" `
     -ConfigFile "my-config.json"
 ```

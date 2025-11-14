@@ -1,6 +1,6 @@
 # Project Structure & File Conventions
 
-**Laravel Multi-Tenant Assessment Platform**
+**{{PROJECT_NAME}} - Laravel Multi-Tenant Platform**
 
 [← Back to Index](./README.md)
 
@@ -9,11 +9,11 @@
 ## Quick Reference
 
 **TL;DR:**
-- Laravel 10+ with API versioning (V3)
+- Laravel 11+ with API versioning
 - Multi-tenant architecture (MSP → Company → Client)
 - Auth0 authentication integration
 - Role-based permission system
-- Standard Laravel conventions + ComplianceScorecard extensions
+- Standard Laravel conventions + project-specific extensions
 
 ---
 
@@ -297,23 +297,18 @@ Examples:
 // File: app/Http/Middleware/ApiRateLimiter.php
 
 /*
- * © 2025 ComplianceRisk.io Inc. doing business as Compliance Scorecard. All rights reserved.
+ * © {{COPYRIGHT_YEAR}} {{COMPANY_NAME}}. All rights reserved.
  *
- * NOTICE: All information contained herein is, and remains the property of ComplianceRisk.io Inc. and its suppliers, if any.
- * The intellectual and technical concepts contained herein are proprietary to ComplianceRisk.io Inc. and its suppliers and may be
+ * NOTICE: All information contained herein is, and remains the property of {{COMPANY_NAME}} and its suppliers, if any.
+ * The intellectual and technical concepts contained herein are proprietary to {{COMPANY_NAME}} and its suppliers and may be
  * covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
  *
  * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
- * from ComplianceRisk.io Inc.
+ * from {{COMPANY_NAME}}.
  *
- * Compliance Scorecard is a leading SaaS platform specializing in compliance and risk management solutions for Managed Service Providers (MSPs),
- * Managed Security Service Providers (MSSPs), and virtual/fractional Chief Information Security Officers (vCISOs). Our cloud-hosted application
- * empowers small and medium-sized businesses to effectively understand and manage their compliance posture. Key features include compliance
- * monitoring, risk assessment tools, policy management, assessment management, full asset governance, integration capabilities, and detailed
- * dashboards and reporting. The platform aligns with SOC 2 Trust Service Criteria to ensure security, availability, processing integrity,
- * confidentiality, and privacy.
+ * {{PROJECT_DESCRIPTION}}
  *
- * For the full system description, please visit: https://SystemDescription.compliancescorecard.com
+ * For more information, please visit: {{DOCUMENTATION_URL}}
  */
 
 namespace App\Http\Middleware;
@@ -333,7 +328,7 @@ class ApiRateLimiter
 // File: {relative_path_from_project_root}
 
 /*
- * © {year} ComplianceRisk.io Inc. doing business as Compliance Scorecard. All rights reserved.
+ * © {{COPYRIGHT_YEAR}} {{COMPANY_NAME}}. All rights reserved.
  * [Full copyright notice...]
  */
 

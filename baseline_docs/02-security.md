@@ -2,7 +2,7 @@
 title: {{PROJECT_NAME}} - Security Specification
 version: 1.0
 last_updated: 2025-11-02
-author: ComplianceScorecard Engineering
+author: GoldenEye Engineering (@goldeneye)
 ---
 
 # {{PROJECT_NAME}} — Security Specification

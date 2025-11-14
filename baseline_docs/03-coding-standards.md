@@ -2,7 +2,7 @@
 title: {{PROJECT_NAME}} - Coding Standards & Best Practices
 version: 2.0
 last_updated: 2025-01-15
-author: ComplianceScorecard Engineering
+author: GoldenEye Engineering (@goldeneye)
 status: REDIRECTED TO MODULAR STRUCTURE
 ---
 

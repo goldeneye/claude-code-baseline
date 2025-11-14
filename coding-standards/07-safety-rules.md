@@ -131,7 +131,7 @@ backups/
 
 ```sql
 -- ❌ NEVER DO THIS - CATASTROPHIC!
-DROP DATABASE polygon_compliance;
+DROP DATABASE {{PROJECT_DB}};
 DROP TABLE assessments;
 TRUNCATE TABLE users;
 
@@ -168,11 +168,11 @@ public function down(): void
 
 ```bash
 # ✅ GOOD - Full database backup
-mysqldump -u username -p polygon_compliance > \
-    ~/backups/polygon_compliance_$(date +%Y%m%d_%H%M%S).sql
+mysqldump -u username -p {{PROJECT_DB}} > \
+    ~/backups/{{PROJECT_DB}}_$(date +%Y%m%d_%H%M%S).sql
 
 # ✅ GOOD - Single table backup
-mysqldump -u username -p polygon_compliance assessments > \
+mysqldump -u username -p {{PROJECT_DB}} assessments > \
     ~/backups/assessments_$(date +%Y%m%d_%H%M%S).sql
 
 # Then run migration
@@ -420,7 +420,7 @@ git diff app/Models/DeletedFile.php
 # 4. Restore from most recent backup
 
 # If you have backup:
-mysql -u username -p polygon_compliance < ~/backups/latest_backup.sql
+mysql -u username -p {{PROJECT_DB}} < ~/backups/latest_backup.sql
 
 # 5. Verify data integrity
 # 6. Document incident

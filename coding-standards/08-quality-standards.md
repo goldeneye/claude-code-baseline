@@ -124,10 +124,10 @@ POST-CODING CHECKLIST:
  * // Returns: ['success' => true, 'score' => 85, ...]
  *
  * @see AssessmentScoringService::validateScoring()
- * @link https://docs.compliancescorecard.com/assessment-scoring
+ * @link https://docs.{{DOMAIN}}/assessment-scoring
  *
  * @since 2.1.0
- * @author ComplianceScorecard Dev Team
+ * @author {{PROJECT_NAME}} Dev Team
  */
 public function calculateScore(
     Assessment $assessment,

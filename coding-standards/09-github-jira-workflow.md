@@ -44,7 +44,7 @@
 
 7. **NEVER DEPLOY TO MAIN** without approval
 8. **Only approved staff can deploy to DEV**
-9. **Only ComplianceScorecard staff can deploy to MAIN**
+9. **Only authorized project staff can deploy to MAIN**
 10. **Only Josh can approve PR to MAIN**
 
 ### 🧪 Quality Assurance Pipeline - MANDATORY
@@ -139,7 +139,7 @@ Step 10: Get Required Approvals
 Step 11: Deploy Following Rules
 ├── DEV: Approved staff only
 ├── STAGING: After successful DEV testing
-├── MAIN: Only ComplianceScorecard staff
+├── MAIN: Only authorized project staff
 └── Only Josh approves MAIN deployment
 
 Step 12: Update Jira & Close Ticket
@@ -276,7 +276,7 @@ updated stuff
 
 ```markdown
 ## Jira Ticket
-**Link:** [PROJ-123](https://compliancescorecard.atlassian.net/browse/PROJ-123)
+**Link:** [PROJ-123](https://{{PROJECT_NAME}}.atlassian.net/browse/PROJ-123)
 **Sprint:** Sprint 15
 **Epic:** Assessment System Enhancement
 
@@ -407,7 +407,7 @@ PROCESS:
 ### MAIN/PRODUCTION Environment
 
 ```
-WHO CAN DEPLOY: ComplianceScorecard staff ONLY
+WHO CAN DEPLOY: Authorized project staff ONLY
 APPROVAL REQUIRED: Josh approval + QA + Stakeholders
 PROCESS:
 1. Code fully tested in DEV and STAGING
