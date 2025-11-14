@@ -9,8 +9,7 @@ author: {{USERNAME}} - aka GoldenEye Engineering timgolden.com
 
 ## Purpose
 
-This document provides a high-level overview of {{PROJECT_NAME}}, a compliance and security assessment platform designed for MSPs, MSSPs, and vCISOs. The system enables automated compliance scanning, client assessment management, and regulatory framework alignment.
-
+This document provides a high-level overview of {{PROJECT_NAME}}, 
 ---
 
 ## System Identity
@@ -27,38 +26,6 @@ This document provides a high-level overview of {{PROJECT_NAME}}, a compliance a
 ---
 
 ## Core Capabilities
-
-### 1. Compliance Scanning & Assessment
-- Automated domain security scanning (DNS, WHOIS, Email Security, Web Privacy)
-- Multi-framework compliance mapping (FTC Safeguards, SOC 2, CIS Controls, CMMC)
-- Real-time scan progress tracking
-- Letter-grade scoring system (A-F) with detailed breakdowns
-
-### 2. Client & Assessment Management
-- Multi-tenant MSP architecture with client isolation
-- Assessment template creation and versioning
-- Assessment event scheduling and tracking
-- Role-based access control (RBAC) with 201+ permissions
-
-### 3. AI-Driven Analysis
-- Client segmentation and risk scoring
-- Bring-Your-Own (BYO) AI model support (OpenAI, Anthropic, etc.)
-- Default open-source GPT integration
-- Field-level encryption for sensitive AI data
-
-### 4. API & Integration
-- RESTful API with JWT authentication
-- Rate limiting and IP whitelisting
-- Service-to-service authentication via Auth0
-- Webhook support for async notifications
-
-### 5. Reporting & Export
-- PDF report generation
-- Executive vs. technical report views
-- Compliance framework mapping
-- Automated scheduled reports
-
----
 
 ## Technology Stack
 
@@ -82,7 +49,7 @@ This document provides a high-level overview of {{PROJECT_NAME}}, a compliance a
 - **Monitoring**: Health checks + metrics dashboard
 
 ### Specialized Components
-- **Python Scanners**: DNS, WHOIS, Web Privacy analyzers
+- **Python Scanners**: 
 - **AI Integration**: Multi-provider support with encryption
 - **PDF Generation**: Laravel Dompdf/Snappy
 
@@ -111,45 +78,6 @@ This document provides a high-level overview of {{PROJECT_NAME}}, a compliance a
 
 ## Key Differentiators
 
-### Security-First Design
-- Field-level encryption for PII and sensitive data
-- Auth0 SSO with JWT validation
-- IP whitelisting and rate limiting
-- No plaintext storage of keys or tokens
-- Audit trail for all actions
-
-### Multi-Tenant Isolation
-- `msp_id` filtering on all queries
-- Dedicated API keys per MSP
-- Per-MSP AI configuration
-- Data segregation at database level
-
-### Framework-Agnostic
-- Supports custom compliance frameworks
-- Template variables for easy reuse
-- No hardcoded client/project names
-- Portable across deployments
-
-### Compliance Alignment
-- **FTC Safeguards Rule**: Encryption, access control, audit logging
-- **SOC 2**: Security, availability, confidentiality controls
-- **CIS Controls**: Automated security checks
-- **CMMC Level 2**: 110+ control mappings
-
----
-
-## User Roles & Permissions
-
-| Role | Description | Key Permissions |
-|------|-------------|-----------------|
-| **Super Admin** | Full system access | All permissions (201+) |
-| **MSP Admin** | Company-wide admin | Manage clients, users, settings |
-| **Company User** | Internal team member | View/edit assigned clients |
-| **Client User** | End-client access | View own assessments only |
-| **Auditor** | Read-only compliance view | Read assessments, generate reports |
-| **Peer Group Admin** | Cross-org collaboration | Manage peer group data |
-
----
 
 ## Deployment Models
 
@@ -164,23 +92,9 @@ npm run dev                     # Frontend (port 3101)
 docker-compose up -d
 ```
 
-### 3. Managed Cloud (Laravel Forge/Vapor)
-- Single container or multi-node
-- Auto-scaling with load balancer
-- Managed database (RDS) and Redis cluster
+
 
 ---
-
-## Service Ports
-
-| Service | Port | Description |
-|---------|------|-------------|
-| Main Platform API | 3000 | Primary Laravel backend |
-| Client Segmentation API | 3100 | Microservice for AI analysis |
-| Frontend Dev Server | 3101 | Vite development server |
-| GPT-OSS Local Engine | 5000 | Optional local AI inference |
-| MySQL | 3306 | Database server |
-| Redis | 6379 | Cache and queue |
 
 ---
 
@@ -271,6 +185,6 @@ API_RATE_LIMIT_DEFAULT=60
 
 ---
 
-**Last Updated**: 2025-11-02
-**Document Version**: 1.0
-**Status**: Production-Ready Baseline
+**Last Updated**: 
+**Document Version**:
+**Status**:  Baseline
